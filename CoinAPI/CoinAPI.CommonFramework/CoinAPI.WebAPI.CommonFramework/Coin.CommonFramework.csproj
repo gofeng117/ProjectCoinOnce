@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CF4264B4-438D-479C-8EA0-C44A33E493D6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CoinAPI.CommonFramework</RootNamespace>
+    <AssemblyName>CoinAPI.CommonFramework</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;TDD</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\CoinAPI.CommonFramework.XML</DocumentationFile>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\public dependency\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="KJFramework, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\public dependency\KJFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="KJFramework.Basic, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\public dependency\KJFramework.Basic.dll</HintPath>
+    </Reference>
+    <Reference Include="KJFramework.Cache, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\public dependency\KJFramework.Cache.dll</HintPath>
+    </Reference>
+    <Reference Include="KJFramework.Data.Synchronization, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\public dependency\KJFramework.Data.Synchronization.dll</HintPath>
+    </Reference>
+    <Reference Include="KJFramework.Dynamic, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\public dependency\KJFramework.Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="KJFramework.IO, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\public dependency\KJFramework.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="KJFramework.Messages, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\public dependency\KJFramework.Messages.dll</HintPath>
+    </Reference>
+    <Reference Include="KJFramework.Net, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\public dependency\KJFramework.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="KJFramework.Net.Channels, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\public dependency\KJFramework.Net.Channels.dll</HintPath>
+    </Reference>
+    <Reference Include="KJFramework.Net.Cloud">
+      <HintPath>..\..\public dependency\KJFramework.Net.Cloud.dll</HintPath>
+    </Reference>
+    <Reference Include="KJFramework.Net.Transaction, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\public dependency\KJFramework.Net.Transaction.dll</HintPath>
+    </Reference>
+    <Reference Include="KJFramework.Platform.Deploy.CSN.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\public dependency\KJFramework.Platform.Deploy.CSN.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="KJFramework.Platform.Deploy.CSN.NetworkLayer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\public dependency\KJFramework.Platform.Deploy.CSN.NetworkLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="KJFramework.Platform.Deploy.CSN.ProtocolStack, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\public dependency\KJFramework.Platform.Deploy.CSN.ProtocolStack.dll</HintPath>
+    </Reference>
+    <Reference Include="KJFramework.Platform.Deploy.Metadata, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\public dependency\KJFramework.Platform.Deploy.Metadata.dll</HintPath>
+    </Reference>
+    <Reference Include="mysql.data, Version=6.4.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\public dependency\mysql.data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\public dependency\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attributes\CodeItemAttribute.cs" />
+    <Compile Include="CommonCounter.cs" />
+    <Compile Include="Components\ServiceComponent.cs" />
+    <Compile Include="Configurations\DeployConfigSection.cs" />
+    <Compile Include="Configurations\DeploySettingConfiguration.cs" />
+    <Compile Include="Configurations\Loaders\RemoteConfigurationLoader.cs" />
+    <Compile Include="Configurations\Settings\RemoteConfigurationSetting.cs" />
+    <Compile Include="Core\SystemWorker.cs" />
+    <Compile Include="DbAccess\Database.cs" />
+    <Compile Include="DbAccess\DatabaseManager.cs" />
+    <Compile Include="DbAccess\DatabaseOperation.cs" />
+    <Compile Include="DbAccess\DataReader.cs" />
+    <Compile Include="DbAccess\DbType.cs" />
+    <Compile Include="DbAccess\MysqlDatabase.cs" />
+    <Compile Include="DbAccess\SqlServerDatabase.cs" />
+    <Compile Include="DbAccess\SqlUtils.cs" />
+    <Compile Include="Enums\ExecuteResults.cs" />
+    <Compile Include="Enums\MessageCommunicationTypes.cs" />
+    <Compile Include="Enums\QueueSequence.cs" />
+    <Compile Include="Enums\SystemErrors.cs" />
+    <Compile Include="Exceptions\CommunicationFailException.cs" />
+    <Compile Include="Exceptions\CommunicationTimeoutException.cs" />
+    <Compile Include="Exceptions\FileTooLargeException.cs" />
+    <Compile Include="Exceptions\MatchSizeNotFoundException.cs" />
+    <Compile Include="Exceptions\RelationNotFoundException.cs" />
+    <Compile Include="Extends\MetadataContainerExtend.cs" />
+    <Compile Include="Handle\AsyncWaitingHandle.cs" />
+    <Compile Include="Handle\AsyncWaitingHandles.cs" />
+    <Compile Include="Handle\IAsyncWaitingHandle.cs" />
+    <Compile Include="Enums\AuthorizeType.cs" />
+    <Compile Include="Metadata\AdCreative.cs" />
+    <Compile Include="Metadata\AdGroup.cs" />
+    <Compile Include="Metadata\AdTextCreative.cs" />
+    <Compile Include="Metadata\Campaign.cs" />
+    <Compile Include="Metadata\Color.cs" />
+    <Compile Include="Objects\JsonIntellectObject.cs" />
+    <Compile Include="Objects\Protocols.cs" />
+    <Compile Include="Processors\ColorIntellectPropertyProcessor.cs" />
+    <Compile Include="Processors\IMessageProcessor.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Proxies\IRemoteConfigurationProxy.cs" />
+    <Compile Include="Proxies\IRemoteDataSyncProxy.cs" />
+    <Compile Include="Proxies\RemoteConfigurationProxy.cs" />
+    <Compile Include="Proxies\RemoteDataSyncProxy.cs" />
+    <Compile Include="Proxies\SolitaryRemoteConfigurationProxy.cs" />
+    <Compile Include="Results\ExecuteResult.cs" />
+    <Compile Include="Results\ExecuteResultOfT.cs" />
+    <Compile Include="Results\FailExecuteResult.cs" />
+    <Compile Include="Results\FailExecuteResultOfT.cs" />
+    <Compile Include="Results\IExecuteResult.cs" />
+    <Compile Include="Results\IExecuteResultOfT.cs" />
+    <Compile Include="Schedulers\IRequestScheduler.cs" />
+    <Compile Include="Schedulers\RequestScheduler.cs" />
+    <Compile Include="Transactions\FailMobiSageMessageTransaction.cs" />
+    <Compile Include="Transactions\FailMobiSageMetadataTransaction.cs" />
+    <Compile Include="Transactions\FakedBusinessTransaction.cs" />
+    <Compile Include="Transactions\FakedMetadataTransaction.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Readme.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

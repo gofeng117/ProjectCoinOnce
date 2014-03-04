@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D0A9330B-8305-42A3-8D3D-EECDD6D739BA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CoinAPI.ABS.NUintTest</RootNamespace>
+    <AssemblyName>CoinAPI.ABS.NUintTest</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="KJFramework">
+      <HintPath>..\..\..\public dependency\KJFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="KJFramework.Basic">
+      <HintPath>..\..\..\public dependency\KJFramework.Basic.dll</HintPath>
+    </Reference>
+    <Reference Include="KJFramework.Cache">
+      <HintPath>..\..\..\public dependency\KJFramework.Cache.dll</HintPath>
+    </Reference>
+    <Reference Include="KJFramework.Dynamic">
+      <HintPath>..\..\..\public dependency\KJFramework.Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="KJFramework.IO">
+      <HintPath>..\..\..\public dependency\KJFramework.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="KJFramework.Messages">
+      <HintPath>..\..\..\public dependency\KJFramework.Messages.dll</HintPath>
+    </Reference>
+    <Reference Include="KJFramework.Net">
+      <HintPath>..\..\..\public dependency\KJFramework.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="KJFramework.Net.Channels">
+      <HintPath>..\..\..\public dependency\KJFramework.Net.Channels.dll</HintPath>
+    </Reference>
+    <Reference Include="KJFramework.Net.Transaction">
+      <HintPath>..\..\..\public dependency\KJFramework.Net.Transaction.dll</HintPath>
+    </Reference>
+    <Reference Include="mysql.data">
+      <HintPath>..\..\..\public dependency\mysql.data.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\..\public dependency\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.mocks">
+      <HintPath>..\..\..\public dependency\nunit.mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="pnunit.framework">
+      <HintPath>..\..\..\public dependency\pnunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ChannelPool.cs" />
+    <Compile Include="Common.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BASTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\MobiSage.Ads.WebAPI.CommonFramework\MobiSage.Ads.WebAPI.CommonFramework\CoinAPI.CommonFramework.csproj">
+      <Project>{cf4264b4-438d-479c-8ea0-c44a33e493d6}</Project>
+      <Name>CoinAPI.CommonFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MobiSage.Ads.WebAPI.CommonFramework\CoinAPI.Domain.Midiator\CoinAPI.Domain.Midiator.csproj">
+      <Project>{dfb5c1f3-f522-46d4-9721-9d70869269e2}</Project>
+      <Name>CoinAPI.Domain.Midiator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MobiSage.Ads.WebAPI.CommonFramework\CoinAPI.Domain.ProtocolMetadata\CoinAPI.Domain.ProtocolMetadata.csproj">
+      <Project>{f7a3b49d-0cff-4f31-a1f7-d90883de0f7f}</Project>
+      <Name>CoinAPI.Domain.ProtocolMetadata</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MobiSage.Ads.WebAPI.CommonFramework\CoinAPI.Domain\CoinAPI.Domain.csproj">
+      <Project>{bbcd8108-7ada-4cb4-b259-af1fb15e0e5f}</Project>
+      <Name>CoinAPI.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CoinAPI.BAS\CoinAPI.BAS.ProtocolStack\CoinAPI.BAS.ProtocolStack.csproj">
+      <Project>{fc4a447c-5c81-4807-94bd-953b3d50bb73}</Project>
+      <Name>CoinAPI.BAS.ProtocolStack</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CoinAPI.ProxyLib\CoinAPI.ProxyLib\CoinAPI.ProxyLib.csproj">
+      <Project>{1ae9886d-ca10-4614-864e-6fa9fc0f7baa}</Project>
+      <Name>CoinAPI.ProxyLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

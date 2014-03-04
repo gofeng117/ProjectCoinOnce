@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5C6C2EE8-AAAB-4BAC-B3F8-1AC749202BD0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CoinAPI.Domain.Repository</RootNamespace>
+    <AssemblyName>CoinAPI.Domain.Repository</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;TDD</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="KJFramework">
+      <HintPath>..\..\..\public dependency\KJFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="KJFramework.IO">
+      <HintPath>..\..\..\public dependency\KJFramework.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="KJFramework.Messages">
+      <HintPath>..\..\..\public dependency\KJFramework.Messages.dll</HintPath>
+    </Reference>
+    <Reference Include="mysql.data">
+      <HintPath>..\..\..\public dependency\mysql.data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdCreativeORMConvertor.cs" />
+    <Compile Include="AdCreativeRepository.cs" />
+    <Compile Include="AdGroupORMConvertor.cs" />
+    <Compile Include="AdGroupRepository.cs" />
+    <Compile Include="CampaignORMConvertor.cs" />
+    <Compile Include="CampaignRepository.cs" />
+    <Compile Include="CampaignSimpleORMConvertor.cs" />
+    <Compile Include="DMPRepository.cs" />
+    <Compile Include="IAdAccountRepository.cs" />
+    <Compile Include="IAdCreativeRepository.cs" />
+    <Compile Include="IAdTextCreativeRepository.cs" />
+    <Compile Include="IDMPRepository.cs" />
+    <Compile Include="Interface\IGroupRepository.cs" />
+    <Compile Include="IORMConvertor.cs" />
+    <Compile Include="Objects\CreativeTemplate.cs" />
+    <Compile Include="Objects\ImageSizeSearchObject.cs" />
+    <Compile Include="Objects\ParametersObject.cs" />
+    <Compile Include="Objects\SpName.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Interface\ICampaignRepository.cs" />
+    <Compile Include="AdAccountRepository.cs" />
+    <Compile Include="SimpleUserTagORMConvertor.cs" />
+    <Compile Include="SimpleAdGroupORMConvertor.cs" />
+    <Compile Include="ILogRepository.cs" />
+    <Compile Include="LogRepository.cs" />
+    <Compile Include="LogORMConvertor.cs" />
+    <Compile Include="AdGroupSimpleORMConvertor.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CoinAPI.LGS\CoinAPI.LGS.ProtocolStack\CoinAPI.LGS.ProtocolStack.csproj">
+      <Project>{efd46e58-597f-41b0-b194-9627637f20a8}</Project>
+      <Name>CoinAPI.LGS.ProtocolStack</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CoinAPI.UAS\CoinAPI.UAS.Common\CoinAPI.UAS.Common.csproj">
+      <Project>{2056da99-b837-4f70-849c-4dafc49f54f6}</Project>
+      <Name>CoinAPI.UAS.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MobiSage.Ads.WebAPI.CommonFramework\CoinAPI.CommonFramework.csproj">
+      <Project>{cf4264b4-438d-479c-8ea0-c44a33e493d6}</Project>
+      <Name>CoinAPI.CommonFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CoinAPI.Domain.Midiator\CoinAPI.Domain.Midiator.csproj">
+      <Project>{dfb5c1f3-f522-46d4-9721-9d70869269e2}</Project>
+      <Name>CoinAPI.Domain.Midiator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CoinAPI.Domain.ProtocolMetadata\CoinAPI.Domain.ProtocolMetadata.csproj">
+      <Project>{f7a3b49d-0cff-4f31-a1f7-d90883de0f7f}</Project>
+      <Name>CoinAPI.Domain.ProtocolMetadata</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CoinAPI.Domain\CoinAPI.Domain.csproj">
+      <Project>{bbcd8108-7ada-4cb4-b259-af1fb15e0e5f}</Project>
+      <Name>CoinAPI.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,2074 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KJFramework.Net.Transaction</name>
+    </assembly>
+    <members>
+        <member name="T:KJFramework.Net.Transaction.Agent.IntellectObjectConnectionAgent">
+            <summary>
+                连接代理器，提供了相关的基本操作
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Transaction.Agent.IServerConnectionAgent`1">
+            <summary>
+                服务器端代理器元接口
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Transaction.Agent.IConnectionAgent">
+            <summary>
+                连接代理器，提供了相关的基本操作
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Agent.IConnectionAgent.Close">
+            <summary>
+                主动关闭连接代理器
+                * 主动关闭的行为将会关闭内部的通信信道连接
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.Agent.IConnectionAgent.Tag">
+            <summary>
+                获取或设置附属属性
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Transaction.Agent.IConnectionAgent.Disconnected">
+            <summary>
+                断开事件
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Agent.IServerConnectionAgent`1.GetChannel">
+            <summary>
+                获取内部的通信信道
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Agent.IServerConnectionAgent`1.CreateTransaction">
+            <summary>
+                创建一个新的事务
+            </summary>
+            <returns>返回新创建的事务</returns>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Agent.IServerConnectionAgent`1.CreateOnewayTransaction">
+            <summary>
+                创建一个新的单向事务
+            </summary>
+            <returns>返回新创建的单向事务</returns>
+        </member>
+        <member name="E:KJFramework.Net.Transaction.Agent.IServerConnectionAgent`1.NewTransaction">
+            <summary>
+                新的事物创建被创建时激活此事件
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Agent.IntellectObjectConnectionAgent.#ctor(KJFramework.Net.Channels.IMessageTransportChannel{KJFramework.Net.Transaction.Messages.BaseMessage},KJFramework.Net.Transaction.Managers.MessageTransactionManager)">
+            <summary>
+                连接代理器，提供了相关的基本操作
+            </summary>
+            <param name="channel">消息通信信道</param>
+            <param name="transactionManager">事务管理器</param>
+            <exception cref="T:System.NullReferenceException">参数不能为空</exception>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Agent.IntellectObjectConnectionAgent.Close">
+            <summary>
+                主动关闭连接代理器
+                * 主动关闭的行为将会关闭内部的通信信道连接
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Agent.IntellectObjectConnectionAgent.GetChannel">
+            <summary>
+                获取内部的通信信道
+                * 一般不建议使用此方法直接操作内部的通信信道
+            </summary>
+            <returns>返回通信信道</returns>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Agent.IntellectObjectConnectionAgent.CreateTransaction">
+            <summary>
+                创建一个新的事务
+            </summary>
+            <returns>返回新创建的事务</returns>
+            <exception cref="T:System.ArgumentNullException">参数错误</exception>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Agent.IntellectObjectConnectionAgent.CreateOnewayTransaction">
+            <summary>
+                创建一个新的单向事务
+            </summary>
+            <returns>返回新创建的单向事务</returns>
+            <exception cref="T:System.ArgumentNullException">参数错误</exception>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Agent.IntellectObjectConnectionAgent.Create(System.Net.IPEndPoint,KJFramework.Net.ProtocolStacks.IProtocolStack{KJFramework.Net.Transaction.Messages.BaseMessage},KJFramework.Net.Transaction.Managers.MessageTransactionManager)">
+            <summary>
+                创建一个新的连接代理器
+            </summary>
+            <param name="iep">远程终结点地址</param>
+            <param name="protocolStack">协议栈</param>
+            <param name="transactionManager">事务管理器</param>
+            <returns>如果无法连接到远程地址，则返回null.</returns>
+            <exception cref="T:System.ArgumentNullException">非法参数</exception>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.Agent.IntellectObjectConnectionAgent.Tag">
+            <summary>
+                获取或设置附属属性
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.Agent.IntellectObjectConnectionAgent.TransactionManager">
+            <summary>
+                获取事务管理器
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Transaction.Agent.IntellectObjectConnectionAgent.Disconnected">
+            <summary>
+                断开事件
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Transaction.Agent.IntellectObjectConnectionAgent.NewTransaction">
+            <summary>
+                新的事物创建被创建时激活此事件
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Transaction.Agent.MetadataConnectionAgent">
+            <summary>
+                连接代理器，提供了相关的基本操作
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Agent.MetadataConnectionAgent.#ctor(KJFramework.Net.Channels.IMessageTransportChannel{KJFramework.Messages.Contracts.MetadataContainer},KJFramework.Net.Transaction.Managers.MetadataTransactionManager)">
+            <summary>
+                连接代理器，提供了相关的基本操作
+            </summary>
+            <param name="channel">消息通信信道</param>
+            <param name="transactionManager">事务管理器</param>
+            <exception cref="T:System.NullReferenceException">参数不能为空</exception>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Agent.MetadataConnectionAgent.Close">
+            <summary>
+                主动关闭连接代理器
+                * 主动关闭的行为将会关闭内部的通信信道连接
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Agent.MetadataConnectionAgent.GetChannel">
+            <summary>
+                获取内部的通信信道
+                * 一般不建议使用此方法直接操作内部的通信信道
+            </summary>
+            <returns>返回通信信道</returns>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Agent.MetadataConnectionAgent.CreateTransaction">
+            <summary>
+                创建一个新的事务
+            </summary>
+            <returns>返回新创建的事务</returns>
+            <exception cref="T:System.ArgumentNullException">参数错误</exception>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Agent.MetadataConnectionAgent.CreateOnewayTransaction">
+            <summary>
+                创建一个新的单向事务
+            </summary>
+            <returns>返回新创建的单向事务</returns>
+            <exception cref="T:System.ArgumentNullException">参数错误</exception>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Agent.MetadataConnectionAgent.Create(System.Net.IPEndPoint,KJFramework.Net.ProtocolStacks.IProtocolStack{KJFramework.Messages.Contracts.MetadataContainer},KJFramework.Net.Transaction.Managers.MetadataTransactionManager)">
+            <summary>
+                创建一个新的连接代理器
+            </summary>
+            <param name="iep">远程终结点地址</param>
+            <param name="protocolStack">协议栈</param>
+            <param name="transactionManager">事务管理器</param>
+            <returns>如果无法连接到远程地址，则返回null.</returns>
+            <exception cref="T:System.ArgumentNullException">非法参数</exception>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.Agent.MetadataConnectionAgent.Tag">
+            <summary>
+                获取或设置附属属性
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.Agent.MetadataConnectionAgent.TransactionManager">
+            <summary>
+                获取事务管理器
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Transaction.Agent.MetadataConnectionAgent.Disconnected">
+            <summary>
+                断开事件
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Transaction.Agent.MetadataConnectionAgent.NewTransaction">
+            <summary>
+                新的事物创建被创建时激活此事件
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Transaction.Attribute.ProcessorMessageIdentityAttribute">
+            <summary>
+                处理器的属性
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.Attribute.ProcessorMessageIdentityAttribute.ProtocolId">
+            <summary>
+                获取协议ID
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.Attribute.ProcessorMessageIdentityAttribute.ServiceId">
+            <summary>
+                获取服务角色ID
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.Attribute.ProcessorMessageIdentityAttribute.DetailsId">
+            <summary>
+                获取详细信息ID
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Transaction.Clusters.INetworkCluster`1">
+            <summary>
+                网络群集负载器接口
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Clusters.INetworkCluster`1.GetChannel(System.String,KJFramework.Net.ProtocolStacks.IProtocolStack{`0},System.String@)">
+            <summary>
+                根据当前负载器规则获取一个通信信道
+            </summary>
+            <param name="roleId">角色编号</param>
+            <param name="protocolStack">协议栈</param>
+            <param name="errMsg">错误信息</param>
+            <returns>如果指定条件的通信信道不存在，则会创建它并返回</returns>
+            <exception cref="T:System.ArgumentNullException">参数不能为空</exception>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Clusters.INetworkCluster`1.GetChannelBySpecificCondition(System.String,KJFramework.Net.ProtocolStacks.IProtocolStack{`0},System.Int32,System.String@)">
+            <summary>
+                根据当前负载器规则获取一个通信信道
+            </summary>
+            <param name="roleId">角色编号</param>
+            <param name="protocolStack">协议栈</param>
+            <param name="balanceFlag">负载位</param>
+            <param name="errMsg">错误信息</param>
+            <returns>如果指定条件的通信信道不存在，则会创建它并返回</returns>
+            <exception cref="T:System.ArgumentNullException">参数不能为空</exception>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Clusters.INetworkCluster`1.GetChannelBySpecificCondition(System.String,KJFramework.Net.ProtocolStacks.IProtocolStack{`0},System.Int64,System.String@)">
+            <summary>
+                根据当前负载器规则获取一个通信信道
+            </summary>
+            <param name="roleId">角色编号</param>
+            <param name="protocolStack">协议栈</param>
+            <param name="balanceFlag">负载位</param>
+            <param name="errMsg">错误信息</param>
+            <returns>如果指定条件的通信信道不存在，则会创建它并返回</returns>
+            <exception cref="T:System.ArgumentNullException">参数不能为空</exception>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Clusters.INetworkCluster`1.GetChannelBySpecificCondition(System.String,KJFramework.Net.ProtocolStacks.IProtocolStack{`0},System.String,System.String@)">
+            <summary>
+                根据当前负载器规则获取一个通信信道
+            </summary>
+            <param name="roleId">角色编号</param>
+            <param name="protocolStack">协议栈</param>
+            <param name="balanceFlag">负载位</param>
+            <param name="errMsg">错误信息</param>
+            <returns>如果指定条件的通信信道不存在，则会创建它并返回</returns>
+            <exception cref="T:System.ArgumentNullException">参数不能为空</exception>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Clusters.INetworkCluster`1.GetChannelBySpecificCondition(System.String,KJFramework.Net.ProtocolStacks.IProtocolStack{`0},System.Guid,System.String@)">
+            <summary>
+                根据当前负载器规则获取一个通信信道
+            </summary>
+            <param name="roleId">角色编号</param>
+            <param name="protocolStack">协议栈</param>
+            <param name="balanceFlag">负载位</param>
+            <param name="errMsg">错误信息</param>
+            <returns>如果指定条件的通信信道不存在，则会创建它并返回</returns>
+            <exception cref="T:System.ArgumentNullException">参数不能为空</exception>
+        </member>
+        <member name="T:KJFramework.Net.Transaction.Clusters.HashNetworkCluster">
+            <summary>
+                按照普通HASH方式的网络群集负载器
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Clusters.HashNetworkCluster.#ctor(KJFramework.Net.Transaction.Managers.MessageTransactionManager,KJFramework.Net.Transaction.Pools.IntellectObjectSystemConnectionPool,System.Collections.Generic.Dictionary{System.String,KJFramework.Net.Transaction.Objects.ServiceCoreConfig[]},System.Collections.Generic.Dictionary{System.String,System.Int32})">
+            <summary>
+                按照普通HASH方式的网络群集负载器
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Clusters.HashNetworkCluster.GetChannel(System.String,KJFramework.Net.ProtocolStacks.IProtocolStack{KJFramework.Net.Transaction.Messages.BaseMessage},System.String@)">
+            <summary>
+                根据当前负载器规则获取一个通信信道
+            </summary>
+            <param name="roleId">角色编号</param>
+            <param name="protocolStack">协议栈</param>
+            <param name="errMsg">错误信息</param>
+            <returns>如果指定条件的通信信道不存在，则会创建它并返回</returns>
+            <exception cref="T:System.ArgumentNullException">参数不能为空</exception>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Clusters.HashNetworkCluster.GetChannelBySpecificCondition(System.String,KJFramework.Net.ProtocolStacks.IProtocolStack{KJFramework.Net.Transaction.Messages.BaseMessage},System.Int32,System.String@)">
+            <summary>
+                根据当前负载器规则获取一个通信信道
+            </summary>
+            <param name="roleId">角色编号</param>
+            <param name="protocolStack">协议栈</param>
+            <param name="balanceFlag">负载位</param>
+            <param name="errMsg">错误信息</param>
+            <returns>如果指定条件的通信信道不存在，则会创建它并返回</returns>
+            <exception cref="T:System.ArgumentNullException">参数不能为空</exception>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Clusters.HashNetworkCluster.GetChannelBySpecificCondition(System.String,KJFramework.Net.ProtocolStacks.IProtocolStack{KJFramework.Net.Transaction.Messages.BaseMessage},System.Int64,System.String@)">
+            <summary>
+                根据当前负载器规则获取一个通信信道
+            </summary>
+            <param name="roleId">角色编号</param>
+            <param name="protocolStack">协议栈</param>
+            <param name="balanceFlag">负载位</param>
+            <param name="errMsg">错误信息</param>
+            <returns>如果指定条件的通信信道不存在，则会创建它并返回</returns>
+            <exception cref="T:System.ArgumentNullException">参数不能为空</exception>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Clusters.HashNetworkCluster.GetChannelBySpecificCondition(System.String,KJFramework.Net.ProtocolStacks.IProtocolStack{KJFramework.Net.Transaction.Messages.BaseMessage},System.String,System.String@)">
+            <summary>
+                根据当前负载器规则获取一个通信信道
+            </summary>
+            <param name="roleId">角色编号</param>
+            <param name="protocolStack">协议栈</param>
+            <param name="balanceFlag">负载位</param>
+            <param name="errMsg">错误信息</param>
+            <returns>如果指定条件的通信信道不存在，则会创建它并返回</returns>
+            <exception cref="T:System.ArgumentNullException">参数不能为空</exception>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Clusters.HashNetworkCluster.GetChannelBySpecificCondition(System.String,KJFramework.Net.ProtocolStacks.IProtocolStack{KJFramework.Net.Transaction.Messages.BaseMessage},System.Guid,System.String@)">
+            <summary>
+                根据当前负载器规则获取一个通信信道
+            </summary>
+            <param name="roleId">角色编号</param>
+            <param name="protocolStack">协议栈</param>
+            <param name="balanceFlag">负载位</param>
+            <param name="errMsg">错误信息</param>
+            <returns>如果指定条件的通信信道不存在，则会创建它并返回</returns>
+            <exception cref="T:System.ArgumentNullException">参数不能为空</exception>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Clusters.HashNetworkCluster.Create(KJFramework.Net.Transaction.Managers.MessageTransactionManager,KJFramework.Net.Transaction.Pools.IntellectObjectSystemConnectionPool,System.Collections.Generic.Dictionary{System.String,KJFramework.Net.Transaction.Objects.ServiceCoreConfig[]},System.Collections.Generic.Dictionary{System.String,System.Int32})">
+            <summary>
+                创建一个新的网络集群负载器
+            </summary>
+            <param name="transactionManager">事务管理器</param>
+            <param name="connectionPool">连接池</param>
+            <param name="addresses">地址集</param>
+            <param name="maxRanges">范围集</param>
+            <returns>返回一个新的网络集群负载器</returns>
+            <exception cref="T:System.ArgumentNullException">参数不能为空</exception>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Clusters.HashNetworkCluster.GetConfig(KJFramework.Net.Transaction.Objects.ServiceCoreConfig[],System.Int32,System.Int32)">
+            <summary>
+                折半法查找指定用户UserId所在的服务地址
+            </summary>
+            <param name="configs">某服务的所有覆盖范围</param>
+            <param name="maxRange">服务最大覆盖范围</param>
+            <param name="userId">用户Id</param>
+            <returns>返回指定用户所在的服务地址</returns>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Clusters.HashNetworkCluster.GetConfig(KJFramework.Net.Transaction.Objects.ServiceCoreConfig[],System.Int32,System.Int64)">
+            <summary>
+                折半法查找指定用户UserId所在的服务地址
+            </summary>
+            <param name="configs">某服务的所有覆盖范围</param>
+            <param name="maxRange">服务最大覆盖范围</param>
+            <param name="mobileNo">手机号</param>
+            <returns>返回指定用户所在的服务地址</returns>
+        </member>
+        <member name="T:KJFramework.Net.Transaction.Clusters.MetadataContainerHashNetworkCluster">
+            <summary>
+                按照普通HASH方式的网络群集负载器
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Clusters.MetadataContainerHashNetworkCluster.#ctor(KJFramework.Net.Transaction.Managers.MetadataTransactionManager,KJFramework.Net.Transaction.Pools.MetadataSystemConnectionPool,System.Collections.Generic.Dictionary{System.String,KJFramework.Net.Transaction.Objects.ServiceCoreConfig[]},System.Collections.Generic.Dictionary{System.String,System.Int32})">
+            <summary>
+                按照普通HASH方式的网络群集负载器
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Clusters.MetadataContainerHashNetworkCluster.GetChannel(System.String,KJFramework.Net.ProtocolStacks.IProtocolStack{KJFramework.Messages.Contracts.MetadataContainer},System.String@)">
+            <summary>
+                根据当前负载器规则获取一个通信信道
+            </summary>
+            <param name="roleId">角色编号</param>
+            <param name="protocolStack">协议栈</param>
+            <param name="errMsg">错误信息</param>
+            <returns>如果指定条件的通信信道不存在，则会创建它并返回</returns>
+            <exception cref="T:System.ArgumentNullException">参数不能为空</exception>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Clusters.MetadataContainerHashNetworkCluster.GetChannelBySpecificCondition(System.String,KJFramework.Net.ProtocolStacks.IProtocolStack{KJFramework.Messages.Contracts.MetadataContainer},System.Int32,System.String@)">
+            <summary>
+                根据当前负载器规则获取一个通信信道
+            </summary>
+            <param name="roleId">角色编号</param>
+            <param name="protocolStack">协议栈</param>
+            <param name="balanceFlag">负载位</param>
+            <param name="errMsg">错误信息</param>
+            <returns>如果指定条件的通信信道不存在，则会创建它并返回</returns>
+            <exception cref="T:System.ArgumentNullException">参数不能为空</exception>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Clusters.MetadataContainerHashNetworkCluster.GetChannelBySpecificCondition(System.String,KJFramework.Net.ProtocolStacks.IProtocolStack{KJFramework.Messages.Contracts.MetadataContainer},System.Int64,System.String@)">
+            <summary>
+                根据当前负载器规则获取一个通信信道
+            </summary>
+            <param name="roleId">角色编号</param>
+            <param name="protocolStack">协议栈</param>
+            <param name="balanceFlag">负载位</param>
+            <param name="errMsg">错误信息</param>
+            <returns>如果指定条件的通信信道不存在，则会创建它并返回</returns>
+            <exception cref="T:System.ArgumentNullException">参数不能为空</exception>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Clusters.MetadataContainerHashNetworkCluster.GetChannelBySpecificCondition(System.String,KJFramework.Net.ProtocolStacks.IProtocolStack{KJFramework.Messages.Contracts.MetadataContainer},System.String,System.String@)">
+            <summary>
+                根据当前负载器规则获取一个通信信道
+            </summary>
+            <param name="roleId">角色编号</param>
+            <param name="protocolStack">协议栈</param>
+            <param name="balanceFlag">负载位</param>
+            <param name="errMsg">错误信息</param>
+            <returns>如果指定条件的通信信道不存在，则会创建它并返回</returns>
+            <exception cref="T:System.ArgumentNullException">参数不能为空</exception>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Clusters.MetadataContainerHashNetworkCluster.GetChannelBySpecificCondition(System.String,KJFramework.Net.ProtocolStacks.IProtocolStack{KJFramework.Messages.Contracts.MetadataContainer},System.Guid,System.String@)">
+            <summary>
+                根据当前负载器规则获取一个通信信道
+            </summary>
+            <param name="roleId">角色编号</param>
+            <param name="protocolStack">协议栈</param>
+            <param name="balanceFlag">负载位</param>
+            <param name="errMsg">错误信息</param>
+            <returns>如果指定条件的通信信道不存在，则会创建它并返回</returns>
+            <exception cref="T:System.ArgumentNullException">参数不能为空</exception>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Clusters.MetadataContainerHashNetworkCluster.Create(KJFramework.Net.Transaction.Managers.MetadataTransactionManager,KJFramework.Net.Transaction.Pools.MetadataSystemConnectionPool,System.Collections.Generic.Dictionary{System.String,KJFramework.Net.Transaction.Objects.ServiceCoreConfig[]},System.Collections.Generic.Dictionary{System.String,System.Int32})">
+            <summary>
+                创建一个新的网络集群负载器
+            </summary>
+            <param name="transactionManager">事务管理器</param>
+            <param name="connectionPool">连接池</param>
+            <param name="addresses">地址集</param>
+            <param name="maxRanges">范围集</param>
+            <returns>返回一个新的网络集群负载器</returns>
+            <exception cref="T:System.ArgumentNullException">参数不能为空</exception>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Clusters.MetadataContainerHashNetworkCluster.GetConfig(KJFramework.Net.Transaction.Objects.ServiceCoreConfig[],System.Int32,System.Int32)">
+            <summary>
+                折半法查找指定用户UserId所在的服务地址
+            </summary>
+            <param name="configs">某服务的所有覆盖范围</param>
+            <param name="maxRange">服务最大覆盖范围</param>
+            <param name="userId">用户Id</param>
+            <returns>返回指定用户所在的服务地址</returns>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Clusters.MetadataContainerHashNetworkCluster.GetConfig(KJFramework.Net.Transaction.Objects.ServiceCoreConfig[],System.Int32,System.Int64)">
+            <summary>
+                折半法查找指定用户UserId所在的服务地址
+            </summary>
+            <param name="configs">某服务的所有覆盖范围</param>
+            <param name="maxRange">服务最大覆盖范围</param>
+            <param name="mobileNo">手机号</param>
+            <returns>返回指定用户所在的服务地址</returns>
+        </member>
+        <member name="T:KJFramework.Net.Transaction.CommonCounter">
+            <summary>
+              内部计数器
+            </summary>
+        </member>
+        <member name="F:KJFramework.Net.Transaction.CommonCounter.RateOfClientRequest">
+            <summary>
+              客户端每秒请求数
+            </summary>
+        </member>
+        <member name="F:KJFramework.Net.Transaction.CommonCounter.RateOfClientResponse">
+            <summary>
+              客户端每秒应答数
+            </summary>
+        </member>
+        <member name="F:KJFramework.Net.Transaction.CommonCounter.RateOfServerRequest">
+            <summary>
+              服务器端每秒请求数
+            </summary>
+        </member>
+        <member name="F:KJFramework.Net.Transaction.CommonCounter.RateOfServerResponse">
+            <summary>
+              服务器端每秒应答数
+            </summary>
+        </member>
+        <member name="F:KJFramework.Net.Transaction.CommonCounter.TotalOfServiceChannel">
+            <summary>
+              内部服务通信信道总数
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.CommonCounter.Initialize">
+            <summary>
+                Active the counters of performance.
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Comparers.ProtocolsComparer.Equals(KJFramework.Net.Transaction.Objects.Protocols,KJFramework.Net.Transaction.Objects.Protocols)">
+            <summary>
+            When overridden in a derived class, determines whether two objects of type 
+            <paramref name="T"/> are equal.
+            </summary>
+            <returns>
+            true if the specified objects are equal; otherwise, false.
+            </returns>
+            <param name="x">The first object to compare.</param><param name="y">The second object to compare.</param>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Comparers.ProtocolsComparer.GetHashCode(KJFramework.Net.Transaction.Objects.Protocols)">
+            <summary>
+            When overridden in a derived class, serves as a hash function for the specified object for hashing algorithms and data structures, such as a hash table.
+            </summary>
+            <returns>
+            A hash code for the specified object.
+            </returns>
+            <param name="obj">The object for which to get a hash code.</param><exception cref="T:System.ArgumentNullException">The type of <paramref name="obj"/> is a reference type and <paramref name="obj"/> is null.</exception>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Comparers.ServiceCoreComparer.Equals(KJFramework.Net.Transaction.Objects.ServiceCoreConfig,KJFramework.Net.Transaction.Objects.ServiceCoreConfig)">
+            <summary>
+            When overridden in a derived class, determines whether two objects of type <paramref name="T"/> are equal.
+            </summary>
+            <returns>
+            true if the specified objects are equal; otherwise, false.
+            </returns>
+            <param name="x">The first object to compare.</param><param name="y">The second object to compare.</param>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Comparers.ServiceCoreComparer.GetHashCode(KJFramework.Net.Transaction.Objects.ServiceCoreConfig)">
+            <summary>
+            When overridden in a derived class, serves as a hash function for the specified object for hashing algorithms and data structures, such as a hash table.
+            </summary>
+            <returns>
+            A hash code for the specified object.
+            </returns>
+            <param name="obj">The object for which to get a hash code.</param><exception cref="T:System.ArgumentNullException">The type of <paramref name="obj"/> is a reference type and <paramref name="obj"/> is null.</exception>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Comparers.TransactionIdentityComparer.Equals(KJFramework.Net.Transaction.Identities.TransactionIdentity,KJFramework.Net.Transaction.Identities.TransactionIdentity)">
+            <summary>
+            When overridden in a derived class, determines whether two objects of type <paramref name="T"/> are equal.
+            </summary>
+            <returns>
+            true if the specified objects are equal; otherwise, false.
+            </returns>
+            <param name="x">The first object to compare.</param><param name="y">The second object to compare.</param>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Comparers.TransactionIdentityComparer.GetHashCode(KJFramework.Net.Transaction.Identities.TransactionIdentity)">
+            <summary>
+            When overridden in a derived class, serves as a hash function for the specified object for hashing algorithms and data structures, such as a hash table.
+            </summary>
+            <returns>
+            A hash code for the specified object.
+            </returns>
+            <param name="obj">The object for which to get a hash code.</param>
+            <exception cref="T:System.ArgumentNullException">
+                The type of <paramref name="obj"/> is a reference type and <paramref name="obj"/> is null.
+            </exception>
+        </member>
+        <member name="T:KJFramework.Net.Transaction.Configurations.TransactionSettingConfigSection">
+            <summary>
+                事务模型相关配置节
+            </summary>
+        </member>
+        <member name="F:KJFramework.Net.Transaction.Configurations.TransactionSettingConfigSection.Settings">
+            <summary>
+              KJFramework.Net.Transaction配置项
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Transaction.Configurations.SettingConfiguration">
+            <summary>
+                相关配置项 
+            </summary>
+        </member>
+        <member name="F:KJFramework.Net.Transaction.Configurations.SettingConfiguration.TransactionTimeout">
+            <summary>
+                事务超时时间
+            </summary>
+        </member>
+        <member name="F:KJFramework.Net.Transaction.Configurations.SettingConfiguration.TransactionCheckInterval">
+            <summary>
+               事务超时检查时间间隔
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Transaction.Contexts.BusinessTransactionContext">
+            <summary>
+                事务相关上下文基础结构
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.Contexts.BusinessTransactionContext.ClientAgent">
+            <summary>
+                获取或设置连接方的连接代理器
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.Contexts.BusinessTransactionContext.ClientTransactionEx">
+            <summary>
+                获取或设置客户端事务
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.Contexts.BusinessTransactionContext.PreviousTransaction">
+            <summary>
+                获取或设置与本事务所关联的执行事务
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Transaction.Enums.QueueSequence">
+            <summary>
+                当前可用队列
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Transaction.FailMessageTransaction">
+            <summary>
+              失败的消息事务
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Transaction.BusinessMessageTransaction">
+            <summary>
+                基础业务消息事务，提供了相关的基本操作
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Transaction.MessageTransaction`1">
+            <summary>
+                消息事务，用于承载网络消息处理的专用事务
+            </summary>
+            <typeparam name="T">消息父类类型</typeparam>
+        </member>
+        <member name="T:KJFramework.Net.Transaction.Transaction">
+            <summary>
+                事物，提供了相关的基本操作
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Transaction.ITransaction">
+            <summary>
+                事物元接口，提供了相关的基本操作
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.ITransaction.GetLease">
+            <summary>
+                获取当前事务的生命周期租约
+            </summary>
+            <returns>返回生命周期租约</returns>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.ITransaction.Id">
+            <summary>
+                获取事务唯一编号
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.ITransaction.Tag">
+            <summary>
+                获取或设置附属属性
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Transaction.#ctor">
+            <summary>
+                事物，提供了相关的基本操作
+                <para>* 使用此构造，将会设置当前的事务永远不超时</para>
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Transaction.#ctor(KJFramework.Net.Transaction.ILease)">
+            <summary>
+                事物，提供了相关的基本操作
+            </summary>
+            <param name="lease">当前事务的生命周期租约</param>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Transaction.GetLease">
+            <summary>
+                获取当前事务的生命周期租约
+            </summary>
+            <returns>返回生命周期租约</returns>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.Transaction.Id">
+            <summary>
+                获取事务唯一编号
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.Transaction.Tag">
+            <summary>
+                获取或设置附属属性
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Transaction.IMessageTransaction`1">
+            <summary>
+                消息事务，用于承载网络消息处理的专用事务
+            </summary>
+            <typeparam name="T">消息父类类型</typeparam>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.IMessageTransaction`1.SetResponse(`0)">
+            <summary>
+                设置响应消息，并激活处理流程
+            </summary>
+            <param name="response">响应消息</param>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.IMessageTransaction`1.SendRequest(`0)">
+            <summary>
+                发送一个请求消息
+            </summary>
+            <param name="message">请求消息</param>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.IMessageTransaction`1.SendResponse(`0)">
+            <summary>
+                发送一个响应消息
+            </summary>
+            <param name="message">响应消息</param>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.IMessageTransaction`1.GetChannel">
+            <summary>
+                获取内部的传输信道
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.IMessageTransaction`1.NeedResponse">
+            <summary>
+                获取或设置一个值，该值标示了当前的事务是否需要响应消息
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.IMessageTransaction`1.Request">
+            <summary>
+                获取或设置请求消息
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.IMessageTransaction`1.Response">
+            <summary>
+                获取或设置响应消息
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Transaction.IMessageTransaction`1.Timeout">
+            <summary>
+                事物超时事件
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Transaction.IMessageTransaction`1.Failed">
+            <summary>
+                事物失败事件
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Transaction.IMessageTransaction`1.ResponseArrived">
+            <summary>
+                响应消息抵达事件
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.MessageTransaction`1.#ctor">
+            <summary>
+                消息事务，用于承载网络消息处理的专用事务
+                <para>* 只有非正常状态才使用此构造</para>
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.MessageTransaction`1.#ctor(KJFramework.Net.Channels.IMessageTransportChannel{`0})">
+            <summary>
+                消息事务，用于承载网络消息处理的专用事务
+                <para>* 使用此构造，将会设置当前的事务永远不超时</para>
+            </summary>
+            <param name="channel">消息通讯信道</param>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.MessageTransaction`1.#ctor(KJFramework.Net.Transaction.ILease,KJFramework.Net.Channels.IMessageTransportChannel{`0})">
+            <summary>
+                消息事务，用于承载网络消息处理的专用事务
+            </summary>
+            <param name="lease">生命周期租约</param>
+            <param name="channel">消息通讯信道</param>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.MessageTransaction`1.SetResponse(`0)">
+            <summary>
+                设置响应消息，并激活处理流程
+            </summary>
+            <param name="response">响应消息</param>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.MessageTransaction`1.SendRequest(`0)">
+            <summary>
+                发送一个请求消息
+            </summary>
+            <param name="message">请求消息</param>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.MessageTransaction`1.SendResponse(`0)">
+            <summary>
+                发送一个响应消息
+            </summary>
+            <param name="message">响应消息</param>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.MessageTransaction`1.GetChannel">
+            <summary>
+                获取相关的传输信道
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.MessageTransaction`1.Identity">
+            <summary>
+                获取或设置当前事务的唯一标示
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.MessageTransaction`1.CreateTime">
+            <summary>
+                获取事务的创建时间
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.MessageTransaction`1.RequestTime">
+            <summary>
+                获取成功操作后的请求时间
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.MessageTransaction`1.ResponseTime">
+            <summary>
+                获取成功操作后的应答时间
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.MessageTransaction`1.NeedResponse">
+            <summary>
+                获取或设置一个值，该值标示了当前的事务是否需要响应消息
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.MessageTransaction`1.Request">
+            <summary>
+                获取或设置请求消息
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.MessageTransaction`1.Response">
+            <summary>
+                获取或设置响应消息
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Transaction.MessageTransaction`1.Timeout">
+            <summary>
+                事物超时事件
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Transaction.MessageTransaction`1.Failed">
+            <summary>
+                事物失败事件
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Transaction.MessageTransaction`1.ResponseArrived">
+            <summary>
+                响应消息抵达事件
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.BusinessMessageTransaction.#ctor">
+            <summary>
+                基础业务消息事务，提供了相关的基本操作
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.BusinessMessageTransaction.#ctor(KJFramework.Net.Channels.IMessageTransportChannel{KJFramework.Net.Transaction.Messages.BaseMessage})">
+            <summary>
+                基础业务消息事务，提供了相关的基本操作
+            </summary>
+            <param name="channel">消息通信信道</param>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.BusinessMessageTransaction.#ctor(KJFramework.Net.Transaction.ILease,KJFramework.Net.Channels.IMessageTransportChannel{KJFramework.Net.Transaction.Messages.BaseMessage})">
+            <summary>
+                基础业务消息事务，提供了相关的基本操作
+            </summary>
+            <param name="lease">事务生命租期租约</param>
+            <param name="channel">消息通信信道</param>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.BusinessMessageTransaction.SetResponse(KJFramework.Net.Transaction.Messages.BaseMessage)">
+            <summary>
+                发送一个应答消息
+            </summary>
+            <param name="response">要发送的应答消息</param>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.BusinessMessageTransaction.SendRequest(KJFramework.Net.Transaction.Messages.BaseMessage)">
+            <summary>
+                发送一个请求消息
+            </summary>
+            <param name="message">请求消息</param>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.BusinessMessageTransaction.SendResponse(KJFramework.Net.Transaction.Messages.BaseMessage)">
+            <summary>
+                发送一个响应消息
+            </summary>
+            <param name="message">响应消息</param>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.BusinessMessageTransaction.SendResponse(KJFramework.Net.Transaction.Messages.BaseMessage,System.Boolean)">
+            <summary>
+                发送一个响应消息
+            </summary>
+            <param name="message">响应消息</param>
+            <param name="autoTransactionIdentity">一个标示，指示了当前是否在应答消息中加入请求消息的事务唯一标示 </param>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.BusinessMessageTransaction.TransactionManager">
+            <summary>
+                获取或设置事务管理器
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.BusinessMessageTransaction.Context">
+            <summary>
+                获取或设置相关上下文
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.BusinessMessageTransaction.Request">
+            <summary>
+                获取或设置请求消息
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.FailMessageTransaction.#ctor(System.String)">
+            <summary>
+                失败的消息事务，提供了相关的基本操作
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.FailMessageTransaction.#ctor(KJFramework.Net.Channels.IMessageTransportChannel{KJFramework.Net.Transaction.Messages.BaseMessage})">
+            <summary>
+                失败的消息事务，提供了相关的基本操作
+            </summary>
+            <param name="channel">消息通信信道</param>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.FailMessageTransaction.#ctor(KJFramework.Net.Transaction.ILease,KJFramework.Net.Channels.IMessageTransportChannel{KJFramework.Net.Transaction.Messages.BaseMessage})">
+            <summary>
+                失败的消息事务，提供了相关的基本操作
+            </summary>
+            <param name="lease">事务生命租期租约</param>
+            <param name="channel">消息通信信道</param>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.FailMessageTransaction.SendRequest(KJFramework.Net.Transaction.Messages.BaseMessage)">
+            <summary>
+                发送一个请求消息
+            </summary>
+            <param name="message">请求消息</param>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.FailMessageTransaction.SendResponse(KJFramework.Net.Transaction.Messages.BaseMessage)">
+            <summary>
+                发送一个响应消息
+            </summary>
+            <param name="message">响应消息</param>
+        </member>
+        <member name="T:KJFramework.Net.Transaction.Global">
+            <summary>
+                全局配置项
+            </summary>
+        </member>
+        <member name="F:KJFramework.Net.Transaction.Global.TransactionTimeout">
+            <summary>
+                全局的事务超时时间
+            </summary>
+        </member>
+        <member name="F:KJFramework.Net.Transaction.Global.TransactionCheckInterval">
+            <summary>
+                全局的事务超时检查时间间隔
+                <para>* 单位: 秒</para>
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Transaction.Helpers.IdentityHelper">
+            <summary>
+                事务唯一标示帮助器
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Helpers.IdentityHelper.Create(System.Net.IPEndPoint)">
+            <summary>
+                创建一个事务唯一标示
+            </summary>
+            <param name="iep">远程终结点地址</param>
+            <returns>返回一个新的事务唯一标示</returns>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Helpers.IdentityHelper.CreateOneway(System.Net.IPEndPoint)">
+            <summary>
+                创建一个事务唯一标示
+            </summary>
+            <param name="iep">远程终结点地址</param>
+            <returns>返回一个新的事务唯一标示</returns>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Helpers.IdentityHelper.Create(System.Net.IPEndPoint,System.Boolean)">
+            <summary>
+                创建一个事务唯一标示
+            </summary>
+            <param name="iep">远程终结点地址</param>
+            <param name="isOneway">单向请求标示</param>
+            <returns>返回一个新的事务唯一标示</returns>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Helpers.IdentityHelper.Create(System.Net.IPEndPoint,System.Int32,System.Boolean)">
+            <summary>
+                创建一个事务唯一标示
+            </summary>
+            <param name="iep">远程终结点地址</param>
+            <param name="messageId">消息编号</param>
+            <param name="isOneway">单向请求标示</param>
+            <returns>返回一个新的事务唯一标示</returns>
+        </member>
+        <member name="T:KJFramework.Net.Transaction.Managers.MetadataTransactionManager">
+            <summary>
+                消息事务管理器，提供了相关的基本操作
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Transaction.TransactionManager`1">
+            <summary>
+                事务管理器，提供了相关的基本操作
+            </summary>
+            <typeparam name="V">事务类型</typeparam>
+        </member>
+        <member name="T:KJFramework.Net.Transaction.ITransactionManager`1">
+            <summary>
+                事务管理器元接口，提供了相关的基本操作
+            </summary>
+            <typeparam name="V">事务类型</typeparam>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.ITransactionManager`1.Add(KJFramework.Net.Transaction.Identities.TransactionIdentity,`0)">
+            <summary>
+                管理一个事务
+            </summary>
+            <param name="key">事务唯一键值</param>
+            <param name="transaction">事务</param>
+            <exception cref="T:System.ArgumentNullException">参数错误</exception>
+            <returns>返回添加操作的状态</returns>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.ITransactionManager`1.GetTransaction(KJFramework.Net.Transaction.Identities.TransactionIdentity)">
+            <summary>
+                获取一个正在管理中的事务
+            </summary>
+            <param name="key">事务唯一键值</param>
+            <returns>事务</returns>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.ITransactionManager`1.Remove(KJFramework.Net.Transaction.Identities.TransactionIdentity)">
+            <summary>
+                移除一个不需要管理的事务
+            </summary>
+            <param name="key">事务唯一键值</param>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.ITransactionManager`1.Renew(KJFramework.Net.Transaction.Identities.TransactionIdentity,System.TimeSpan)">
+            <summary>
+                为一个管理中的事务进行续约操作
+            </summary>
+            <param name="key">事务唯一键值</param>
+            <param name="timeSpan">续约时间</param>
+            <returns>
+                返回续约后的时间
+                <para>* 如果返回值 = MIN(DateTime), 则表示续约失败</para>
+            </returns>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.ITransactionManager`1.GetRemove(KJFramework.Net.Transaction.Identities.TransactionIdentity)">
+            <summary>
+                尝试获取一个具有指定唯一标示的事务，并且在获取该事务后进行移除操作
+            </summary>
+            <param name="key">事务唯一键值</param>
+            <returns>返回获取到的事务</returns>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.ITransactionManager`1.Interval">
+            <summary>
+                获取事务检查的时间间隔
+                <para>* 单位: 毫秒</para>
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Transaction.ITransactionManager`1.TransactionExpired">
+            <summary>
+                事务过期事件
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.TransactionManager`1.#ctor(System.Int32,System.Collections.Generic.IEqualityComparer{KJFramework.Net.Transaction.Identities.TransactionIdentity})">
+            <summary>
+                事务管理器，提供了相关的基本操作
+            </summary>
+            <param name="interval">
+                事务检查时间间隔
+                <para>* 默认时间: 30s</para>
+            </param>
+            <param name="comparer">比较器</param>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.TransactionManager`1.Add(KJFramework.Net.Transaction.Identities.TransactionIdentity,`0)">
+            <summary>
+                管理一个事务
+            </summary>
+            <param name="key">事务唯一键值</param>
+            <param name="transaction">事务</param>
+            <exception cref="T:System.ArgumentNullException">参数错误</exception>
+            <returns>返回添加操作的状态</returns>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.TransactionManager`1.GetTransaction(KJFramework.Net.Transaction.Identities.TransactionIdentity)">
+            <summary>
+                获取一个正在管理中的事务
+            </summary>
+            <param name="key">事务唯一键值</param>
+            <returns>事务</returns>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.TransactionManager`1.Remove(KJFramework.Net.Transaction.Identities.TransactionIdentity)">
+            <summary>
+                移除一个不需要管理的事务
+            </summary>
+            <param name="key">事务唯一键值</param>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.TransactionManager`1.Renew(KJFramework.Net.Transaction.Identities.TransactionIdentity,System.TimeSpan)">
+            <summary>
+                为一个管理中的事务进行续约操作
+            </summary>
+            <param name="key">事务唯一键值</param>
+            <param name="timeSpan">续约时间</param>
+            <returns>
+                返回续约后的时间
+                <para>* 如果返回值 = MIN(DateTime), 则表示续约失败</para>
+            </returns>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.TransactionManager`1.GetRemove(KJFramework.Net.Transaction.Identities.TransactionIdentity)">
+            <summary>
+                尝试获取一个具有指定唯一标示的事务，并且在获取该事务后进行移除操作
+            </summary>
+            <param name="key">事务唯一键值</param>
+            <returns>返回获取到的事务</returns>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.TransactionManager`1.Interval">
+            <summary>
+                获取或设置事务检查的时间间隔
+                <para>* 单位: 毫秒</para>
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Transaction.TransactionManager`1.TransactionExpired">
+            <summary>
+                事务过期事件
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Managers.MetadataTransactionManager.#ctor(System.Collections.Generic.IEqualityComparer{KJFramework.Net.Transaction.Identities.TransactionIdentity})">
+            <summary>
+                消息事务管理器，提供了相关的基本操作
+                * 默认时间：从配置文件中读取.
+            </summary>
+            <param name="comparer">比较器</param>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Managers.MetadataTransactionManager.#ctor(System.Collections.Generic.IEqualityComparer{KJFramework.Net.Transaction.Identities.TransactionIdentity},System.Int32)">
+            <summary>
+                消息事务管理器，提供了相关的基本操作
+                * 默认时间：30s.
+            </summary>
+            <param name="interval">事务检查时间间隔</param>
+            <param name="comparer">比较器</param>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Managers.MetadataTransactionManager.Create(KJFramework.Net.Transaction.Identities.TransactionIdentity,KJFramework.Net.Channels.IMessageTransportChannel{KJFramework.Messages.Contracts.MetadataContainer})">
+            <summary>
+                创建一个新的消息事务，并将其加入到当前的事务列表中
+            </summary>
+            <param name="identity">事务唯一标示</param>
+            <param name="channel">消息通信信道</param>
+            <returns>返回一个新的消息事务</returns>
+            <exception cref="T:System.ArgumentNullException">通信信道不能为空</exception>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Managers.MetadataTransactionManager.Active(KJFramework.Net.Transaction.Identities.TransactionIdentity,KJFramework.Messages.Contracts.MetadataContainer)">
+            <summary>
+                激活一个事务，并尝试处理该事务的响应消息流程
+            </summary>
+            <param name="identity">事务唯一标示</param>
+            <param name="response">响应消息</param>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Managers.MetadataTransactionManager.Add(KJFramework.Net.Transaction.Identities.TransactionIdentity,KJFramework.Net.Transaction.MetadataMessageTransaction)">
+            <summary>
+                管理一个事务
+            </summary>
+            <param name="key">事务唯一键值</param>
+            <param name="transaction">事务</param>
+            <exception cref="T:System.ArgumentNullException">参数错误</exception>
+            <returns>
+                返回添加操作的状态
+            </returns>
+        </member>
+        <member name="T:KJFramework.Net.Transaction.MetadataMessageTransaction">
+            <summary>
+              基于元数据网络通信协议的消息事务
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.MetadataMessageTransaction.#ctor">
+            <summary>
+                基于元数据网络通信协议的消息事务，提供了相关的基本操作
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.MetadataMessageTransaction.#ctor(KJFramework.Net.Channels.IMessageTransportChannel{KJFramework.Messages.Contracts.MetadataContainer})">
+            <summary>
+                基于元数据网络通信协议的消息事务，提供了相关的基本操作
+            </summary>
+            <param name="channel">消息通信信道</param>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.MetadataMessageTransaction.#ctor(KJFramework.Net.Transaction.ILease,KJFramework.Net.Channels.IMessageTransportChannel{KJFramework.Messages.Contracts.MetadataContainer})">
+            <summary>
+                基于元数据网络通信协议的消息事务，提供了相关的基本操作
+            </summary>
+            <param name="lease">事务生命租期租约</param>
+            <param name="channel">消息通信信道</param>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.MetadataMessageTransaction.SetResponse(KJFramework.Messages.Contracts.MetadataContainer)">
+            <summary>
+                发送一个应答消息
+            </summary>
+            <param name="response">要发送的应答消息</param>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.MetadataMessageTransaction.SendRequest(KJFramework.Messages.Contracts.MetadataContainer)">
+            <summary>
+                发送一个请求消息
+            </summary>
+            <param name="message">请求消息</param>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.MetadataMessageTransaction.SendResponse(KJFramework.Messages.Contracts.MetadataContainer)">
+            <summary>
+                发送一个响应消息
+            </summary>
+            <param name="message">响应消息</param>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.MetadataMessageTransaction.SendResponse(KJFramework.Messages.Contracts.MetadataContainer,System.Boolean)">
+            <summary>
+                发送一个响应消息
+            </summary>
+            <param name="message">响应消息</param>
+            <param name="autoTransactionIdentity">一个标示，指示了当前是否在应答消息中加入请求消息的事务唯一标示 </param>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.MetadataMessageTransaction.TransactionManager">
+            <summary>
+                获取或设置事务管理器
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.MetadataMessageTransaction.Request">
+            <summary>
+                获取或设置请求消息
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Transaction.Objects.NewProcessorObject">
+            <summary>
+                处理器对象信息集合
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.Objects.NewProcessorObject.Processor">
+            <summary>
+                获取或设置处理器
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.Objects.NewProcessorObject.Counters">
+            <summary>
+                获取或设置内部性能计数器集合
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Transaction.Objects.ProcessorObject">
+            <summary>
+                处理器对象信息集合
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.Objects.ProcessorObject.Processor">
+            <summary>
+                获取或设置处理器
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.Objects.ProcessorObject.Counters">
+            <summary>
+                获取或设置内部性能计数器集合
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Transaction.Objects.ServiceCoreConfig">
+            <summary>
+                服务核心配置信息
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.Objects.ServiceCoreConfig.Address">
+            <summary>
+                获取服务远程地址
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.Objects.ServiceCoreConfig.BeginRange">
+            <summary>
+                获取服务的负载区域开始位置
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.Objects.ServiceCoreConfig.EndRange">
+            <summary>
+                获取服务的负载区域结束位置
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Transaction.Pools.IntellectObjectSystemConnectionPool">
+            <summary>
+                系统连接池，仅供系统内部使用
+                <para>*key = xxxxxxx(IP):xxxxx(Port)</para>
+                <para>*demo = 127.0.0.1:8588</para>
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Transaction.Pools.ConnectionPool`2">
+            <summary>
+                连接池
+            </summary>
+            <typeparam name="T">标示一个连接</typeparam>
+            <typeparam name="TMessage">消息类型</typeparam>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Pools.ConnectionPool`2.Add(`0,KJFramework.Net.Transaction.Agent.IServerConnectionAgent{`1})">
+            <summary>
+                添加一个新的连接
+            </summary>
+            <param name="key">连接标示</param>
+            <param name="channel">消息通信信道</param>
+            <returns>返回添加后的状态</returns>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Pools.ConnectionPool`2.GetChannel(`0)">
+            <summary>
+                获取具有指定唯一标示的消息通信信道
+            </summary>
+            <param name="key">连接标示</param>
+            <returns>返回一个消息通信信道</returns>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Pools.ConnectionPool`2.Remove(`0)">
+            <summary>
+                移除具有指定唯一标示的消息通信信道
+            </summary>
+            <param name="key">连接标示</param>
+            <returns>返回移除后的状态</returns>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Pools.IntellectObjectSystemConnectionPool.GetChannel(System.String,System.String,KJFramework.Net.ProtocolStacks.IProtocolStack{KJFramework.Net.Transaction.Messages.BaseMessage},KJFramework.Net.Transaction.Managers.MessageTransactionManager)">
+            <summary>
+                获取具有指定标示的连接代理器，如果具有该条件的代理器不存在，则会创建一个新的代理器
+            </summary>
+            <param name="key">连接标示</param>
+            <param name="roleId">服务角色编号</param>
+            <param name="protocolStack">连接所承载的协议栈</param>
+            <param name="transactionManager">事务管理器</param>
+            <returns>如果返回null, 则表示当前无法连接到目标远程终结点地址</returns>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Pools.IntellectObjectSystemConnectionPool.Add(System.String,KJFramework.Net.Transaction.Agent.IServerConnectionAgent{KJFramework.Net.Transaction.Messages.BaseMessage})">
+            <summary>
+                添加一个新的连接
+            </summary>
+            <param name="key">连接标示</param>
+            <param name="channel">消息通信信道</param>
+            <returns>返回添加后的状态</returns>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Pools.IntellectObjectSystemConnectionPool.Remove(System.String)">
+            <summary>
+                移除具有指定唯一标示的消息通信信道
+            </summary>
+            <param name="key">连接标示</param>
+            <returns>返回移除后的状态</returns>
+        </member>
+        <member name="T:KJFramework.Net.Transaction.Pools.MetadataSystemConnectionPool">
+            <summary>
+                系统连接池，仅供系统内部使用
+                <para>*key = xxxxxxx(IP):xxxxx(Port)</para>
+                <para>*demo = 127.0.0.1:8588</para>
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Pools.MetadataSystemConnectionPool.GetChannel(System.String,System.String,KJFramework.Net.ProtocolStacks.IProtocolStack{KJFramework.Messages.Contracts.MetadataContainer},KJFramework.Net.Transaction.Managers.MetadataTransactionManager)">
+            <summary>
+                获取具有指定标示的连接代理器，如果具有该条件的代理器不存在，则会创建一个新的代理器
+            </summary>
+            <param name="key">连接标示</param>
+            <param name="roleId">服务角色编号</param>
+            <param name="protocolStack">连接所承载的协议栈</param>
+            <param name="transactionManager">事务管理器</param>
+            <returns>如果返回null, 则表示当前无法连接到目标远程终结点地址</returns>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Pools.MetadataSystemConnectionPool.Add(System.String,KJFramework.Net.Transaction.Agent.IServerConnectionAgent{KJFramework.Messages.Contracts.MetadataContainer})">
+            <summary>
+                添加一个新的连接
+            </summary>
+            <param name="key">连接标示</param>
+            <param name="channel">消息通信信道</param>
+            <returns>返回添加后的状态</returns>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Pools.MetadataSystemConnectionPool.Remove(System.String)">
+            <summary>
+                移除具有指定唯一标示的消息通信信道
+            </summary>
+            <param name="key">连接标示</param>
+            <returns>返回移除后的状态</returns>
+        </member>
+        <member name="T:KJFramework.Net.Transaction.Processors.IMessageTransactionProcessor`2">
+            <summary>
+                消息处理器元接口，提供了相关的基本操作
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Processors.IMessageTransactionProcessor`2.Process(`0)">
+            <summary>
+                处理一个事务
+            </summary>
+            <param name="transaction">消息事务</param>
+        </member>
+        <member name="T:KJFramework.Net.Transaction.ProtocolStack.MetadataProtocolStack">
+            <summary>
+                服务器端消息协议栈抽象父类
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.ProtocolStack.MetadataProtocolStack.#ctor">
+            <summary>
+                服务器端消息协议栈抽象父类
+                <para>* 此构造将会自动初始化当前协议栈</para>
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.ProtocolStack.MetadataProtocolStack.Initialize">
+            <summary>
+               初始化
+            </summary>
+            <returns>返回初始化的结果</returns>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.ProtocolStack.MetadataProtocolStack.Parse(System.Byte[])">
+            <summary>
+            解析元数据
+            </summary>
+            <param name="data">元数据</param>
+            <returns>
+            返回能否解析的一个标示
+            </returns>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.ProtocolStack.MetadataProtocolStack.ConvertToBytes(KJFramework.Messages.Contracts.MetadataContainer)">
+            <summary>
+            将一个消息转换为2进制形式
+            </summary>
+            <param name="message">需要转换的消息</param>
+            <returns>
+            返回转换后的2进制
+            </returns>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.ProtocolStack.MetadataProtocolStack.GetMessageDefinitions">
+            <summary>
+                获取一个协议站内所有的消息定义
+            </summary>
+            <returns>返回消息定义集合</returns>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.ProtocolStack.MetadataProtocolStack.Parse(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+                解析元数据
+            </summary>
+            <param name="data">总BUFF长度</param>
+            <param name="offset">可用偏移量</param>
+            <param name="count">可用长度</param>
+            <returns>
+                返回能否解析的一个标示
+            </returns>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.ProtocolStack.MetadataProtocolStack.Combine(KJFramework.Net.Transaction.ProtocolStack.MetadataProtocolStack)">
+            <summary>
+                将当前协议栈与指定协议栈进行合并
+            </summary>
+            <param name="protocolStack">要合并的协议栈</param>
+            <returns>返回合并后的当前协议栈</returns>
+        </member>
+        <member name="T:KJFramework.Net.Transaction.Schedulers.INewRequestScheduler`1">
+            <summary>
+                请求分发器元接口，提供了相关的基本操作
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Schedulers.INewRequestScheduler`1.Regist(KJFramework.Net.Transaction.Agent.IServerConnectionAgent{`0})">
+            <summary>
+                注册一个连接代理器
+            </summary>
+            <param name="agent">连接代理器</param>
+            <exception cref="T:System.ArgumentNullException">参数不能为空</exception>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Schedulers.INewRequestScheduler`1.Regist(KJFramework.Net.Transaction.Objects.Protocols,KJFramework.Net.Transaction.Processors.IMessageTransactionProcessor{KJFramework.Net.Transaction.MetadataMessageTransaction,KJFramework.Messages.Contracts.MetadataContainer})">
+            <summary>
+                注册一个消息处理器
+            </summary>
+            <param name="protocol">消息处理协议</param>
+            <param name="processor">处理器</param>
+            <exception cref="T:System.ArgumentNullException">参数不能为空</exception>
+        </member>
+        <member name="T:KJFramework.Net.Transaction.Schedulers.IRequestScheduler`1">
+            <summary>
+                请求分发器元接口，提供了相关的基本操作
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Schedulers.IRequestScheduler`1.Regist(KJFramework.Net.Transaction.Agent.IServerConnectionAgent{`0})">
+            <summary>
+                注册一个连接代理器
+            </summary>
+            <param name="agent">连接代理器</param>
+            <exception cref="T:System.ArgumentNullException">参数不能为空</exception>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Schedulers.IRequestScheduler`1.Regist(KJFramework.Net.Transaction.Objects.Protocols,KJFramework.Net.Transaction.Processors.IMessageProcessor)">
+            <summary>
+                注册一个消息处理器
+            </summary>
+            <param name="protocol">消息处理协议</param>
+            <param name="processor">处理器</param>
+            <exception cref="T:System.ArgumentNullException">参数不能为空</exception>
+        </member>
+        <member name="T:KJFramework.Net.Transaction.Managers.MessageTransactionManager">
+            <summary>
+                消息事务管理器，提供了相关的基本操作
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Managers.MessageTransactionManager.#ctor(System.Collections.Generic.IEqualityComparer{KJFramework.Net.Transaction.Identities.TransactionIdentity})">
+            <summary>
+                消息事务管理器，提供了相关的基本操作
+                * 默认时间：从配置文件中读取.
+            </summary>
+            <param name="comparer">比较器</param>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Managers.MessageTransactionManager.#ctor(System.Collections.Generic.IEqualityComparer{KJFramework.Net.Transaction.Identities.TransactionIdentity},System.Int32)">
+            <summary>
+                消息事务管理器，提供了相关的基本操作
+                * 默认时间：30s.
+            </summary>
+            <param name="interval">事务检查时间间隔</param>
+            <param name="comparer">比较器</param>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Managers.MessageTransactionManager.Create(KJFramework.Net.Transaction.Identities.TransactionIdentity,KJFramework.Net.Channels.IMessageTransportChannel{KJFramework.Net.Transaction.Messages.BaseMessage})">
+            <summary>
+                创建一个新的消息事务，并将其加入到当前的事务列表中
+            </summary>
+            <param name="identity">事务唯一标示</param>
+            <param name="channel">消息通信信道</param>
+            <returns>返回一个新的消息事务</returns>
+            <exception cref="T:System.ArgumentNullException">通信信道不能为空</exception>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Managers.MessageTransactionManager.Active(KJFramework.Net.Transaction.Identities.TransactionIdentity,KJFramework.Net.Transaction.Messages.BaseMessage)">
+            <summary>
+                激活一个事务，并尝试处理该事务的响应消息流程
+            </summary>
+            <param name="identity">事务唯一标示</param>
+            <param name="response">响应消息</param>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Managers.MessageTransactionManager.Add(KJFramework.Net.Transaction.Identities.TransactionIdentity,KJFramework.Net.Transaction.BusinessMessageTransaction)">
+            <summary>
+                管理一个事务
+            </summary>
+            <param name="key">事务唯一键值</param>
+            <param name="transaction">事务</param>
+            <exception cref="T:System.ArgumentNullException">参数错误</exception>
+            <returns>
+                返回添加操作的状态
+            </returns>
+        </member>
+        <member name="T:KJFramework.Net.Transaction.Messages.BaseMessage">
+            <summary>
+                Server Side基础通讯消息，任何通讯消息都应该继承此类
+                <para>* 建议派生类的Intellect Property Id从10开始</para>
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.Messages.BaseMessage.MessageIdentity">
+            <summary>
+                获取或设置与客户端通信的消息唯一标示
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.Messages.BaseMessage.TransactionIdentity">
+            <summary>
+                获取或设置服务器内部的事务唯一标示
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Transaction.Identities.MessageIdentity">
+            <summary>
+                消息唯一标示，提供了相关的基本属性结构
+                <para>* 此标示仅用来与客户端通讯时使用</para>
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Identities.MessageIdentity.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.Identities.MessageIdentity.ProtocolId">
+            <summary>
+                获取或设置消息大分类编号
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.Identities.MessageIdentity.ServiceId">
+            <summary>
+                获取或设置消息小分类编号
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.Identities.MessageIdentity.DetailsId">
+            <summary>
+                获取或设置消息详细分类编号
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.Identities.MessageIdentity.Tid">
+            <summary>
+                获取或设置当前消息事务唯一编号
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Transaction.Identities.TransactionIdentity">
+            <summary>
+                事物唯一标示
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Identities.TransactionIdentity.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.Identities.TransactionIdentity.IsRequest">
+            <summary>
+                获取或设置一个值，该值标示了当前的消息是否为请求消息
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.Identities.TransactionIdentity.IsOneway">
+            <summary>
+                获取或设置一个值，该值标示了当前的消息是否需要响应
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.Identities.TransactionIdentity.MessageId">
+            <summary>
+                获取或设置消息编号
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.Identities.TransactionIdentity.EndPoint">
+            <summary>
+                获取或设置远程终结点
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Transaction.IExecutableTransaction">
+            <summary>
+                可执行事务元接口，提供了相关的基本操作
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.IExecutableTransaction.Commit">
+            <summary>
+                提交事务
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.IExecutableTransaction.Rollback">
+            <summary>
+                回滚事务
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.IExecutableTransaction.Finished">
+            <summary>
+                获取一个值，该值标示了当前事务是否已经操作完成
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Transaction.IExecutableTransaction.Completed">
+            <summary>
+                事务已完成事件
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Transaction.ILease">
+            <summary>
+                生命周期租约元接口，提供了相关的基本操作
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.ILease.Change(System.DateTime)">
+            <summary>
+                变更当前生命租期的时间
+            </summary>
+            <param name="dateTime">死亡时间</param>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.ILease.Discard">
+            <summary>
+                将当前缓存的生命周期置为死亡状态
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.ILease.Renew(System.TimeSpan)">
+            <summary>
+                将当前租期续约一段时间
+            </summary>
+            <param name="timeSpan">续约时间</param>
+            <returns>返回续约后的到期时间</returns>
+            <exception cref="T:System.Exception">更新失败</exception>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.ILease.CanTimeout">
+            <summary>
+                获取或设置一个值，该值表示了当前的缓存是否支持超时检查
+                <para>* 如果CanTimeout = false, 则ExpireTime = max(DateTime)</para>
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.ILease.IsDead">
+            <summary>
+                获取一个值，该值表示了当前的缓存是否已经处于死亡的状态
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.ILease.CreateTime">
+            <summary>
+                获取生命周期创建的时间
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.ILease.ExpireTime">
+            <summary>
+                获取超时时间
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Transaction.Lease">
+            <summary>
+                生命周期租约，提供了相关的基本操作
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Lease.#ctor">
+            <summary>
+                生命周期租约，提供了相关的基本操作
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Lease.#ctor(System.DateTime)">
+            <summary>
+                生命周期租约，提供了相关的基本操作
+            </summary>
+            <param name="expireTime">过期时间</param>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Lease.Change(System.DateTime)">
+            <summary>
+                变更当前生命租期的时间
+            </summary>
+            <param name="dateTime">死亡时间</param>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Lease.Discard">
+            <summary>
+                将当前缓存的生命周期置为死亡状态
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Lease.Renew(System.TimeSpan)">
+            <summary>
+                将当前租期续约一段时间
+            </summary>
+            <param name="timeSpan">续约时间</param>
+            <returns>返回续约后的到期时间</returns>
+            <exception cref="T:System.Exception">更新失败</exception>
+        </member>
+        <member name="F:KJFramework.Net.Transaction.Lease.DeadLease">
+            <summary>
+                表示一个已经死亡的租赁契约
+            </summary>
+        </member>
+        <member name="F:KJFramework.Net.Transaction.Lease.ALiveLease">
+            <summary>
+                表示一个永远存货的租赁契约
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.Lease.CanTimeout">
+            <summary>
+                获取或设置一个值，该值表示了当前的缓存是否支持超时检查
+                <para>* 如果CanTimeout = false, 则ExpireTime = max(DateTime)</para>
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.Lease.IsDead">
+            <summary>
+                获取一个值，该值表示了当前的缓存是否已经处于死亡的状态
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.Lease.CreateTime">
+            <summary>
+                获取生命周期创建的时间
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Transaction.Lease.ExpireTime">
+            <summary>
+                获取超时时间
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Transaction.Processors.IMessageProcessor">
+            <summary>
+                消息处理器元接口，提供了相关的基本操作
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Processors.IMessageProcessor.Process(KJFramework.Net.Transaction.BusinessMessageTransaction)">
+            <summary>
+                处理一个事务
+            </summary>
+            <param name="transaction">消息事务</param>
+        </member>
+        <member name="T:KJFramework.Net.Transaction.Processors.MessageIdentityProcessor">
+            <summary>
+                消息唯一标示处理器，提供了相关的基本操作
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Processors.MessageIdentityProcessor.#ctor">
+            <summary>
+                消息唯一标示处理器，提供了相关的基本操作
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Processors.MessageIdentityProcessor.Process(KJFramework.Messages.Proxies.IMemorySegmentProxy,KJFramework.Messages.Attributes.IntellectPropertyAttribute,KJFramework.Messages.Analysers.ToBytesAnalyseResult,System.Object,System.Boolean,System.Boolean)">
+            <summary>
+            从第三方客户数据转换为元数据
+            </summary>
+            <param name="proxy">内存片段代理器</param><param name="attribute">字段属性</param><param name="analyseResult">分析结果</param><param name="target">目标对象实例</param><param name="isArrayElement">当前写入的值是否为数组元素标示</param><param name="isNullable">是否为可空字段标示</param>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Processors.MessageIdentityProcessor.Process(KJFramework.Messages.Proxies.IMemorySegmentProxy,System.Object,System.Boolean,System.Boolean)">
+            <summary>
+                从第三方客户数据转换为元数据
+                <para>* 此方法将会被轻量级的DataHelper所使用，并且写入的数据将不会拥有编号(Id)</para>
+            </summary>
+            <param name="proxy">内存片段代理器</param>
+            <param name="target">目标对象实例</param>
+            <param name="isArrayElement">当前写入的值是否为数组元素标示</param>
+            <param name="isNullable">是否为可空字段标示</param>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Processors.MessageIdentityProcessor.Process(KJFramework.Messages.Attributes.IntellectPropertyAttribute,System.Byte[])">
+            <summary>
+            从元数据转换为第三方客户数据
+            </summary>
+            <param name="attribute">当前字段标注的属性</param>
+            <param name="data">元数据</param>
+            <returns>
+            返回转换后的第三方客户数据
+            </returns>
+            <exception cref="N:KJFramework.Exception">转换失败</exception>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Processors.MessageIdentityProcessor.Process(System.Object,KJFramework.Messages.Analysers.GetObjectAnalyseResult,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+                从元数据转换为第三方客户数据
+            </summary>
+            <param name="instance">目标对象</param>
+            <param name="result">分析结果</param>
+            <param name="data">元数据</param>
+            <param name="offset">元数据所在的偏移量</param>
+            <param name="length">元数据长度</param>
+        </member>
+        <member name="T:KJFramework.Net.Transaction.Processors.TransactionIdentityProcessor">
+            <summary>
+                事物唯一标示处理器
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Processors.TransactionIdentityProcessor.#ctor">
+            <summary>
+                事物唯一标示处理器
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Processors.TransactionIdentityProcessor.Process(KJFramework.Messages.Proxies.IMemorySegmentProxy,KJFramework.Messages.Attributes.IntellectPropertyAttribute,KJFramework.Messages.Analysers.ToBytesAnalyseResult,System.Object,System.Boolean,System.Boolean)">
+            <summary>
+            从第三方客户数据转换为元数据
+            </summary>
+            <param name="proxy">内存片段代理器</param>
+            <param name="attribute">字段属性</param>
+            <param name="analyseResult">分析结果</param>
+            <param name="target">目标对象实例</param>
+            <param name="isArrayElement">当前写入的值是否为数组元素标示</param>
+            <param name="isNullable">是否为可空字段标示</param>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Processors.TransactionIdentityProcessor.Process(KJFramework.Messages.Proxies.IMemorySegmentProxy,System.Object,System.Boolean,System.Boolean)">
+            <summary>
+                从第三方客户数据转换为元数据
+                <para>* 此方法将会被轻量级的DataHelper所使用，并且写入的数据将不会拥有编号(Id)</para>
+            </summary>
+            <param name="proxy">内存片段代理器</param>
+            <param name="target">目标对象实例</param>
+            <param name="isArrayElement">当前写入的值是否为数组元素标示</param>
+            <param name="isNullable">是否为可空字段标示</param>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Processors.TransactionIdentityProcessor.Process(KJFramework.Messages.Attributes.IntellectPropertyAttribute,System.Byte[])">
+            <summary>
+            从元数据转换为第三方客户数据
+            </summary>
+            <param name="attribute">当前字段标注的属性</param>
+            <param name="data">元数据</param>
+            <returns>
+            返回转换后的第三方客户数据
+            </returns>
+            <exception cref="N:KJFramework.Exception">转换失败</exception>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Processors.TransactionIdentityProcessor.Process(System.Object,KJFramework.Messages.Analysers.GetObjectAnalyseResult,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+                从元数据转换为第三方客户数据
+            </summary>
+            <param name="instance">目标对象</param>
+            <param name="result">分析结果</param>
+            <param name="data">元数据</param>
+            <param name="offset">元数据所在的偏移量</param>
+            <param name="length">元数据长度</param>
+        </member>
+        <member name="T:KJFramework.Net.Transaction.ProtocolStack.BusinessProtocolStack">
+            <summary>
+                服务器端消息协议栈抽象父类
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.ProtocolStack.BusinessProtocolStack.#ctor">
+            <summary>
+                服务器端消息协议栈抽象父类
+                <para>* 此构造将会自动初始化当前协议栈</para>
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.ProtocolStack.BusinessProtocolStack.Parse(System.Byte[])">
+            <summary>
+            解析元数据
+            </summary>
+            <param name="data">元数据</param>
+            <returns>
+            返回能否解析的一个标示
+            </returns>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.ProtocolStack.BusinessProtocolStack.ConvertToBytes(KJFramework.Net.Transaction.Messages.BaseMessage)">
+            <summary>
+            将一个消息转换为2进制形式
+            </summary>
+            <param name="message">需要转换的消息</param>
+            <returns>
+            返回转换后的2进制
+            </returns>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.ProtocolStack.BusinessProtocolStack.GetMessageDefinitions">
+            <summary>
+                获取一个协议站内所有的消息定义
+            </summary>
+            <returns>返回消息定义集合</returns>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.ProtocolStack.BusinessProtocolStack.Parse(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+                解析元数据
+            </summary>
+            <param name="data">总BUFF长度</param>
+            <param name="offset">可用偏移量</param>
+            <param name="count">可用长度</param>
+            <returns>
+                返回能否解析的一个标示
+            </returns>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.ProtocolStack.BusinessProtocolStack.Combine(KJFramework.Net.Transaction.ProtocolStack.BusinessProtocolStack)">
+            <summary>
+                将当前协议栈与指定协议栈进行合并
+            </summary>
+            <param name="protocolStack">要合并的协议栈</param>
+            <returns>返回合并后的当前协议栈</returns>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.ProtocolStack.BusinessProtocolStack.AutoInitialize">
+            <summary>
+                自动化初始工作
+            </summary>
+            <returns>返回协议栈实例</returns>
+        </member>
+        <member name="T:KJFramework.Net.Transaction.Schedulers.BaseMessageRequestScheduler">
+            <summary>
+                请求分发器，提供了相关的基本操作
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Schedulers.BaseMessageRequestScheduler.#ctor">
+            <summary>
+                请求分发器，提供了相关的基本操作
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Schedulers.BaseMessageRequestScheduler.Regist(KJFramework.Net.Transaction.Agent.IServerConnectionAgent{KJFramework.Net.Transaction.Messages.BaseMessage})">
+            <summary>
+                注册一个连接代理器
+            </summary>
+            <param name="agent">连接代理器</param>
+            <exception cref="T:System.ArgumentNullException">参数不能为空</exception>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Schedulers.BaseMessageRequestScheduler.Regist(KJFramework.Net.Transaction.Objects.Protocols,KJFramework.Net.Transaction.Processors.IMessageProcessor)">
+            <summary>
+                注册一个消息处理器
+            </summary>
+            <param name="protocol">消息处理协议</param>
+            <param name="processor">处理器</param>
+            <exception cref="T:System.ArgumentNullException">参数不能为空</exception>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Schedulers.BaseMessageRequestScheduler.CreateDynamicCounters">
+            <summary>
+                动态创建已注册处理器的性能计数器
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Schedulers.BaseMessageRequestScheduler.DistoryDynamicCounters">
+            <summary>
+                 销毁程序内部创建的动态性能计数器
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Transaction.Schedulers.MetadataMessageRequestScheduler">
+            <summary>
+                请求分发器，提供了相关的基本操作
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Schedulers.MetadataMessageRequestScheduler.#ctor">
+            <summary>
+                请求分发器，提供了相关的基本操作
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Schedulers.MetadataMessageRequestScheduler.Regist(KJFramework.Net.Transaction.Agent.IServerConnectionAgent{KJFramework.Messages.Contracts.MetadataContainer})">
+            <summary>
+                注册一个连接代理器
+            </summary>
+            <param name="agent">连接代理器</param>
+            <exception cref="T:System.ArgumentNullException">参数不能为空</exception>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Schedulers.MetadataMessageRequestScheduler.Regist(KJFramework.Net.Transaction.Objects.Protocols,KJFramework.Net.Transaction.Processors.IMessageTransactionProcessor{KJFramework.Net.Transaction.MetadataMessageTransaction,KJFramework.Messages.Contracts.MetadataContainer})">
+            <summary>
+                注册一个消息处理器
+            </summary>
+            <param name="protocol">消息处理协议</param>
+            <param name="processor">处理器</param>
+            <exception cref="T:System.ArgumentNullException">参数不能为空</exception>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Schedulers.MetadataMessageRequestScheduler.Regist(KJFramework.Net.Transaction.Processors.IMessageTransactionProcessor{KJFramework.Net.Transaction.MetadataMessageTransaction,KJFramework.Messages.Contracts.MetadataContainer})">
+            <summary>
+                注册一个消息处理器
+            </summary>
+            <param name="processor">处理器</param>
+            <exception cref="T:System.ArgumentNullException">参数不能为空</exception>
+            <exception cref="T:System.ArgumentException">Attribute标签为空</exception>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Schedulers.MetadataMessageRequestScheduler.CreateDynamicCounters">
+            <summary>
+                动态创建已注册处理器的性能计数器
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.Schedulers.MetadataMessageRequestScheduler.DistoryDynamicCounters">
+            <summary>
+                 销毁程序内部创建的动态性能计数器
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Transaction.ValueStored.MessageIdentityValueStored">
+            <summary>
+                MessageIdentity类型的存储
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.ValueStored.MessageIdentityValueStored.#ctor">
+            <summary>
+                默认TypeId的构造函数
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.ValueStored.MessageIdentityValueStored.#ctor(KJFramework.Net.Transaction.Identities.MessageIdentity)">
+            <summary>
+                MessageIdentity类型存储的初始化构造器
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.ValueStored.MessageIdentityValueStored.#cctor">
+            <summary>
+                MessageIdentity类型存储的静态构造器
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.ValueStored.MessageIdentityValueStored.GetValue``1">
+            <summary>
+                获取存储的对应类型的Value值
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.ValueStored.MessageIdentityValueStored.ToBytes(KJFramework.Messages.Proxies.IMemorySegmentProxy)">
+            <summary>
+              扩展类型序列化方法
+            </summary>
+            <param name="proxy">内存代理器</param>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.ValueStored.MessageIdentityValueStored.ToData(KJFramework.Messages.Contracts.MetadataContainer,System.Byte,System.Byte[],System.Int32,System.UInt32)">
+            <summary>
+              扩展类型反序列化方法
+            </summary>
+            <param name="metadataObject">元数据集合</param>
+            <param name="id">属性对应key</param>
+            <param name="data">属性对应byte数组</param>
+            <param name="offsetStart">属性在数组中的偏移值</param>
+            <param name="length">属性在byte数组中的长度</param>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.ValueStored.MessageIdentityValueStored.Clone">
+            <summary>
+              返回一个实例对象
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.ValueStored.MessageIdentityValueStored.ToString">
+            <summary>
+            Returns a string that represents the current object.
+            </summary>
+            <returns>
+            A string that represents the current object.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="T:KJFramework.Net.Transaction.ValueStored.TransactionIdentityValueStored">
+            <summary>
+                TransactionIdentity类型的存储
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.ValueStored.TransactionIdentityValueStored.#ctor">
+            <summary>
+                默认TypeId的构造函数
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.ValueStored.TransactionIdentityValueStored.#ctor(KJFramework.Net.Transaction.Identities.TransactionIdentity)">
+            <summary>
+                TransactionIdentity类型存储的初始化构造器
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.ValueStored.TransactionIdentityValueStored.#cctor">
+            <summary>
+                TransactionIdentity类型存储的静态构造器
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.ValueStored.TransactionIdentityValueStored.GetValue``1">
+            <summary>
+                获取存储的对应类型的Value值
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.ValueStored.TransactionIdentityValueStored.ToBytes(KJFramework.Messages.Proxies.IMemorySegmentProxy)">
+            <summary>
+              扩展类型序列化方法
+            </summary>
+            <param name="proxy">内存代理器</param>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.ValueStored.TransactionIdentityValueStored.ToData(KJFramework.Messages.Contracts.MetadataContainer,System.Byte,System.Byte[],System.Int32,System.UInt32)">
+            <summary>
+              扩展类型反序列化方法
+            </summary>
+            <param name="metadataObject">元数据集合</param>
+            <param name="id">属性对应key</param>
+            <param name="data">属性对应byte数组</param>
+            <param name="offsetStart">属性在数组中的偏移值</param>
+            <param name="length">属性在byte数组中的长度</param>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.ValueStored.TransactionIdentityValueStored.Clone">
+            <summary>
+              返回一个实例对象
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Transaction.ValueStored.TransactionIdentityValueStored.ToString">
+            <summary>
+            Returns a string that represents the current object.
+            </summary>
+            <returns>
+            A string that represents the current object.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,644 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KJFramework.IO</name>
+    </assembly>
+    <members>
+        <member name="T:KJFramework.IO.Buffers.ByteArrayBuffer">
+            <summary>
+              字节数组缓冲区，更多用于解析消息包时缓冲接收到的字节数组
+            </summary>
+        </member>
+        <member name="T:KJFramework.IO.Buffers.IByteArrayBuffer">
+            <summary>
+              字节数组缓冲区，更多用于解析消息包时缓冲接收到的字节数组
+            </summary>
+        </member>
+        <member name="M:KJFramework.IO.Buffers.IByteArrayBuffer.Add(System.Byte[])">
+            <summary>
+              添加缓存
+            </summary>
+            <param name="data">接收到的数据</param>
+            <returns>返回提取后的数据</returns>
+        </member>
+        <member name="M:KJFramework.IO.Buffers.IByteArrayBuffer.Clear">
+            <summary>
+              清空缓冲区
+            </summary>
+        </member>
+        <member name="P:KJFramework.IO.Buffers.IByteArrayBuffer.BufferSize">
+            <summary>
+              获取缓冲区大小
+              <para>* 缓冲区的大小应该设置为：缓冲区长度 * 容量。</para>
+            </summary>
+        </member>
+        <member name="P:KJFramework.IO.Buffers.IByteArrayBuffer.AutoClear">
+            <summary>
+              获取或设置一个值，改值标示了如果缓冲区不够的时候，是否自动重置缓冲区
+            </summary>
+        </member>
+        <member name="M:KJFramework.IO.Buffers.ByteArrayBuffer.#ctor(System.Int32)">
+            <summary>
+              字节数组缓冲区，更多用于解析消息包时缓冲接收到的字节数组
+              <para>* 缓冲区的大小应该设置为：缓冲区长度 * 容量。</para>
+            </summary>
+            <param name="bufferSize">缓冲区长度</param>
+            <param name="capacity">容量</param>
+        </member>
+        <member name="M:KJFramework.IO.Buffers.ByteArrayBuffer.Add(System.Byte[])">
+            <summary>
+              添加缓存
+            </summary>
+            <param name="data">接收到的数据</param>
+        </member>
+        <member name="M:KJFramework.IO.Buffers.ByteArrayBuffer.Clear">
+            <summary>
+              清空缓冲区
+            </summary>
+        </member>
+        <member name="M:KJFramework.IO.Buffers.ByteArrayBuffer.PickupData(System.Int32@,System.Int32)">
+            <summary>
+              第三方用户使用的方法，意在使用自己的方式提取有用的数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:KJFramework.IO.Buffers.ByteArrayBuffer.BufferSize">
+            <summary>
+              获取缓冲区大小
+              <para>* 缓冲区的大小应该设置为：缓冲区长度 * 容量。</para>
+            </summary>
+        </member>
+        <member name="P:KJFramework.IO.Buffers.ByteArrayBuffer.AutoClear">
+            <summary>
+              获取或设置一个值，改值标示了如果缓冲区不够的时候，是否自动重置缓冲区
+            </summary>
+        </member>
+        <member name="T:KJFramework.IO.EventArgs.FulfilEventArgs">
+            <summary>
+                   条件满足触发事件
+            </summary>
+        </member>
+        <member name="T:KJFramework.IO.EventArgs.MouseMoveEventArgs">
+            <summary>
+                鼠标移动事件
+            </summary>
+        </member>
+        <member name="M:KJFramework.IO.EventArgs.MouseMoveEventArgs.#ctor(System.Double,System.Double)">
+            <summary>
+                鼠标移动事件
+            </summary>
+            <param name="x">X轴坐标</param>
+            <param name="y">Y轴坐标</param>
+        </member>
+        <member name="P:KJFramework.IO.EventArgs.MouseMoveEventArgs.X">
+            <summary>
+                X轴坐标
+            </summary>
+        </member>
+        <member name="P:KJFramework.IO.EventArgs.MouseMoveEventArgs.Y">
+            <summary>
+                Y轴坐标
+            </summary>
+        </member>
+        <member name="T:KJFramework.IO.Exception.FileHasExistsException">
+            <summary>
+                文件已经存在异常
+            </summary>
+            <remarks>
+                当要创建文件时，设置为不允许覆盖，而要创建的文件存在，则触发该异常。
+            </remarks>
+        </member>
+        <member name="M:KJFramework.IO.Exception.FileHasExistsException.#ctor">
+            <summary>
+                文件已经存在异常
+            </summary>
+            <remarks>
+                当要创建文件时，设置为不允许覆盖，而要创建的文件存在，则触发该异常。
+            </remarks>
+        </member>
+        <member name="T:KJFramework.IO.Exception.FileNotFoundException">
+            <summary>
+                文件未找到异常
+            </summary>
+        </member>
+        <member name="M:KJFramework.IO.Exception.FileNotFoundException.#ctor">
+            <summary>
+                文件未找到异常
+            </summary>
+        </member>
+        <member name="T:KJFramework.IO.Helper.ByteArrayHelper">
+            <summary>
+                字节数组帮助器，提供了相关的基本相关操作
+            </summary>
+        </member>
+        <member name="M:KJFramework.IO.Helper.ByteArrayHelper.Equals(System.Byte[],System.Byte[])">
+            <summary>
+                比对2个字节数组是否每个字节数值都相同
+            </summary>
+            <param name="orgByte">第一个字节数组</param>
+            <param name="newByte">第二个字节数组</param>
+            <returns>返回false,则表示不相同</returns>
+        </member>
+        <member name="M:KJFramework.IO.Helper.ByteArrayHelper.Equals(System.Byte[],System.Byte[],System.Int32)">
+            <summary>
+                从指定位置开始，比对2个字节数组是否每个字节数值都相同
+                     * 注意： compareSize不能小于0
+            </summary>
+            <param name="orgByte">第一个字节数组</param>
+            <param name="newByte">第二个字节数组</param>
+            <param name="compareSize">比对位置</param>
+            <returns>返回false,则表示不相同</returns>
+        </member>
+        <member name="M:KJFramework.IO.Helper.ByteArrayHelper.JudgeNull(System.Byte[])">
+            <summary>
+                判断指定字节数组所有元素是否都为空
+            </summary>
+            <param name="totalArry" type="byte[]">
+                <para>
+                    字节数组
+                </para>
+            </param>
+            <returns>
+                返回false, 标示不都为空
+            </returns>
+        </member>
+        <member name="M:KJFramework.IO.Helper.ByteArrayHelper.GetReallyData(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+                获取一个字节数组中的真是数据
+            </summary>
+            <param name="data">源字节数组</param>
+            <param name="offset">偏移</param>
+            <param name="count">长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:KJFramework.IO.Helper.ByteArrayHelper.IndexOfFlagForArray(System.Byte[],System.Byte[],KJFramework.IO.Helper.ByteArrayHelper.FLAG)">
+            <summary>
+                获取指定标记内容在字节数组中的位置
+            </summary>
+            <param name="totalArray" type="byte[]">
+                <para>
+                    字节数组
+                </para>
+            </param>
+            <param name="Flag" type="byte[]">
+                <para>
+                    标记内容 : byte[]
+                </para>
+            </param>
+            <param name="flag" type="KJFramework.Helper.ByteArrayHelper.FLAG">
+                <para>
+                    判断条件 : 开始 / 结尾
+                </para>
+            </param>
+            <returns>
+                返回根据判断条件的位置结果 
+                   * 如果是从判断第一次相同的情况，则返回第一次开始出现处索引，不存在则返回 -1
+                   * 如果是从判断最后一次相同的情况，则返回最后一次开始出现处索引，不存在则返回 -1
+            </returns>
+        </member>
+        <member name="M:KJFramework.IO.Helper.ByteArrayHelper.IndexOfFlagForArray(System.Byte[],System.Byte,System.Byte,System.Int32,System.Int32,KJFramework.IO.Helper.ByteArrayHelper.FLAG)">
+            <summary>
+                从一个字节数组中根据开始字节以及结束字节按照指定的分割长度来获取第一次或者最后一次出现的位置
+                    * 分割长度是指： 开始字节与结尾字节之间的字节长度（距离）
+                      如： start --中间距离3个位置--  end
+                      [注] 必须指定一个大于0的分割长度。
+            </summary>
+            <param name="totalArray">字节数组</param>
+            <param name="startFlag">开始字节</param>
+            <param name="endFlag">结尾字节</param>
+            <param name="startIndex">开始查找的位置</param>
+            <param name="splitSize">分割（距离）长度</param>
+            <param name="flag">判断位置标示</param>
+            <returns>返回根据判断标示判断到的位置，如果不存在则返回 -1</returns>
+        </member>
+        <member name="M:KJFramework.IO.Helper.ByteArrayHelper.GetNextData(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+                从指定的位置开始截取指定字节数组中指定长度的数据
+            </summary>
+            <param name="data">数据</param>
+            <param name="startOffset">开始偏移</param>
+            <param name="catchLength">截取长度</param>
+            <returns>返回截取后的数据</returns>
+        </member>
+        <member name="M:KJFramework.IO.Helper.ByteArrayHelper.GetBinary(System.String,System.Globalization.NumberStyles)">
+            <summary>
+                将一个字符串按照指定的数字规则转换成2进制字符串
+            </summary>
+            <param name="binary">要转换的字符串</param>
+            <param name="styles">转换样式</param>
+            <returns>返回null，则表示不能转换，或者转换错误</returns>
+        </member>
+        <member name="M:KJFramework.IO.Helper.ByteArrayHelper.StrToHexByte(System.String)">
+            <summary>
+                字符串转16进制字节数组
+            </summary>
+            <param name="hexString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KJFramework.IO.Helper.ByteArrayHelper.ByteToHexStr(System.Byte[])">
+            <summary>
+                字节数组转16进制字符串
+            </summary>
+            <param name="bytes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KJFramework.IO.Helper.ByteArrayHelper.ByteToHexStr(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+                字节数组转16进制字符串
+            </summary>
+            <param name="bytes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KJFramework.IO.Helper.ByteArrayHelper.ToHex(System.String,System.String,System.Boolean)">
+            <summary>
+                从汉字转换到16进制
+            </summary>
+            <param name="s"></param>
+            <param name="charset">编码,如"utf-8","gb2312"</param>
+            <param name="fenge">是否每字符用逗号分隔</param>
+            <returns></returns>
+        </member>
+        <member name="M:KJFramework.IO.Helper.ByteArrayHelper.UnHex(System.String,System.String)">
+            <summary>
+                 从16进制转换成汉字
+             </summary>
+             <param name="hex"></param>
+             <param name="charset">编码,如"utf-8","gb2312"</param>
+             <returns></returns>
+        </member>
+        <member name="T:KJFramework.IO.Helper.ByteArrayHelper.FLAG">
+            <summary>
+                判断条件枚举
+            </summary>
+        </member>
+        <member name="F:KJFramework.IO.Helper.ByteArrayHelper.FLAG.Begin">
+            <summary>
+                开始
+            </summary>
+        </member>
+        <member name="F:KJFramework.IO.Helper.ByteArrayHelper.FLAG.End">
+            <summary>
+                结束
+            </summary>
+        </member>
+        <member name="T:KJFramework.IO.Helper.CommandHelper">
+            <summary>
+                命令帮助器, 提供了相关的基本操作。
+            </summary>
+        </member>
+        <member name="M:KJFramework.IO.Helper.CommandHelper.ExecuteCommand(System.String)">
+            <summary>
+                执行指定DOS命令
+            </summary>
+            <param name="command" type="string">
+                <para>
+                    要执行的DOS命令
+                </para>
+            </param>
+            <returns>
+                返回执行结果
+            </returns>
+        </member>
+        <member name="M:KJFramework.IO.Helper.CommandHelper.OpenFile(System.String)">
+            <summary>
+                打开指定路径文件
+            </summary>
+            <param name="filePath" type="string">
+                <para>
+                    要打开的文件路径
+                </para>
+            </param>
+        </member>
+        <member name="T:KJFramework.IO.Helper.ConsoleHelper">
+            <summary>
+                控制台帮助器，提供了相关的基本操作。
+            </summary>
+        </member>
+        <member name="M:KJFramework.IO.Helper.ConsoleHelper.Print(System.String)">
+            <summary>
+                向控制台输出指定内容
+            </summary>
+            <param name="context">输出内容</param>
+        </member>
+        <member name="M:KJFramework.IO.Helper.ConsoleHelper.Print(System.String,System.ConsoleColor)">
+            <summary>
+                向控制台输出具有指定前景色的内容
+            </summary>
+            <param name="context">输出内容</param>
+            <param name="consoleColor">前景色</param>
+        </member>
+        <member name="M:KJFramework.IO.Helper.ConsoleHelper.Print(System.String,System.ConsoleColor,System.ConsoleColor,System.Boolean)">
+            <summary>
+                向控制台输出具有指定前景色的内容，并可以还原控制台输出前景色
+            </summary>
+            <param name="context">输出内容</param>
+            <param name="nowConsoleColor">前景色</param>
+            <param name="orgConsoleColor">要还原的前景色</param>
+            <param name="autoRest">还原标志位</param>
+        </member>
+        <member name="M:KJFramework.IO.Helper.ConsoleHelper.Print(System.String,System.ConsoleColor,System.ConsoleColor)">
+            <summary>
+                向控制台输出具有指定前景色的内容，并可以还原控制台输出前景色
+            </summary>
+            <param name="context">输出内容</param>
+            <param name="nowConsoleColor">前景色</param>
+            <param name="orgConsoleColor">要还原的前景色</param>
+        </member>
+        <member name="M:KJFramework.IO.Helper.ConsoleHelper.PrintLine">
+            <summary>
+                向控制台输出一个换行
+            </summary>
+        </member>
+        <member name="M:KJFramework.IO.Helper.ConsoleHelper.PrintLine(System.String)">
+            <summary>
+                向控制台输出指定内容，并换行
+            </summary>
+            <param name="context">输出内容</param>
+        </member>
+        <member name="M:KJFramework.IO.Helper.ConsoleHelper.PrintLine(System.String,System.ConsoleColor)">
+            <summary>
+                向控制台输出具有指定前景色的内容，并换行
+            </summary>
+            <param name="context">输出内容</param>
+            <param name="consoleColor">前景色</param>
+        </member>
+        <member name="M:KJFramework.IO.Helper.ConsoleHelper.PrintLine(System.String,System.ConsoleColor,System.ConsoleColor,System.Boolean)">
+            <summary>
+                向控制台输出具有指定前景色的内容，可以还原控制台输出前景色，并换行
+            </summary>
+            <param name="context">输出内容</param>
+            <param name="nowConsoleColor">前景色</param>
+            <param name="orgConsoleColor">要还原的前景色</param>
+            <param name="autoRest">还原标志位</param>
+        </member>
+        <member name="M:KJFramework.IO.Helper.ConsoleHelper.ResetConsoleColor(System.ConsoleColor)">
+            <summary>
+                重置控制台前景色
+            </summary>
+            <param name="consoleColor">前景色</param>
+        </member>
+        <member name="M:KJFramework.IO.Helper.ConsoleHelper.PrepareShowProcess(System.String)">
+            <summary>
+                准备显示进度
+            </summary>
+            <param name="prepareString">准备名称</param>
+        </member>
+        <member name="M:KJFramework.IO.Helper.ConsoleHelper.PrepareShowProcess(System.String,System.ConsoleColor)">
+            <summary>
+                准备显示进度
+            </summary>
+            <param name="prepareString">准备名称</param>
+            <param name="consoleColor">前景色</param>
+        </member>
+        <member name="M:KJFramework.IO.Helper.ConsoleHelper.ShowProcess(System.Int32,KJFramework.Basic.Enum.ShowProcessTypes,System.ConsoleColor)">
+            <summary>
+                显示进度数字
+            </summary>
+            <param name="processValue">进度值</param>
+            <param name="showProcessType">显示进度类型</param>
+            <param name="consoleColor">前景色</param>
+        </member>
+        <member name="M:KJFramework.IO.Helper.ConsoleHelper.EndShowProcess">
+            <summary>
+                结束显示进度
+            </summary>
+        </member>
+        <member name="M:KJFramework.IO.Helper.ConsoleHelper.Wait">
+            <summary>
+                等待输入
+            </summary>
+            <returns>返回用户的输入</returns>
+        </member>
+        <member name="M:KJFramework.IO.Helper.ConsoleHelper.PrintNewLine(System.Int32)">
+            <summary>
+                输出空行
+            </summary>
+            <param name="count">空行数目</param>
+        </member>
+        <member name="M:KJFramework.IO.Helper.ConsoleHelper.Wait(System.String,System.String,System.String@)">
+            <summary>
+                输出等待命令提示信息，直到用户输入了规定的结束符号
+            </summary>
+            <param name="notifyText">提示信息</param>
+            <param name="endText">结束符号</param>
+            <param name="result">用户键入的结果 [out]</param>
+        </member>
+        <member name="P:KJFramework.IO.Helper.ConsoleHelper.IsConsole">
+            <summary>
+                获取一个值，该值标示了当前运行的环境是否是CUI
+                <para>* 注: 该值是有缓存的</para>
+            </summary>
+        </member>
+        <member name="T:KJFramework.IO.Helper.DirectoryHelper">
+            <summary>
+                目录帮助器, 提供了相关的基本操作
+            </summary>
+        </member>
+        <member name="M:KJFramework.IO.Helper.DirectoryHelper.GetFiles(System.String,System.String)">
+            <summary>
+                获取指定目录中具有指定后缀名的文件列表
+            </summary>
+            <param name="path" type="string">
+                <para>
+                    寻找目录, 请在目录后面加上 "/"
+                    比如: C:\Hook\
+                </para>
+            </param>
+            <param name="ext" type="string">
+                <para>
+                    指定后缀名 : 比如 exe, dll 等等,请不要以"."开头
+                    直接填写后缀名即可。
+                    如果是 *.* 则等同返回该目录下的所有文件
+                    其他非法后缀名会导致异常的抛出
+                </para>
+            </param>
+            <returns>
+                返回null,表示当前目录中不存在具有指定后缀名的文件
+            </returns>
+        </member>
+        <member name="T:KJFramework.IO.Exception.PluginPathNotFoundException">
+            <summary>
+                插件目录未找到异常
+            </summary>
+            <remarks>
+                当读取的插件目录不存在时，触发此异常
+            </remarks>
+        </member>
+        <member name="M:KJFramework.IO.Exception.PluginPathNotFoundException.#ctor">
+            <summary>
+                插件目录未找到异常
+            </summary>
+            <remarks>
+                当读取的插件目录不存在时，触发此异常
+            </remarks>
+        </member>
+        <member name="T:KJFramework.IO.Helper.ProcessHelper">
+            <summary>
+                进程帮助器, 提供了相关的基本操作。
+            </summary>
+        </member>
+        <member name="F:KJFramework.IO.Helper.ProcessHelper.MinWorkset">
+            <summary>
+                最小工作集
+            </summary>
+        </member>
+        <member name="M:KJFramework.IO.Helper.ProcessHelper.ReleaseMemory">
+            <summary>
+                释放内存
+                   * 将进程工作集内存最小化操作。
+            </summary>
+        </member>
+        <member name="M:KJFramework.IO.Helper.ProcessHelper.ReleaseMemory(System.IntPtr,System.IntPtr)">
+            <summary>
+                释放内存
+                   * 将进程工作集设为指定值。
+            </summary>
+            <param name="min">工作集最大值</param>
+            <param name="max">工作集最小值</param>
+        </member>
+        <member name="M:KJFramework.IO.Helper.ProcessHelper.GetAllProcessFromComputer">
+            <summary>
+                获得当前计算机所有进程
+            </summary>
+            <returns>
+                返回当前计算机所有进程
+            </returns>
+        </member>
+        <member name="M:KJFramework.IO.Helper.ProcessHelper.GetComputerProcessCount">
+            <summary>
+                获得当前计算机进程数目
+            </summary>
+            <returns>
+                返回当前计算机进程数目
+            </returns>
+        </member>
+        <member name="M:KJFramework.IO.Helper.ProcessHelper.Kill(System.Diagnostics.ProcessThread)">
+            <summary>
+                结束指定执行进程
+            </summary>
+            <param name="thread">执行进程</param>
+            <returns>返回结束的状态</returns>
+        </member>
+        <member name="M:KJFramework.IO.Helper.ProcessHelper.Kill(System.String)">
+            <summary>
+                结束指定进程名称的进程
+            </summary>
+            <param name="processName" type="string">
+                <para>
+                    要结束的进程名称
+                </para>
+            </param>
+            <returns>
+                返回结束的状态
+            </returns>
+        </member>
+        <member name="T:KJFramework.IO.Helper.ResourceHelper">
+            <summary>
+                资源帮助器, 提供了相关的基本操作。
+            </summary>
+        </member>
+        <member name="M:KJFramework.IO.Helper.ResourceHelper.WriterImageResourceToFile(System.String,KJFramework.IO.Helper.ResourceHelper.ImageResourceCotent[])">
+            <summary>
+                将指定图形文件集合写入资源文件 - [不支持资源追加]
+            </summary>
+            <param name="filePath" type="string">
+                <para>
+                    要写入的文件名称
+                </para>
+            </param>
+            <param name="resourceInfo" type="UMFramework.Resource.ResourceHelper.ImageResourceCotent[]">
+                <para>
+                    要写入的图形资源集合
+                </para>
+            </param>
+            <returns>
+                返回写入的状态
+            </returns>
+        </member>
+        <member name="M:KJFramework.IO.Helper.ResourceHelper.ReadImageResourceFormFile(System.String)">
+            <summary>
+                提取指定文件中的图形资源
+            </summary>
+            <param name="filePath" type="string">
+                <para>
+                    要提取资源的文件全路径
+                </para>
+            </param>
+            <returns>
+               返回存有该文件图形资源的Hashtable
+            </returns>
+        </member>
+        <member name="T:KJFramework.IO.Helper.ResourceHelper.ImageResourceCotent">
+            <summary>
+                资源文件相关信息类
+            </summary>
+        </member>
+        <member name="P:KJFramework.IO.Helper.ResourceHelper.ImageResourceCotent.ResourceKey">
+            <summary>
+                资源标示
+            </summary>
+        </member>
+        <member name="P:KJFramework.IO.Helper.ResourceHelper.ImageResourceCotent.ResourcePath">
+            <summary>
+                资源路径
+            </summary>
+        </member>
+        <member name="T:KJFramework.IO.Hook.IIOHook">
+            <summary>
+                   输入输出钩子元接口，提供了相关的基本操作。
+            </summary>
+        </member>
+        <member name="E:KJFramework.IO.Hook.IIOHook.Fulfilled">
+            <summary>
+                   条件满足触发事件
+            </summary>
+        </member>
+        <member name="T:KJFramework.IO.Hook.IKeyboardHook">
+            <summary>
+                   键盘钩子元接口，提供了相关的基本操作。
+            </summary>
+        </member>
+        <member name="M:KJFramework.IO.Hook.IKeyboardHook.InstallHook">
+            <summary>
+                安装钩子
+            </summary>
+            <returns>
+                安装状态
+            </returns>
+        </member>
+        <member name="M:KJFramework.IO.Hook.IKeyboardHook.UnInstallHook">
+            <summary>
+                 卸载钩子
+            </summary>
+        </member>
+        <member name="P:KJFramework.IO.Hook.IKeyboardHook.ResetMilliseconds">
+            <summary>
+                   防止2次触发事件的时间间隔，默认为500毫秒
+                       * 单位：毫秒
+            </summary>
+        </member>
+        <member name="T:KJFramework.IO.Hook.IMouseHook">
+            <summary>
+                鼠标钩子元接口，提供了相关的基本操作。
+            </summary>
+        </member>
+        <member name="M:KJFramework.IO.Hook.IMouseHook.InstallHook">
+            <summary>
+                安装钩子
+            </summary>
+            <returns>
+                安装状态
+            </returns>
+        </member>
+        <member name="M:KJFramework.IO.Hook.IMouseHook.UnInstallHook">
+            <summary>
+                 卸载钩子
+            </summary>
+        </member>
+        <member name="E:KJFramework.IO.Hook.IMouseHook.MouseMove">
+            <summary>
+                鼠标移动事件
+            </summary>
+        </member>
+    </members>
+</doc>

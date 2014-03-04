@@ -1,0 +1,219 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KJFramework.Test.LoadRunner</name>
+    </assembly>
+    <members>
+        <member name="T:KJFramework.Test.LoadRunner.ITestContext">
+            <summary>
+                测试上下文接口
+            </summary>
+        </member>
+        <member name="M:KJFramework.Test.LoadRunner.ITestContext.AddResource(System.String,System.Object)">
+            <summary>
+                添加一个共享资源
+            </summary>
+            <param name="key">KEY</param>
+            <param name="value">VALUE</param>
+        </member>
+        <member name="M:KJFramework.Test.LoadRunner.ITestContext.RemoveResource(System.String)">
+            <summary>
+                移除一个共享资源
+            </summary>
+            <param name="key">KEY</param>
+        </member>
+        <member name="M:KJFramework.Test.LoadRunner.ITestContext.GetResource(System.String)">
+            <summary>
+                获取一个共享资源
+            </summary>
+            <param name="key">KEY</param>
+            <returns>返回获取到的共享资源</returns>
+        </member>
+        <member name="P:KJFramework.Test.LoadRunner.ITestContext.Api">
+            <summary>
+                获取LoadRunner API
+            </summary>
+        </member>
+        <member name="T:KJFramework.Test.LoadRunner.ITestInfo">
+            <summary>
+                测试信息接口
+            </summary>
+        </member>
+        <member name="P:KJFramework.Test.LoadRunner.ITestInfo.Name">
+            <summary>
+                获取或设置测试事务名称
+            </summary>
+        </member>
+        <member name="P:KJFramework.Test.LoadRunner.ITestInfo.Description">
+            <summary>
+                获取或设置测试事务描述
+            </summary>
+        </member>
+        <member name="T:KJFramework.Test.LoadRunner.ITestTransaction`1">
+            <summary>
+                测试事务接口
+            </summary>
+        </member>
+        <member name="M:KJFramework.Test.LoadRunner.ITestTransaction`1.SetTestUnit(KJFramework.Test.LoadRunner.ITestUnit{`0})">
+            <summary>
+                设置测试单元，整个测试事务将从这个测试单元开始执行
+            </summary>
+            <param name="unit">测试单元</param>
+        </member>
+        <member name="M:KJFramework.Test.LoadRunner.ITestTransaction`1.Start">
+            <summary>
+                开始执行
+            </summary>
+        </member>
+        <member name="P:KJFramework.Test.LoadRunner.ITestTransaction`1.Context">
+            <summary>
+                获取或设置测试上下文
+            </summary>
+        </member>
+        <member name="P:KJFramework.Test.LoadRunner.ITestTransaction`1.Info">
+            <summary>
+                获取测试信息
+            </summary>
+        </member>
+        <member name="T:KJFramework.Test.LoadRunner.ITestUnit`1">
+            <summary>
+                最小测试单元接口
+            </summary>
+        </member>
+        <member name="M:KJFramework.Test.LoadRunner.ITestUnit`1.Execute(`0)">
+            <summary>
+                执行当前测试单元
+            </summary>
+            <param name="context">测试上下文</param>
+            <returns>返回执行结果</returns>
+        </member>
+        <member name="P:KJFramework.Test.LoadRunner.ITestUnit`1.Info">
+            <summary>
+                获取测试信息
+            </summary>
+        </member>
+        <member name="P:KJFramework.Test.LoadRunner.ITestUnit`1.Next">
+            <summary>
+                获取或设置下一个要执行的测试单元
+            </summary>
+        </member>
+        <member name="T:KJFramework.Test.LoadRunner.TestContext">
+            <summary>
+                测试上下文
+            </summary>
+        </member>
+        <member name="M:KJFramework.Test.LoadRunner.TestContext.#ctor(LoadRunner.LrApi)">
+            <summary>
+                测试上下文
+            </summary>
+            <param name="api">LoadRunner API</param>
+        </member>
+        <member name="M:KJFramework.Test.LoadRunner.TestContext.AddResource(System.String,System.Object)">
+            <summary>
+                添加一个共享资源
+            </summary>
+            <param name="key">KEY</param>
+            <param name="value">VALUE</param>
+        </member>
+        <member name="M:KJFramework.Test.LoadRunner.TestContext.RemoveResource(System.String)">
+            <summary>
+                移除一个共享资源
+            </summary>
+            <param name="key">KEY</param>
+        </member>
+        <member name="M:KJFramework.Test.LoadRunner.TestContext.GetResource(System.String)">
+            <summary>
+                获取一个共享资源
+            </summary>
+            <param name="key">KEY</param>
+            <returns>返回获取到的共享资源</returns>
+        </member>
+        <member name="P:KJFramework.Test.LoadRunner.TestContext.Api">
+            <summary>
+                获取LoadRunner API
+            </summary>
+        </member>
+        <member name="T:KJFramework.Test.LoadRunner.TestInfo">
+            <summary>
+                测试信息
+            </summary>
+        </member>
+        <member name="P:KJFramework.Test.LoadRunner.TestInfo.Name">
+            <summary>
+                获取或设置测试事务名称
+            </summary>
+        </member>
+        <member name="P:KJFramework.Test.LoadRunner.TestInfo.Description">
+            <summary>
+                获取或设置测试事务描述
+            </summary>
+        </member>
+        <member name="T:KJFramework.Test.LoadRunner.TestTransaction`1">
+            <summary>
+                测试事务
+            </summary>
+        </member>
+        <member name="M:KJFramework.Test.LoadRunner.TestTransaction`1.#ctor(KJFramework.Test.LoadRunner.ITestInfo,LoadRunner.LrApi)">
+            <summary>
+                测试事务
+            </summary>
+            <param name="info">测试信息</param>
+            <param name="api">LoadRunner API</param>
+        </member>
+        <member name="M:KJFramework.Test.LoadRunner.TestTransaction`1.SetTestUnit(KJFramework.Test.LoadRunner.ITestUnit{`0})">
+            <summary>
+                设置测试单元，整个测试事务将从这个测试单元开始执行
+            </summary>
+            <param name="unit">测试单元</param>
+        </member>
+        <member name="M:KJFramework.Test.LoadRunner.TestTransaction`1.Start">
+            <summary>
+                开始执行
+            </summary>
+        </member>
+        <member name="M:KJFramework.Test.LoadRunner.TestTransaction`1.FillConfiguration">
+            <summary>
+                填充默认的KJFramework配置值
+            </summary>
+        </member>
+        <member name="P:KJFramework.Test.LoadRunner.TestTransaction`1.Context">
+            <summary>
+                获取或设置测试上下文
+            </summary>
+        </member>
+        <member name="P:KJFramework.Test.LoadRunner.TestTransaction`1.Info">
+            <summary>
+                获取测试信息
+            </summary>
+        </member>
+        <member name="T:KJFramework.Test.LoadRunner.TestUnit`1">
+            <summary>
+                测试单元
+            </summary>
+        </member>
+        <member name="M:KJFramework.Test.LoadRunner.TestUnit`1.Execute(`0)">
+            <summary>
+                执行当前测试单元
+            </summary>
+            <param name="context">测试上下文</param>
+            <returns>返回执行结果</returns>
+        </member>
+        <member name="M:KJFramework.Test.LoadRunner.TestUnit`1.InnerExecute(`0)">
+            <summary>
+                执行当前测试单元
+            </summary>
+            <param name="context">测试上下文</param>
+            <returns>返回执行结果</returns>
+        </member>
+        <member name="P:KJFramework.Test.LoadRunner.TestUnit`1.Info">
+            <summary>
+                获取测试信息
+            </summary>
+        </member>
+        <member name="P:KJFramework.Test.LoadRunner.TestUnit`1.Next">
+            <summary>
+                获取或设置下一个要执行的测试单元
+            </summary>
+        </member>
+    </members>
+</doc>

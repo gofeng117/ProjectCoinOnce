@@ -1,0 +1,3149 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KJFramework.Net.Channels</name>
+    </assembly>
+    <members>
+        <member name="T:KJFramework.Net.Channels.Buffers.ReceiveBuffer">
+            <summary>
+              接收缓冲区
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Buffers.ReceiveBuffer.#ctor(System.Int32)">
+            <summary>
+              接收缓冲区
+            </summary>
+            <param name="bufferSize">缓冲区大小</param>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Buffers.ReceiveBuffer.PickupData(System.Int32@,System.Int32)">
+            <summary>
+              第三方用户使用的方法，意在使用自己的方式提取有用的数据
+            </summary>
+            <returns/>
+        </member>
+        <member name="T:KJFramework.Net.Channels.Caches.BuffStub">
+            <summary>
+               缓冲区存根基础类
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Caches.BuffStub.#ctor">
+            <summary>
+                缓冲区存根基础类
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Caches.BuffStub.Clear">
+            <summary>
+                清理资源
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.Caches.BuffStub.Tag">
+            <summary>
+                获取或设置附属属性
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.Caches.BuffStub.Segment">
+            <summary>
+                获取内部关联的内存数据片段
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.Caches.IMultiPacketStub`1">
+            <summary>
+                封包片存根元接口，提供了相关的基本操作
+            </summary>
+            <typeparam name="T">消息类型</typeparam>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Caches.IMultiPacketStub`1.AddPacket(`0)">
+            <summary>
+                添加一个封包片
+            </summary>
+            <param name="message">封包片消息</param>
+            <returns>如果返回值不为false, 则证明已经接收一个完整的消息</returns>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Caches.IMultiPacketStub`1.GetPackets">
+            <summary>
+                获取内部所有的封包片
+            </summary>
+            <returns>返回封包片集合</returns>
+        </member>
+        <member name="P:KJFramework.Net.Channels.Caches.IMultiPacketStub`1.SessionId">
+            <summary>
+                获取当前完整消息的编号
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.Caches.IMultiPacketStub`1.MaxPacketCount">
+            <summary>
+                获取最大封包片数目
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.Caches.MultiPacketStub`1">
+            <summary>
+                封包片存根，提供了相关的基本操作
+            </summary>
+            <typeparam name="T">消息类型</typeparam>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Caches.MultiPacketStub`1.#ctor(System.Int32,System.Int32)">
+            <summary>
+                封包片存根，提供了相关的基本操作
+            </summary>
+            <exception cref="T:System.ArgumentException">参数错误</exception>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Caches.MultiPacketStub`1.AddPacket(`0)">
+            <summary>
+                添加一个封包片
+            </summary>
+            <param name="message">封包片消息</param>
+            <returns>如果返回值不为false, 则证明已经接收一个完整的消息</returns>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Caches.MultiPacketStub`1.GetPackets">
+            <summary>
+                获取内部所有的封包片
+            </summary>
+            <returns>返回封包片集合</returns>
+        </member>
+        <member name="P:KJFramework.Net.Channels.Caches.MultiPacketStub`1.SessionId">
+            <summary>
+                获取当前完整消息的编号
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.Caches.MultiPacketStub`1.MaxPacketCount">
+            <summary>
+                获取最大封包片数目
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.Caches.SocketBuffStub">
+            <summary>
+                套接字异步对象存根
+                <para>* 此类型存根将会持有一个内存缓冲区</para>
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Caches.SocketBuffStub.#ctor">
+            <summary>
+                套接字IO对象数据存根
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Caches.SocketBuffStub.Clear">
+            <summary>
+                清理资源
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.Caches.SocketBuffStub.Target">
+            <summary>
+                获取缓存目标
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.Caches.NoBuffSocketStub">
+            <summary>
+                套接字异步对象存根
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Caches.NoBuffSocketStub.#ctor">
+            <summary>
+                套接字IO对象数据存根
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.Caches.NoBuffSocketStub.Target">
+            <summary>
+                获取缓存目标
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.Caches.NoBuffSocketStub.Tag">
+            <summary>
+                获取或设置附属属性
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.Caches.SocketIOStub">
+            <summary>
+                套接字基础存根对象
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.ChannelConst">
+            <summary>
+              KJFramework内部网络层核心初始化基础类
+            </summary>
+        </member>
+        <member name="F:KJFramework.Net.Channels.ChannelConst.RecvBufferSize">
+            <summary>
+                传输通道缓冲区大小
+            </summary>
+        </member>
+        <member name="F:KJFramework.Net.Channels.ChannelConst.BuffStubPoolSize">
+            <summary>
+                底层SocketAsyncEventArgs缓存个数
+                <para>* 此类型缓存将会持有内存缓冲区</para>
+            </summary>
+        </member>
+        <member name="F:KJFramework.Net.Channels.ChannelConst.NamedPipeBuffStubPoolSize">
+            <summary>
+                底层提供给命名管道使用的缓冲区缓存个数
+                <para>* 此类型缓存将会持有内存缓冲区</para>
+            </summary>
+        </member>
+        <member name="F:KJFramework.Net.Channels.ChannelConst.NoBuffStubPoolSize">
+            <summary>
+                底层SocketAsyncEventArgs缓存个数
+            </summary>
+        </member>
+        <member name="F:KJFramework.Net.Channels.ChannelConst.MaxMessageDataLength">
+            <summary>
+                此字段用于判断一个消息是否需要分包传输
+            </summary>
+        </member>
+        <member name="F:KJFramework.Net.Channels.ChannelConst.SegmentSize">
+            <summary>
+                缓冲区内存片段大小
+            </summary>
+        </member>
+        <member name="F:KJFramework.Net.Channels.ChannelConst.MemoryChunkSize">
+            <summary>
+                需要申请的缓冲区内存总大小
+            </summary>
+        </member>
+        <member name="F:KJFramework.Net.Channels.ChannelConst.SegmentContainer">
+            <summary>
+                内存片段容器
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.ChannelConst.Initialize">
+            <summary>
+                Initialize global memory pool.
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.CommunicationObject">
+            <summary>
+                通讯对象抽象类，提供了相关的基本操作。
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.ICommunicationObject">
+            <summary>
+                通讯对象元接口，提供了相关的基本操作。
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.ICommunicationObject.Abort">
+            <summary>
+                停止
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.ICommunicationObject.Open">
+            <summary>
+                打开
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.ICommunicationObject.Close">
+            <summary>
+                关闭
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.ICommunicationObject.BeginOpen(System.AsyncCallback,System.Object)">
+            <summary>
+                异步打开
+            </summary>
+            <param name="callback">回调函数</param>
+            <param name="state">状态</param>
+            <returns>返回异步结果</returns>
+        </member>
+        <member name="M:KJFramework.Net.Channels.ICommunicationObject.BeginClose(System.AsyncCallback,System.Object)">
+            <summary>
+                异步关闭
+            </summary>
+            <param name="callback">回调函数</param>
+            <param name="state">状态</param>
+            <returns>返回异步结果</returns>
+        </member>
+        <member name="M:KJFramework.Net.Channels.ICommunicationObject.EndOpen(System.IAsyncResult)">
+            <summary>
+                异步打开
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.ICommunicationObject.EndClose(System.IAsyncResult)">
+            <summary>
+                异步关闭
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.ICommunicationObject.Enable">
+            <summary>
+                获取或设置当前可用状态
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.ICommunicationObject.CommunicationState">
+            <summary>
+                获取当前通讯状态
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Channels.ICommunicationObject.Closed">
+            <summary>
+                已关闭事件
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Channels.ICommunicationObject.Closing">
+            <summary>
+                正在关闭事件
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Channels.ICommunicationObject.Faulted">
+            <summary>
+                已错误事件
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Channels.ICommunicationObject.Opened">
+            <summary>
+                已开启事件
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Channels.ICommunicationObject.Opening">
+            <summary>
+                正在开启事件
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.CommunicationObject.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:KJFramework.Net.Channels.CommunicationObject.Abort">
+            <summary>
+                停止
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.CommunicationObject.Open">
+            <summary>
+                打开
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.CommunicationObject.Close">
+            <summary>
+                关闭
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.CommunicationObject.BeginOpen(System.AsyncCallback,System.Object)">
+            <summary>
+                异步打开
+            </summary>
+            <param name="callback">回调函数</param>
+            <param name="state">状态</param>
+            <returns>返回异步结果</returns>
+        </member>
+        <member name="M:KJFramework.Net.Channels.CommunicationObject.BeginClose(System.AsyncCallback,System.Object)">
+            <summary>
+                异步关闭
+            </summary>
+            <param name="callback">回调函数</param>
+            <param name="state">状态</param>
+            <returns>返回异步结果</returns>
+        </member>
+        <member name="M:KJFramework.Net.Channels.CommunicationObject.EndOpen(System.IAsyncResult)">
+            <summary>
+                异步打开
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.CommunicationObject.EndClose(System.IAsyncResult)">
+            <summary>
+                异步关闭
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.CommunicationObject.Statistics">
+            <summary>
+            获取或设置统计器
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.CommunicationObject.Enable">
+            <summary>
+                获取或设置当前可用状态
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.CommunicationObject.CommunicationState">
+            <summary>
+                获取当前通讯状态
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Channels.CommunicationObject.Closed">
+            <summary>
+                已关闭事件
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Channels.CommunicationObject.Closing">
+            <summary>
+                正在关闭事件
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Channels.CommunicationObject.Faulted">
+            <summary>
+                已错误事件
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Channels.CommunicationObject.Opened">
+            <summary>
+                已开启事件
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Channels.CommunicationObject.Opening">
+            <summary>
+                正在开启事件
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.Configurations.ChannelModelSettingConfigSection">
+            <summary>
+                通信信道模型相关配置节
+            </summary>
+        </member>
+        <member name="F:KJFramework.Net.Channels.Configurations.ChannelModelSettingConfigSection.Settings">
+            <summary>
+              KJFramework.Net.Channels配置项
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.Configurations.SettingConfiguration">
+            <summary>
+                相关配置项 
+            </summary>
+        </member>
+        <member name="F:KJFramework.Net.Channels.Configurations.SettingConfiguration.RecvBufferSize">
+            <summary>
+              传输通道缓冲区大小
+            </summary>
+        </member>
+        <member name="F:KJFramework.Net.Channels.Configurations.SettingConfiguration.BuffStubPoolSize">
+            <summary>
+               底层SocketAsyncEventArgs缓存个数
+                <para>* 此类型缓存将会持有内存缓冲区</para>
+            </summary>
+        </member>
+        <member name="F:KJFramework.Net.Channels.Configurations.SettingConfiguration.NamedPipeBuffStubPoolSize">
+            <summary>
+              底层提供给命名管道使用的缓冲区缓存个数
+                <para>* 此类型缓存将会持有内存缓冲区</para>
+            </summary>
+        </member>
+        <member name="F:KJFramework.Net.Channels.Configurations.SettingConfiguration.NoBuffStubPoolSize">
+            <summary>
+               底层SocketAsyncEventArgs缓存个数
+            </summary>
+        </member>
+        <member name="F:KJFramework.Net.Channels.Configurations.SettingConfiguration.MaxMessageDataLength">
+            <summary>
+               最大消息包长度, 如果超过此长度则进行分包处理
+            </summary>
+        </member>
+        <member name="F:KJFramework.Net.Channels.Configurations.SettingConfiguration.SegmentSize">
+            <summary>
+               获取或设置内存片段的大小
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.Disconvery.DiscoveryInputPin">
+            <summary>
+              探索模式的输入节点
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Disconvery.DiscoveryInputPin.#ctor(System.Int32,System.Int32)">
+            <summary>
+              探索模式的输入节点
+            </summary>
+            <param name="port">需要监听的UDP端口</param>
+            <param name="bufferSize">
+              缓冲区大小
+              <para>*默认为: 2K</para>
+            </param>
+            <exception cref="T:System.ArgumentException">参数错误</exception>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Disconvery.DiscoveryInputPin.Start">
+            <summary>
+              开始监听
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Disconvery.DiscoveryInputPin.Stop">
+            <summary>
+              停止监听
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Disconvery.DiscoveryInputPin.StartRecv(System.Net.Sockets.SocketAsyncEventArgs)">
+            <summary>
+              开始异步接收数据
+            </summary>
+            <param name="args">异步SOCKET事件</param>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Disconvery.DiscoveryInputPin.ProcessRecv(System.Net.Sockets.SocketAsyncEventArgs)">
+            <summary>
+              处理接收到的数据
+            </summary>
+            <param name="args">异步SOCKET事件</param>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Disconvery.DiscoveryInputPin.AddNotificationEvent(System.String,System.Action{KJFramework.Net.Channels.Disconvery.Protocols.CommonBoradcastProtocol})">
+            <summary>
+              添加一个关注指定KEY的事件
+            </summary>
+            <param name="key">关键字</param>
+            <param name="callback">回调函数</param>
+            <exception cref="T:System.ArgumentNullException">参数不能为空</exception>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Disconvery.DiscoveryInputPin.RemoveNotificationEvent(System.String)">
+            <summary>
+              移除一个关注指定KEY的事件
+            </summary>
+            <param name="key">关键字</param>
+            <exception cref="T:System.ArgumentNullException">参数不能为空</exception>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Disconvery.DiscoveryInputPin.ClearNotificationEvent">
+            <summary>
+              清空所有关注的事件
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.Disconvery.DiscoveryInputPin.Enable">
+            <summary>
+              获取或设置当前的启用状态
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.Disconvery.DiscoveryOnputPin">
+            <summary>
+              探索模式的输出节点
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Disconvery.DiscoveryOnputPin.#ctor(System.Int32)">
+            <summary>
+              探索模式的输出节点
+            </summary>
+            <param name="port">目标UDP端口</param>
+            <exception cref="T:System.ArgumentException">参数错误</exception>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Disconvery.DiscoveryOnputPin.#ctor(System.Net.IPEndPoint)">
+            <summary>
+              探索模式的输出节点
+            </summary>
+            <param name="iep">目标远程终结点地址</param>
+            <exception cref="T:System.ArgumentNullException">参数不能为空</exception>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Disconvery.DiscoveryOnputPin.Initialize">
+            <summary>
+              初始化内部数据
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Disconvery.DiscoveryOnputPin.Send(KJFramework.Net.Channels.Disconvery.Protocols.CommonBoradcastProtocol)">
+            <summary>
+              发送一个消息
+            </summary>
+            <exception cref="T:System.ArgumentNullException">参数不能为空</exception>
+            <exception cref="T:System.ArgumentException">字段不能没有值</exception>
+            <exception cref="N:KJFramework.Net.Exception">内部无法发送出任何数据到目标网络</exception>
+        </member>
+        <member name="T:KJFramework.Net.Channels.Disconvery.Protocols.CommonBoradcastProtocol">
+            <summary>
+              通用广播协议
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.Disconvery.Protocols.CommonBoradcastProtocol.Key">
+            <summary>
+              获取或设置KEY
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.Disconvery.Protocols.CommonBoradcastProtocol.Value">
+            <summary>
+              获取或设置VALUE
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.Disconvery.Protocols.CommonBoradcastProtocol.Environment">
+            <summary>
+              获取或设置环境关键字
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.Events.SegmentReceiveEventArgs">
+            <summary>
+                接收到内存片段的事件
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Events.SegmentReceiveEventArgs.#ctor(System.Int32)">
+            <summary>
+                接收到内存片段的事件
+            </summary>
+            <param name="bytesTransferred">接收到的数据长度</param>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Events.SegmentReceiveEventArgs.Complete">
+            <summary>
+               完成当前处理
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Events.SegmentReceiveEventArgs.GetStub">
+            <summary>
+               获取内部的缓冲区存根
+            </summary>
+            <returns>返回缓冲区存根</returns>
+        </member>
+        <member name="P:KJFramework.Net.Channels.Events.SegmentReceiveEventArgs.BytesTransferred">
+            <summary>
+                获取接收到的数据真实长度
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.ChannelCounter">
+            <summary>
+              内部计数器
+            </summary>
+        </member>
+        <member name="F:KJFramework.Net.Channels.ChannelCounter.RateOfDirectParse">
+            <summary>
+              原地解析数据数
+            </summary>
+        </member>
+        <member name="F:KJFramework.Net.Channels.ChannelCounter.RateOfMemSegmentGiveback">
+            <summary>
+              归还内存片段数
+            </summary>
+        </member>
+        <member name="F:KJFramework.Net.Channels.ChannelCounter.RateOfRentMemSegment">
+            <summary>
+              租借内存片段数
+            </summary>
+        </member>
+        <member name="F:KJFramework.Net.Channels.ChannelCounter.RateOfFixedBufferStubGiveback">
+            <summary>
+              带缓冲区的固定内存存根每秒钟归还次数
+            </summary>
+        </member>
+        <member name="F:KJFramework.Net.Channels.ChannelCounter.RateOfRentFixedBufferStub">
+            <summary>
+              带缓冲区的固定内存存根每秒钟租借次数
+            </summary>
+        </member>
+        <member name="F:KJFramework.Net.Channels.ChannelCounter.RateOfNamedPipeBufferStubGiveback">
+            <summary>
+              带缓冲区的固定内存存根每秒钟归还次数
+            </summary>
+        </member>
+        <member name="F:KJFramework.Net.Channels.ChannelCounter.RateOfRentNamedPipeBufferStub">
+            <summary>
+              带缓冲区的固定内存存根每秒钟租借次数
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.ChannelCounter.Initialize">
+            <summary>
+                Active the counters of performance.
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.Events.SocketSegmentReceiveEventArgs">
+            <summary>
+                Socket接收到内存片段的事件
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Events.SocketSegmentReceiveEventArgs.#ctor(KJFramework.Cache.Cores.IFixedCacheStub{KJFramework.Net.Channels.Caches.SocketBuffStub},System.Int32)">
+            <summary>
+                Socket接收到内存片段的事件
+            </summary>
+            <param name="stub">带缓冲区的固定缓存存根</param>
+            <param name="bytesTransferred">接收到的数据长度</param>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Events.SocketSegmentReceiveEventArgs.Complete">
+            <summary>
+               完成当前处理
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Events.SocketSegmentReceiveEventArgs.GetStub">
+            <summary>
+               获取内部的缓冲区存根
+            </summary>
+            <returns>返回缓冲区存根</returns>
+        </member>
+        <member name="P:KJFramework.Net.Channels.Events.SocketSegmentReceiveEventArgs.Stub">
+            <summary>
+                获取带缓冲区的固定缓存存根
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.Events.NamedPipeSegmentReceiveEventArgs">
+            <summary>
+                命名管道接收到内存片段的事件
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Events.NamedPipeSegmentReceiveEventArgs.#ctor(KJFramework.Cache.Cores.IFixedCacheStub{KJFramework.Net.Channels.Caches.BuffStub},System.Int32)">
+            <summary>
+                命名管道接收到内存片段的事件
+            </summary>
+            <param name="bytesTransferred">接收到的数据长度</param>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Events.NamedPipeSegmentReceiveEventArgs.Complete">
+            <summary>
+               完成当前处理
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Events.NamedPipeSegmentReceiveEventArgs.GetStub">
+            <summary>
+               获取内部的缓冲区存根
+            </summary>
+            <returns>返回缓冲区存根</returns>
+        </member>
+        <member name="P:KJFramework.Net.Channels.Events.NamedPipeSegmentReceiveEventArgs.Stub">
+            <summary>
+                获取带缓冲区的固定缓存存根
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.Health.AliveCheckTcpConnection`1">
+            <summary>
+              基于TCP协议的健康检查通信信道
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Health.AliveCheckTcpConnection`1.#ctor(`0,System.Net.IPEndPoint)">
+            <summary>
+              基于TCP协议的健康检查通信信道
+                <para>* 使用此构造默认检查间隔为: 30s</para>
+            </summary>
+            <remarks>
+                  当一个健康检查通信信道创建成功后，它的任务就是每隔一个指定的时间段就去检查一次
+              通信状态，如果还是无法连接成功则继续等待下一个激活的时间。
+                  但是，如果连接成功后，该健康检查的通信信道会激活自身的Succeed事件，并自动关闭当前的健康检查信道，
+              也就是说，一旦连接成功，那么这个信道将不会继续完成轮训的时间段任务。如果需要重启开启，请调用它的Run()方法。
+              
+              注意：此信道在初始化的后会自动开启，在初始化后手动调用一次Run()方法
+            </remarks>
+            <param name="key">Key名称</param>
+            <param name="iep">需要检查的远程通信端口</param>
+            <exception cref="T:System.ArgumentNullException">参数不能为空</exception>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Health.AliveCheckTcpConnection`1.#ctor(`0,System.Net.IPEndPoint,System.TimeSpan)">
+            <summary>
+              基于TCP协议的健康检查通信信道
+            </summary>
+            <remarks>
+                  当一个健康检查通信信道创建成功后，它的任务就是每隔一个指定的时间段就去检查一次
+              通信状态，如果还是无法连接成功则继续等待下一个激活的时间。
+                  但是，如果连接成功后，该健康检查的通信信道会激活自身的Succeed事件，并自动关闭当前的健康检查信道，
+              也就是说，一旦连接成功，那么这个信道将不会继续完成轮训的时间段任务。如果需要重启开启，请调用它的Run()方法。
+              
+              注意：此信道在初始化的后会自动开启，在初始化后手动调用一次Run()方法
+            </remarks>
+            <param name="key">Key名称</param>
+            <param name="iep">需要检查的远程通信端口</param>
+            <param name="timeSpan">检查间隔</param>
+            <exception cref="T:System.ArgumentNullException">参数不能为空</exception>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Health.AliveCheckTcpConnection`1.Run">
+            <summary>
+              运行当前的健康检查通信信道
+              <para>*注意: 此信道在初始化的后会自动开启，在初始化后手动调用一次Run()方法</para>
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.Health.AliveCheckTcpConnection`1.Key">
+            <summary>
+              获取当前通信信道的KEY
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Channels.Health.AliveCheckTcpConnection`1.Succeed">
+            <summary>
+              连接成功事件
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.Objects.SegmentNode">
+            <summary>
+                数据段线性链表节点
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Objects.SegmentNode.#ctor(KJFramework.Net.Channels.Events.SegmentReceiveEventArgs)">
+            <summary>
+                数据段线性链表节点
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Objects.SegmentNode.Clone">
+            <summary>
+            Creates a new object that is a copy of the current instance.
+            </summary>
+            <returns>
+            A new object that is a copy of this instance.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="P:KJFramework.Net.Channels.Objects.SegmentNode.Args">
+            <summary>
+                当前值
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.Objects.SegmentNode.RemainingSize">
+            <summary>
+                获取或设置剩余数据长度
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.Objects.SegmentNode.Next">
+            <summary>
+                下一个节点
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.Parsers.ISegmentDataParser`1">
+            <summary>
+                数据段解析器元接口
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Parsers.ISegmentDataParser`1.Append(KJFramework.Net.Channels.Events.SegmentReceiveEventArgs)">
+            <summary>
+                追加一个新的数据段
+            </summary>
+            <param name="args">数据段接受参数</param>
+        </member>
+        <member name="E:KJFramework.Net.Channels.Parsers.ISegmentDataParser`1.ParseSucceed">
+            <summary>
+                解析成功事件
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.Parsers.SegmentDataParser`1">
+            <summary>
+                数据段解析器元接口
+            </summary>
+            <typeparam name="T">消息类型</typeparam>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Parsers.SegmentDataParser`1.#ctor(KJFramework.Net.ProtocolStacks.IProtocolStack{`0})">
+            <summary>
+                数据段解析器元接口
+            </summary>
+            <param name="protocolStack">协议栈</param>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Parsers.SegmentDataParser`1.Append(KJFramework.Net.Channels.Events.SegmentReceiveEventArgs)">
+            <summary>
+                追加一个新的数据段
+            </summary>
+            <param name="args">数据段接受参数</param>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Parsers.SegmentDataParser`1.CheckBytes(KJFramework.Net.Channels.Objects.SegmentNode)">
+            <summary>
+                检查当前的包的可用总长度
+            </summary>
+            <param name="node">当前数据段节点</param>
+            <returns>返回可用的下一个消息总长度</returns>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Parsers.SegmentDataParser`1.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="E:KJFramework.Net.Channels.Parsers.SegmentDataParser`1.ParseSucceed">
+            <summary>
+                解析成功事件
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.SocketHelper">
+            <summary>
+                套接字帮助器
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.SocketHelper.#cctor">
+            <summary>
+                套接字帮助器
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.SocketHelper.Clear(System.Net.Sockets.SocketAsyncEventArgs)">
+            <summary>
+                清理一个SocketAsyncEventArgs内部资源
+            </summary>
+            <param name="args">SocketAsyncEventArgs</param>
+        </member>
+        <member name="T:KJFramework.Net.Channels.TcpTransportChannel">
+            <summary>
+                基于TCP协议的传输通道，提供了相关的基本操作。
+                <para>* 此信道支持外抛元数据事件。</para>
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.TransportChannel">
+            <summary>
+                传输通道抽象父类，提供了相关的基本操作。
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.ServiceChannel">
+            <summary>
+                服务通道抽象基类，提供了相关的基本操作。
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.IServiceChannel">
+            <summary>
+                服务通道元接口，提供了相关的基本操作
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.IServiceChannel.CreateTime">
+            <summary>
+                获取创建时间
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.IServiceChannel.Key">
+            <summary>
+                获取通道唯一标示
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.ServiceChannel.#ctor">
+            <summary>
+                服务通道抽象基类，提供了相关的基本操作。
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.ServiceChannel.InnerAbort">
+            <summary>
+                停止
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.ServiceChannel.InnerOpen">
+            <summary>
+                打开
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.ServiceChannel.InnerClose">
+            <summary>
+                关闭
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.ServiceChannel.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:KJFramework.Net.Channels.ServiceChannel.Abort">
+            <summary>
+                停止
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.ServiceChannel.Open">
+            <summary>
+                打开
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.ServiceChannel.Close">
+            <summary>
+                关闭
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.ServiceChannel.BeginOpen(System.AsyncCallback,System.Object)">
+            <summary>
+                异步打开
+            </summary>
+            <param name="callback">回调函数</param>
+            <param name="state">状态</param>
+            <returns>返回异步结果</returns>
+        </member>
+        <member name="M:KJFramework.Net.Channels.ServiceChannel.BeginClose(System.AsyncCallback,System.Object)">
+            <summary>
+                异步关闭
+            </summary>
+            <param name="callback">回调函数</param>
+            <param name="state">状态</param>
+            <returns>返回异步结果</returns>
+        </member>
+        <member name="M:KJFramework.Net.Channels.ServiceChannel.EndOpen(System.IAsyncResult)">
+            <summary>
+                异步打开
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.ServiceChannel.EndClose(System.IAsyncResult)">
+            <summary>
+                异步关闭
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.ServiceChannel.ChannelInfo">
+            <summary>
+            获取或设置当前通道信息
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.ServiceChannel.Statistics">
+            <summary>
+            获取或设置统计器
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.ServiceChannel.Enable">
+            <summary>
+                获取或设置当前可用状态
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.ServiceChannel.CommunicationState">
+            <summary>
+                获取当前通讯状态
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Channels.ServiceChannel.Closed">
+            <summary>
+                已关闭事件
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Channels.ServiceChannel.Closing">
+            <summary>
+                正在关闭事件
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Channels.ServiceChannel.Faulted">
+            <summary>
+                已错误事件
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Channels.ServiceChannel.Opened">
+            <summary>
+                已开启事件
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Channels.ServiceChannel.Opening">
+            <summary>
+                正在开启事件
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.ServiceChannel.CreateTime">
+            <summary>
+                获取创建时间
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.ServiceChannel.Key">
+            <summary>
+                获取通道唯一标示
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.IRawTransportChannel">
+            <summary>
+                数据流传输信道元接口，提供了相关的基本操作
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.ITransportChannel">
+            <summary>
+                传输通道元接口，提供了相关的基本操作。
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.ICommunicationChannelAddress">
+            <summary>
+                通讯通道地址元接口，提供了相关的基本属性结构。
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.ICommunicationChannelAddress.Address">
+            <summary>
+                获取或设置物理地址
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.ICommunicationChannelAddress.LogicalAddress">
+            <summary>
+                获取或设置逻辑地址
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.ITransportChannel.Connect">
+            <summary>
+                连接
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.ITransportChannel.Disconnect">
+            <summary>
+                断开
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.ITransportChannel.Send(System.Byte[])">
+            <summary>
+                发送数据
+            </summary>
+            <param name="data">要发送的数据</param>
+            <returns>返回发送的字节数</returns>
+            <exception cref="T:System.ArgumentNullException">参数错误</exception>
+        </member>
+        <member name="P:KJFramework.Net.Channels.ITransportChannel.LocalEndPoint">
+            <summary>
+                获取本地终结点地址
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.ITransportChannel.RemoteEndPoint">
+            <summary>
+                获取远程终结点地址
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.ITransportChannel.Buffer">
+            <summary>
+              获取或设置缓冲区
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.ITransportChannel.LingerState">
+            <summary>
+                获取或设置延迟设置
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.ITransportChannel.IsConnected">
+            <summary>
+                获取一个值，该值表示了当前通道是否处于连接状态
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Channels.ITransportChannel.Connected">
+            <summary>
+                通道已连接事件
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Channels.ITransportChannel.Disconnected">
+            <summary>
+                通道已断开事件
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.IRawTransportChannel.SupportSegment">
+            <summary>
+                获取或设置当前元数据信道是否支持以片段的方式接受网络流数据
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Channels.IRawTransportChannel.ReceivedData">
+            <summary>
+                接收到数据事件
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Channels.IRawTransportChannel.ReceivedDataSegment">
+            <summary>
+                接收到数据片段事件
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.TransportChannel.#ctor">
+            <summary>
+                传输通道抽象父类，提供了相关的基本操作。
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.TransportChannel.Connect">
+            <summary>
+                连接
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.TransportChannel.Disconnect">
+            <summary>
+                断开
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.TransportChannel.Send(System.Byte[])">
+            <summary>
+                发送数据
+            </summary>
+            <param name="data">要发送的数据</param>
+            <returns>返回发送的字节数</returns>
+            <exception cref="T:System.ArgumentNullException">参数错误</exception>
+        </member>
+        <member name="M:KJFramework.Net.Channels.TransportChannel.InnerSend(System.Byte[])">
+            <summary>
+                发送数据
+                <para>* 如果此方法进行发送的元数据，可能是自动分包后的数据。</para>
+            </summary>
+            <param name="data">要发送的数据</param>
+            <returns>返回发送的字节数</returns>
+        </member>
+        <member name="P:KJFramework.Net.Channels.TransportChannel.LocalEndPoint">
+            <summary>
+                获取本地终结点地址
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.TransportChannel.RemoteEndPoint">
+            <summary>
+                获取远程终结点地址
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.TransportChannel.Buffer">
+            <summary>
+              获取缓冲区
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.TransportChannel.LingerState">
+            <summary>
+                获取或设置延迟设置
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.TransportChannel.IsConnected">
+            <summary>
+                获取一个值，该值表示了当前通道是否处于连接状态
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Channels.TransportChannel.Connected">
+            <summary>
+                通道已连接事件
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Channels.TransportChannel.Disconnected">
+            <summary>
+                通道已断开事件
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.TransportChannel.Address">
+            <summary>
+                获取或设置物理地址
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.TransportChannel.LogicalAddress">
+            <summary>
+                获取或设置逻辑地址
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.TransportChannel.SupportSegment">
+            <summary>
+                获取或设置当前元数据信道是否支持以片段的方式接受网络流数据
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Channels.TransportChannel.ReceivedData">
+            <summary>
+                接收到数据事件
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Channels.TransportChannel.ReceivedDataSegment">
+            <summary>
+                接收到数据片段事件
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.ITcpTransportChannel">
+            <summary>
+                基于TCP协议的传输通道元接口，提供了相关的基本操作。
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.ITcpTransportChannel.GetStream">
+            <summary>
+                获取内部核心套接字
+            </summary>
+            <returns>返回内部核心套接字</returns>
+        </member>
+        <member name="P:KJFramework.Net.Channels.ITcpTransportChannel.ChannelKey">
+            <summary>
+                获取当前TCP协议传输通道的唯一键值
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.IReconnectionTransportChannel">
+            <summary>
+                支持断线重连的传输通道员接口，提供了相关的基本操作。
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.IReconnectionTransportChannel.Reconnect">
+            <summary>
+                重新尝试建立连接
+            </summary>
+            <returns>返回尝试后的状态</returns>
+        </member>
+        <member name="M:KJFramework.Net.Channels.TcpTransportChannel.#ctor(System.String,System.Int32)">
+            <summary>
+                基于TCP协议的传输通道，提供了相关的基本操作
+            </summary>
+            <param name="ip">远程终结点IP地址</param>
+            <param name="port">远程终结点端口</param>
+            <exception cref="T:System.ArgumentNullException">参数错误</exception>
+        </member>
+        <member name="M:KJFramework.Net.Channels.TcpTransportChannel.#ctor(System.Net.IPEndPoint)">
+            <summary>
+                基于TCP协议的传输通道，提供了相关的基本操作
+            </summary>
+            <param name="iep">远程终结点地址</param>
+            <exception cref="T:System.ArgumentNullException">参数错误</exception>
+        </member>
+        <member name="M:KJFramework.Net.Channels.TcpTransportChannel.#ctor(System.Net.Sockets.Socket)">
+            <summary>
+                基于TCP协议的传输通道，提供了相关的基本操作
+            </summary>
+            <param name="socket" type="System.Net.Sockets.Socket">网络套接字</param>
+            <exception cref="T:System.ArgumentNullException">参数错误</exception>
+        </member>
+        <member name="M:KJFramework.Net.Channels.TcpTransportChannel.InitializeStatistics">
+            <summary>
+                初始化统计器
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.TcpTransportChannel.InitializeReceiver">
+            <summary>
+                初始化消息接收器
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.TcpTransportChannel.InnerAbort">
+            <summary>
+                停止
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.TcpTransportChannel.InnerOpen">
+            <summary>
+                打开
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.TcpTransportChannel.InnerClose">
+            <summary>
+                关闭
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.TcpTransportChannel.GetStream">
+            <summary>
+                获取内部核心套接字
+            </summary>
+            <returns>返回内部核心套接字</returns>
+        </member>
+        <member name="M:KJFramework.Net.Channels.TcpTransportChannel.Connect">
+            <summary>
+                连接到远程终结点地址
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.TcpTransportChannel.Disconnect">
+            <summary>
+                断开
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.TcpTransportChannel.Reconnect">
+            <summary>
+                重新尝试建立连接
+            </summary>
+            <returns>返回尝试后的状态</returns>
+        </member>
+        <member name="M:KJFramework.Net.Channels.TcpTransportChannel.InnerSend(System.Byte[])">
+            <summary>
+                发送数据
+                <para>* 如果此方法进行发送的元数据，可能是自动分包后的数据。</para>
+            </summary>
+            <param name="data">要发送的数据</param>
+            <returns>返回发送的字节数</returns>
+        </member>
+        <member name="M:KJFramework.Net.Channels.TcpTransportChannel.RecvData(System.Object,KJFramework.Net.Channels.Events.SegmentReceiveEventArgs)">
+            <summary>
+              接收数据
+              <para>* IOCP接收数据线程重入函数</para>  
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.TcpTransportChannel.LocalEndPoint">
+            <summary>
+                获取本地终结点地址
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.TcpTransportChannel.RemoteEndPoint">
+            <summary>
+                获取远程终结点地址
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.TcpTransportChannel.IsConnected">
+            <summary>
+                获取一个值，该值表示了当前通道是否处于连接状态
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.TcpTransportChannel.LingerState">
+            <summary>
+                获取或设置延迟设置
+            </summary>
+            <exception cref="T:System.Exception">无效的Socket</exception>
+        </member>
+        <member name="P:KJFramework.Net.Channels.TcpTransportChannel.ChannelKey">
+            <summary>
+                获取当前TCP协议传输通道的唯一键值
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.Enums.CommunicationStates">
+            <summary>
+                通讯状态枚举
+            </summary>
+        </member>
+        <member name="F:KJFramework.Net.Channels.Enums.CommunicationStates.Unknown">
+            <summary>
+               未知
+            </summary>
+        </member>
+        <member name="F:KJFramework.Net.Channels.Enums.CommunicationStates.Created">
+            <summary>
+                已经被创建
+            </summary>
+        </member>
+        <member name="F:KJFramework.Net.Channels.Enums.CommunicationStates.Opening">
+            <summary>
+                打开中
+            </summary>
+        </member>
+        <member name="F:KJFramework.Net.Channels.Enums.CommunicationStates.Opened">
+            <summary>
+                已经打开
+            </summary>
+        </member>
+        <member name="F:KJFramework.Net.Channels.Enums.CommunicationStates.Closing">
+            <summary>
+                关闭中
+            </summary>
+        </member>
+        <member name="F:KJFramework.Net.Channels.Enums.CommunicationStates.Closed">
+            <summary>
+                已经关闭
+            </summary>
+        </member>
+        <member name="F:KJFramework.Net.Channels.Enums.CommunicationStates.Faulte">
+            <summary>
+                出现错误
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.Enums.HttpChannelTypes">
+            <summary>
+                HTTP协议信道类型
+            </summary>
+        </member>
+        <member name="F:KJFramework.Net.Channels.Enums.HttpChannelTypes.Accepted">
+            <summary>
+                已被接受的，说明当前信道为被动类型
+            </summary>
+        </member>
+        <member name="F:KJFramework.Net.Channels.Enums.HttpChannelTypes.Connected">
+            <summary>
+                已连接的，说明当前信道为主动类型
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.HostChannels.HostTransportChannel">
+            <summary>
+                宿主传输通道抽象父类，提供了相关的基本操作。
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.HostChannels.IHostTransportChannel">
+            <summary>
+                宿主传输通道元接口，提供了相关的基本操作。
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.HostChannels.IHostTransportChannel.Regist">
+            <summary>
+                注册网络
+            </summary>
+            <returns>返回注册的状态</returns>
+        </member>
+        <member name="M:KJFramework.Net.Channels.HostChannels.IHostTransportChannel.UnRegist">
+            <summary>
+                注销网络
+            </summary>
+            <returns>返回注册的状态</returns>
+        </member>
+        <member name="P:KJFramework.Net.Channels.HostChannels.IHostTransportChannel.Id">
+            <summary>
+                获取唯一标识
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Channels.HostChannels.IHostTransportChannel.ChannelCreated">
+            <summary>
+                创建通道事件
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Channels.HostChannels.IHostTransportChannel.ChannelDisconnected">
+            <summary>
+                通道断开事件
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.HostChannels.HostTransportChannel.#ctor">
+            <summary>
+                宿主传输通道抽象父类，提供了相关的基本操作。
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.HostChannels.HostTransportChannel.Regist">
+            <summary>
+                注册网络
+            </summary>
+            <returns>返回注册的状态</returns>
+        </member>
+        <member name="M:KJFramework.Net.Channels.HostChannels.HostTransportChannel.UnRegist">
+            <summary>
+                注销网络
+            </summary>
+            <returns>返回注册的状态</returns>
+        </member>
+        <member name="P:KJFramework.Net.Channels.HostChannels.HostTransportChannel.Id">
+            <summary>
+                获取唯一标识
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Channels.HostChannels.HostTransportChannel.ChannelCreated">
+            <summary>
+                创建通道事件
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Channels.HostChannels.HostTransportChannel.ChannelDisconnected">
+            <summary>
+                断开通道事件
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.HostChannels.HttpHostTransportChannel">
+            <summary>
+                基于HTTP协议的宿主信道，提供了相关的基本操作
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.HostChannels.IHttpHostTransportChannel">
+            <summary>
+                HTTP协议宿主信道元接口，提供了相关的基本操作
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.HostChannels.IHttpHostTransportChannel.Prefixes">
+            <summary>
+                获取由此 HttpListener 对象处理的统一资源标识符 (URI) 前缀
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.HostChannels.IHttpHostTransportChannel.Realm">
+            <summary>
+                获取或设置与此 HttpListener 对象关联的领域或资源分区
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.HostChannels.IHttpHostTransportChannel.UnsafeConnectionNtlmAuthentication">
+            <summary>
+                获取或设置 Boolean 值，该值控制当使用 NTLM 时是否需要对使用同一传输控制协议 (TCP) 连接的其他请求进行身份验证
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.HostChannels.IHttpHostTransportChannel.IgnoreWriteExceptions">
+            <summary>
+                获取或设置 Boolean 值，该值指定应用程序是否接收 HttpListener 向客户端发送响应时发生的异常
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.HostChannels.HttpHostTransportChannel.#ctor">
+            <summary>
+                基于HTTP协议的宿主信道，提供了相关的基本操作
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.HostChannels.HttpHostTransportChannel.Regist">
+            <summary>
+                注册网络
+            </summary>
+            <returns>返回注册的状态</returns>
+        </member>
+        <member name="M:KJFramework.Net.Channels.HostChannels.HttpHostTransportChannel.UnRegist">
+            <summary>
+                注销网络
+            </summary>
+            <returns>返回注册的状态</returns>
+        </member>
+        <member name="P:KJFramework.Net.Channels.HostChannels.HttpHostTransportChannel.Prefixes">
+            <summary>
+                获取由此 HttpListener 对象处理的统一资源标识符 (URI) 前缀
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.HostChannels.HttpHostTransportChannel.Realm">
+            <summary>
+                获取或设置与此 HttpListener 对象关联的领域或资源分区
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.HostChannels.HttpHostTransportChannel.UnsafeConnectionNtlmAuthentication">
+            <summary>
+                获取或设置 Boolean 值，该值控制当使用 NTLM 时是否需要对使用同一传输控制协议 (TCP) 连接的其他请求进行身份验证
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.HostChannels.HttpHostTransportChannel.IgnoreWriteExceptions">
+            <summary>
+                获取或设置 Boolean 值，该值指定应用程序是否接收 HttpListener 向客户端发送响应时发生的异常
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.HostChannels.IPiepHostTransportChannel">
+            <summary>
+                命名管道通讯通道元接口，提供了相关的基本操作。
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.HostChannels.IPiepHostTransportChannel.InstanceCount">
+            <summary>
+                获取实例个数
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.HostChannels.IPiepHostTransportChannel.Name">
+            <summary>
+                获取命名管道的实例名称
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.HostChannels.IPiepHostTransportChannel.LogicalAddress">
+            <summary>
+                获取监听的管道地址
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.HostChannels.PipeHostTransportChannel">
+            <summary>
+                命名管道宿主通讯通道，提供了相关的基本操作
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.HostChannels.PipeHostTransportChannel.#ctor(System.String)">
+            <summary>
+                命名管道宿主通讯通道，提供了相关的基本操作
+            </summary>
+            <param name="name">管道完整URI</param>
+            <exception cref="T:System.ArgumentException">参数错误</exception>
+            <exception cref="T:System.ArgumentNullException">参数错误</exception>
+        </member>
+        <member name="M:KJFramework.Net.Channels.HostChannels.PipeHostTransportChannel.#ctor(System.String,System.Int32)">
+            <summary>
+                命名管道宿主通讯通道，提供了相关的基本操作
+            </summary>
+            <param name="name">管道完整URI</param>
+            <param name="instanceCount">实例数</param>
+            <exception cref="T:System.ArgumentException">参数错误</exception>
+            <exception cref="T:System.ArgumentNullException">参数错误</exception>
+        </member>
+        <member name="M:KJFramework.Net.Channels.HostChannels.PipeHostTransportChannel.#ctor(KJFramework.Net.Channels.Uri.PipeUri,System.Int32)">
+            <summary>
+                命名管道宿主通讯通道，提供了相关的基本操作
+            </summary>
+            <param name="uri">管道URL</param>
+            <param name="instanceCount">实例数</param>
+            <exception cref="T:System.ArgumentException">参数错误</exception>
+            <exception cref="T:System.ArgumentNullException">参数错误</exception>
+        </member>
+        <member name="M:KJFramework.Net.Channels.HostChannels.PipeHostTransportChannel.Regist">
+            <summary>
+                注册网络
+            </summary>
+            <returns>返回注册的状态</returns>
+        </member>
+        <member name="M:KJFramework.Net.Channels.HostChannels.PipeHostTransportChannel.Regist(System.IO.Pipes.PipeDirection)">
+            <summary>
+                注册网络
+            </summary>
+            <param name="direction">命名管道数据流向类型</param>
+            <returns>返回注册的状态</returns>
+        </member>
+        <member name="M:KJFramework.Net.Channels.HostChannels.PipeHostTransportChannel.UnRegist">
+            <summary>
+                注销网络
+            </summary>
+            <returns>返回注册的状态</returns>
+        </member>
+        <member name="P:KJFramework.Net.Channels.HostChannels.PipeHostTransportChannel.AvailableCount">
+            <summary>
+               获取可用的命名管道个数
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.HostChannels.PipeHostTransportChannel.UsedCount">
+            <summary>
+               获取已使用的命名管道个数
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.HostChannels.PipeHostTransportChannel.TotalCount">
+            <summary>
+               获取所有的命名管道个数
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.HostChannels.PipeHostTransportChannel.Name">
+            <summary>
+                获取命名管道的实例名称
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.HostChannels.PipeHostTransportChannel.LogicalAddress">
+            <summary>
+                获取监听的管道地址
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.HostChannels.PipeHostTransportChannel.InstanceCount">
+            <summary>
+                获取实例个数
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.HostChannels.TcpHostTransportChannel">
+            <summary>
+                基于TCP协议的宿主传输通道，提供了相关的基本操作。
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.HostChannels.TcpHostTransportChannel.#ctor(System.Int32)">
+            <summary>
+                基于TCP协议的宿主传输通道，提供了相关的基本操作。
+            </summary>
+            <param name="port" type="int">
+                <para>
+                    监听的端口
+                </para>
+            </param>
+            <exception cref="T:System.ArgumentException">参数错误</exception>
+        </member>
+        <member name="M:KJFramework.Net.Channels.HostChannels.TcpHostTransportChannel.Regist">
+            <summary>
+                注册网络
+            </summary>
+            <returns>返回注册的状态</returns>
+        </member>
+        <member name="M:KJFramework.Net.Channels.HostChannels.TcpHostTransportChannel.UnRegist">
+            <summary>
+                注销网络
+            </summary>
+            <returns>返回注册的状态</returns>
+        </member>
+        <member name="P:KJFramework.Net.Channels.HostChannels.TcpHostTransportChannel.Port">
+            <summary>
+                获取监听的端口
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.HttpTransportChannel">
+            <summary>
+                基于HTTP协议的通讯信道，提供了相关的基本操作
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.IHttpTransportChannel">
+            <summary>
+                基于HTTP协议的传输信道元接口，提供了相关的基本操作
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.IHttpTransportChannel.Send">
+            <summary>
+                发送HTTP请求
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.IHttpTransportChannel.GetRequest">
+            <summary>
+                获取内部核心请求对象
+            </summary>
+            <returns>返回请求对象</returns>
+        </member>
+        <member name="M:KJFramework.Net.Channels.IHttpTransportChannel.GetResponse">
+            <summary>
+                获取内部核心回馈对象
+            </summary>
+            <returns>返回回馈对象</returns>
+        </member>
+        <member name="P:KJFramework.Net.Channels.IHttpTransportChannel.ChannelType">
+            <summary>
+                获取信道类型
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.IHttpTransportChannel.ContentLength64">
+            <summary>
+                获取包含在请求中的正文数据的长度
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.IHttpTransportChannel.StatusCode">
+            <summary>
+                获取或设置返回给客户端的 HTTP 状态代码
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.IHttpTransportChannel.RawUrl">
+            <summary>
+                获取客户端请求的 URL 信息（不包括主机和端口）
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.IHttpTransportChannel.Url">
+            <summary>
+                获取客户端请求的 Uri 对象
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.IHttpTransportChannel.UserHostAddress">
+            <summary>
+                获取请求被定向到的服务器 IP 地址和端口号
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.IHttpTransportChannel.HttpMethod">
+            <summary>
+                获取由客户端指定的 HTTP 方法
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.IHttpTransportChannel.AcceptTypes">
+            <summary>
+                获取客户端接受的 MIME 类型
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.IHttpTransportChannel.ContentType">
+            <summary>
+                获取包含在请求中的正文数据的 MIME 类型
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.IHttpTransportChannel.KeepAlive">
+            <summary>
+                获取一个 Boolean 值，该值指示客户端是否请求持续型连接
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.IHttpTransportChannel.IsLocal">
+            <summary>
+                获取 Boolean 值，该值指示该请求是否来自本地计算机
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.IHttpTransportChannel.HasEntityBody">
+            <summary>
+                获取一个 Boolean 值，该值指示请求是否有关联的正文数据
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.IHttpTransportChannel.Headers">
+            <summary>
+                获取在请求中发送的标头名称/值对的集合
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.IHttpTransportChannel.QueryString">
+            <summary>
+                获取包含在请求中的查询字符串
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.IHttpTransportChannel.Cookies">
+            <summary>
+                获取随请求发送的 Cookie
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.IHttpTransportChannel.ContentEncoding">
+            <summary>
+                获取可用于随请求发送的数据的内容编码
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.HttpTransportChannel.#ctor(System.Net.HttpListenerContext)">
+            <summary>
+                 基于HTTP协议的通讯信道，提供了相关的基本操作
+                <para>* 使用此构造将会迫使信道变为被动状态</para>
+            </summary>
+            <param name="context">监听器上下文</param>
+        </member>
+        <member name="M:KJFramework.Net.Channels.HttpTransportChannel.#ctor(System.String,System.Int32)">
+            <summary>
+                 基于HTTP协议的通讯信道，提供了相关的基本操作
+                <para>* 使用此构造将会迫使信道变为主动状态</para>
+            </summary>
+            <param name="requestUriString">标识 Internet 资源的 URI</param>
+            <param name="timeout">超时时间</param>
+            <exception cref="T:System.ArgumentNullException">参数错误</exception>
+        </member>
+        <member name="M:KJFramework.Net.Channels.HttpTransportChannel.#ctor(System.Uri,System.Int32)">
+            <summary>
+                 基于HTTP协议的通讯信道，提供了相关的基本操作
+                <para>* 使用此构造将会迫使信道变为主动状态</para>
+            </summary>
+            <param name="requestUri">包含请求的资源的 URI 的 Uri</param>
+            <param name="timeout">超时时间</param>
+            <exception cref="T:System.ArgumentNullException">参数错误</exception>
+        </member>
+        <member name="M:KJFramework.Net.Channels.HttpTransportChannel.InnerAbort">
+            <summary>
+                停止
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.HttpTransportChannel.InnerOpen">
+            <summary>
+                打开
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.HttpTransportChannel.InnerClose">
+            <summary>
+                关闭
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.HttpTransportChannel.Connect">
+            <summary>
+                连接
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.HttpTransportChannel.Disconnect">
+            <summary>
+                断开
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.HttpTransportChannel.InnerSend(System.Byte[])">
+            <summary>
+                发送数据
+                <para>* 如果此方法进行发送的元数据，可能是自动分包后的数据。</para>
+            </summary>
+            <param name="data">要发送的数据</param>
+            <returns>返回发送的字节数</returns>
+            <exception cref="T:System.Exception">发生错误</exception>
+        </member>
+        <member name="M:KJFramework.Net.Channels.HttpTransportChannel.Send">
+            <summary>
+                发送HTTP请求
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.HttpTransportChannel.GetRequest">
+            <summary>
+                获取内部核心请求对象
+            </summary>
+            <returns>返回请求对象</returns>
+        </member>
+        <member name="M:KJFramework.Net.Channels.HttpTransportChannel.GetResponse">
+            <summary>
+                获取内部核心回馈对象
+            </summary>
+            <returns>返回回馈对象</returns>
+        </member>
+        <member name="P:KJFramework.Net.Channels.HttpTransportChannel.ChannelType">
+            <summary>
+                获取信道类型
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.HttpTransportChannel.ContentLength64">
+            <summary>
+                获取包含在请求中的正文数据的长度
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.HttpTransportChannel.StatusCode">
+            <summary>
+                获取或设置返回给客户端的 HTTP 状态代码
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.HttpTransportChannel.RawUrl">
+            <summary>
+                获取客户端请求的 URL 信息（不包括主机和端口）
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.HttpTransportChannel.LocalEndPoint">
+            <summary>
+                获取本地终结点地址
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.HttpTransportChannel.RemoteEndPoint">
+            <summary>
+                获取发出请求的客户端 IP 地址和端口号
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.HttpTransportChannel.Url">
+            <summary>
+                获取客户端请求的 Uri 对象
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.HttpTransportChannel.UserHostAddress">
+            <summary>
+                获取请求被定向到的服务器 IP 地址和端口号
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.HttpTransportChannel.HttpMethod">
+            <summary>
+                获取由客户端指定的 HTTP 方法
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.HttpTransportChannel.AcceptTypes">
+            <summary>
+                获取客户端接受的 MIME 类型
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.HttpTransportChannel.ContentType">
+            <summary>
+                获取包含在请求中的正文数据的 MIME 类型
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.HttpTransportChannel.KeepAlive">
+            <summary>
+                获取一个 Boolean 值，该值指示客户端是否请求持续型连接
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.HttpTransportChannel.IsLocal">
+            <summary>
+                获取 Boolean 值，该值指示该请求是否来自本地计算机
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.HttpTransportChannel.HasEntityBody">
+            <summary>
+                获取一个 Boolean 值，该值指示请求是否有关联的正文数据
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.HttpTransportChannel.Headers">
+            <summary>
+                获取在请求中发送的标头名称/值对的集合
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.HttpTransportChannel.QueryString">
+            <summary>
+                获取包含在请求中的查询字符串
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.HttpTransportChannel.Cookies">
+            <summary>
+                获取随请求发送的 Cookie
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.HttpTransportChannel.ContentEncoding">
+            <summary>
+                获取可用于随请求发送的数据的内容编码
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.IDecodeChannel">
+            <summary>
+                解码通道元接口，提供了相关的基本操作。
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.IFunctionChannel">
+            <summary>
+                功能通道元接口，提供了相关的基本操作
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.IFunctionChannel.Process(System.Object,System.Boolean@)">
+            <summary>
+                处理指定对象，并返回处理后的结果
+            </summary>
+            <param name="obj">处理的对象</param>
+            <param name="isSuccess">是否处理成功的标示</param>
+            <returns>回处理后的结果</returns>
+        </member>
+        <member name="P:KJFramework.Net.Channels.IFunctionChannel.Key">
+            <summary>
+                获取唯一标识
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.IEncodeChannel">
+            <summary>
+                编码通道元接口，提供了相关的基本操作。
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.IFunctionChannel`1">
+            <summary>
+                功能通道元接口，提供了相关的基本操作
+            </summary>
+            <typeparam name="T">处理的对象类型</typeparam>
+        </member>
+        <member name="M:KJFramework.Net.Channels.IFunctionChannel`1.Process(`0,System.Boolean@)">
+            <summary>
+                处理指定对象，并返回处理后的结果
+            </summary>
+            <param name="obj">处理的对象</param>
+            <param name="isSuccess">是否处理成功的标示</param>
+            <returns>回处理后的结果</returns>
+        </member>
+        <member name="P:KJFramework.Net.Channels.IFunctionChannel`1.Key">
+            <summary>
+                获取唯一标识
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.IMessageTransportChannel`1">
+            <summary>
+                消息传输信道元接口，提供了相关的基本操作
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.IMessageTransportChannel`1.Send(`0)">
+            <summary>
+                发送一个消息
+            </summary>
+            <param name="obj">要发送的消息</param>
+            <returns>返回发送的字节数</returns>
+        </member>
+        <member name="P:KJFramework.Net.Channels.IMessageTransportChannel`1.ProtocolStack">
+            <summary>
+                获取协议栈
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.IMessageTransportChannel`1.MultiPacketManager">
+            <summary>
+                获取或设置封包片消息管理器
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Channels.IMessageTransportChannel`1.ReceivedMessage">
+            <summary>
+                接收到消息事件
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.IProtocolChannel">
+            <summary>
+                协议通道元接口，提供了相关的基本操作。
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.IProtocolChannel.CreateProtocolMessage``1">
+            <summary>
+                创建协议消息
+            </summary>
+            <typeparam name="TMessage">协议消息类型</typeparam>
+            <returns>返回协议消息</returns>
+        </member>
+        <member name="E:KJFramework.Net.Channels.IProtocolChannel.Requested">
+            <summary>
+                请求事件
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Channels.IProtocolChannel.Responsed">
+            <summary>
+                回馈事件
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.Managers.IMultiPacketManager`1">
+            <summary>
+                封包片管理器元接口，提供了相关的基本操作
+            </summary>
+            <typeparam name="T">消息类型</typeparam>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Managers.IMultiPacketManager`1.Add(System.Int32,`0,System.Int32)">
+            <summary>
+                添加一个封包片
+            </summary>
+            <param name="key">唯一消息Id</param>
+            <param name="message">封包片</param>
+            <param name="maxPacketCount">
+                最大封包片数
+                <para>* 第一次调用时设置此值，以后默认传-1即可。</para>
+            </param>
+            <returns>如果返回值不为null, 则证明已经拼接为一个完整的消息</returns>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Managers.IMultiPacketManager`1.Add(System.Int32,`0,System.TimeSpan,System.Int32)">
+            <summary>
+                添加一个封包片
+            </summary>
+            <param name="key">唯一消息Id</param>
+            <param name="message">封包片</param>
+            <param name="timeSpan">过期时间</param>
+            <param name="maxPacketCount">
+                最大封包片数
+                <para>* 第一次调用时设置此值，以后默认传-1即可。</para>
+            </param>
+            <returns>如果返回值不为null, 则证明已经拼接为一个完整的消息</returns>
+        </member>
+        <member name="E:KJFramework.Net.Channels.Managers.IMultiPacketManager`1.Expired">
+            <summary>
+                封包消息过期事件
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.Managers.MultiPacketManager`1">
+            <summary>
+                封包片管理器，提供了相关的基本操作
+            </summary>
+            <typeparam name="T">消息类型</typeparam>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Managers.MultiPacketManager`1.#ctor">
+            <summary>
+                封包片管理器，提供了相关的基本操作
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Managers.MultiPacketManager`1.Add(System.Int32,`0,System.Int32)">
+            <summary>
+                添加一个封包片
+            </summary>
+            <param name="key">唯一消息Id</param>
+            <param name="message">封包片</param>
+            <param name="maxPacketCount">
+                最大封包片数
+                <para>* 第一次调用时设置此值，以后默认传-1即可。</para>
+            </param>
+            <returns>如果返回值不为null, 则证明已经拼接为一个完整的消息</returns>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Managers.MultiPacketManager`1.Add(System.Int32,`0,System.TimeSpan,System.Int32)">
+            <summary>
+                添加一个封包片
+            </summary>
+            <param name="key">唯一消息Id</param>
+            <param name="message">封包片</param>
+            <param name="timeSpan">过期时间</param>
+            <param name="maxPacketCount">
+                最大封包片数
+                <para>* 第一次调用时设置此值，以后默认传-1即可。</para>
+            </param>
+            <returns>如果返回值不为null, 则证明已经拼接为一个完整的消息</returns>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Managers.MultiPacketManager`1.PickupMessage(KJFramework.Net.Channels.Caches.IMultiPacketStub{`0})">
+            <summary>
+                将一系列的封包片组合成一个完整的消息
+            </summary>
+            <param name="stub">封包片存根</param>
+            <returns>返回一个完整的消息</returns>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Managers.MultiPacketManager`1.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="E:KJFramework.Net.Channels.Managers.MultiPacketManager`1.Expired">
+            <summary>
+                封包消息过期事件
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.MessageTransportChannel`1">
+            <summary>
+                消息传输信道，提供了相关的基本操作
+            </summary>
+            <typeparam name="T">消息类型</typeparam>
+        </member>
+        <member name="M:KJFramework.Net.Channels.MessageTransportChannel`1.#ctor(KJFramework.Net.Channels.IRawTransportChannel,KJFramework.Net.ProtocolStacks.IProtocolStack{`0})">
+            <summary>
+                消息传输信道
+            </summary>
+            <param name="rawChannel">数据流信道</param>
+            <param name="protocolStack">协议栈</param>
+            <exception cref="T:System.ArgumentNullException">参数错误</exception>
+        </member>
+        <member name="M:KJFramework.Net.Channels.MessageTransportChannel`1.#ctor(KJFramework.Net.Channels.IRawTransportChannel,KJFramework.Net.ProtocolStacks.IProtocolStack{`0},KJFramework.Net.Channels.Parsers.ISegmentDataParser{`0})">
+            <summary>
+                消息传输信道 
+            </summary>
+            <param name="rawChannel">数据流信道</param>
+            <param name="protocolStack">协议栈</param>
+            <param name="parser">解析器</param>
+            <exception cref="T:System.ArgumentNullException">参数错误</exception>
+        </member>
+        <member name="M:KJFramework.Net.Channels.MessageTransportChannel`1.Abort">
+            <summary>
+                停止
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.MessageTransportChannel`1.Open">
+            <summary>
+                打开
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.MessageTransportChannel`1.Close">
+            <summary>
+                关闭
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.MessageTransportChannel`1.BeginOpen(System.AsyncCallback,System.Object)">
+            <summary>
+                异步打开
+            </summary>
+            <param name="callback">回调函数</param>
+            <param name="state">状态</param>
+            <returns>返回异步结果</returns>
+        </member>
+        <member name="M:KJFramework.Net.Channels.MessageTransportChannel`1.BeginClose(System.AsyncCallback,System.Object)">
+            <summary>
+                异步关闭
+            </summary>
+            <param name="callback">回调函数</param>
+            <param name="state">状态</param>
+            <returns>返回异步结果</returns>
+        </member>
+        <member name="M:KJFramework.Net.Channels.MessageTransportChannel`1.EndOpen(System.IAsyncResult)">
+            <summary>
+                异步打开
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.MessageTransportChannel`1.EndClose(System.IAsyncResult)">
+            <summary>
+                异步关闭
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.MessageTransportChannel`1.Connect">
+            <summary>
+                连接
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.MessageTransportChannel`1.Disconnect">
+            <summary>
+                断开
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.MessageTransportChannel`1.Send(System.Byte[])">
+            <summary>
+                发送数据
+            </summary>
+            <param name="data">要发送的数据</param>
+            <returns>返回发送的字节数</returns>
+            <exception cref="T:System.ArgumentNullException">参数错误</exception>
+        </member>
+        <member name="M:KJFramework.Net.Channels.MessageTransportChannel`1.Send(`0)">
+            <summary>
+                发送一个消息
+            </summary>
+            <param name="obj">要发送的消息</param>
+            <returns>返回发送的字节数</returns>
+        </member>
+        <member name="M:KJFramework.Net.Channels.MessageTransportChannel`1.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="P:KJFramework.Net.Channels.MessageTransportChannel`1.ChannelInfo">
+            <summary>
+            获取或设置当前通道信息
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.MessageTransportChannel`1.Statistics">
+            <summary>
+            获取或设置统计器
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.MessageTransportChannel`1.Enable">
+            <summary>
+                获取或设置当前可用状态
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.MessageTransportChannel`1.CommunicationState">
+            <summary>
+                获取当前通讯状态
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.MessageTransportChannel`1.CreateTime">
+            <summary>
+                获取创建时间
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.MessageTransportChannel`1.Key">
+            <summary>
+                获取通道唯一标示
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.MessageTransportChannel`1.Address">
+            <summary>
+                获取或设置物理地址
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.MessageTransportChannel`1.LogicalAddress">
+            <summary>
+                获取或设置逻辑地址
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.MessageTransportChannel`1.LocalEndPoint">
+            <summary>
+                获取本地终结点地址
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.MessageTransportChannel`1.RemoteEndPoint">
+            <summary>
+                获取远程终结点地址
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.MessageTransportChannel`1.Buffer">
+            <summary>
+              获取或设置缓冲区
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.MessageTransportChannel`1.LingerState">
+            <summary>
+                获取或设置延迟设置
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.MessageTransportChannel`1.IsConnected">
+            <summary>
+                获取一个值，该值表示了当前通道是否处于连接状态
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Channels.MessageTransportChannel`1.Connected">
+            <summary>
+                通道已连接事件
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Channels.MessageTransportChannel`1.Disconnected">
+            <summary>
+                通道已断开事件
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.MessageTransportChannel`1.ProtocolStack">
+            <summary>
+                获取协议栈
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.MessageTransportChannel`1.MultiPacketManager">
+            <summary>
+                获取或设置封包片消息管理器
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Channels.MessageTransportChannel`1.ReceivedMessage">
+            <summary>
+                接收到消息事件
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.OneWay.IInputChannel`1">
+            <summary>
+                接收通道元接口，提供了相关的基本操作。
+            </summary>
+            <typeparam name="T">消息父类类型</typeparam>
+        </member>
+        <member name="T:KJFramework.Net.Channels.OneWay.IOnewayChannel`1">
+            <summary>
+                单方向信道元接口，提供了相关的基本操作
+            </summary>
+            <typeparam name="T">消息父类类型</typeparam>
+        </member>
+        <member name="M:KJFramework.Net.Channels.OneWay.IOnewayChannel`1.Connect(KJFramework.Net.Channels.IRawTransportChannel)">
+            <summary>
+                连接到远程终结点
+            </summary>
+            <param name="channel">基于流的通讯信道</param>
+            <exception cref="T:System.NullReferenceException">远程终结点地址不能为空</exception>
+        </member>
+        <member name="M:KJFramework.Net.Channels.OneWay.IOnewayChannel`1.Disconnect">
+            <summary>
+                断开当前信道的连接
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.OneWay.IOnewayChannel`1.RegistSpy(KJFramework.Net.Channels.Spy.IMessageSpy{`0})">
+            <summary>
+                注册一个消息拦截器
+            </summary>
+            <param name="spy">消息拦截器</param>
+            <exception cref="T:System.ArgumentNullException">参数不能为空</exception>
+            <exception cref="T:System.ArgumentException">非法参数</exception>
+        </member>
+        <member name="P:KJFramework.Net.Channels.OneWay.IOnewayChannel`1.Connected">
+            <summary>
+                获取当前信道的连接状态
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.OneWay.IOnewayChannel`1.CreateTime">
+            <summary>
+                获取创建时间
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.OneWay.IOnewayChannel`1.Key">
+            <summary>
+                获取通道唯一标示
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.OneWay.IOnewayChannel`1.ProtocolStack">
+            <summary>
+                获取协议栈
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Channels.OneWay.IOnewayChannel`1.ChannelConnected">
+            <summary>
+                信道已连接事件
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Channels.OneWay.IOnewayChannel`1.ChannelDisconnected">
+            <summary>
+                信道已断开事件
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Channels.OneWay.IOnewayChannel`1.UnknownSpyMessage">
+            <summary>
+                已拦截未知消息事件
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.OneWay.InputChannel`1">
+            <summary>
+                输入通道元接口，提供了相关的基本操作。
+            </summary>
+            <typeparam name="T">消息父类类型</typeparam>
+        </member>
+        <member name="T:KJFramework.Net.Channels.OneWay.OnewayChannel`1">
+            <summary>
+                单方向信道抽象父类，提供了相关的基本操作
+            </summary>
+            <typeparam name="T">消息父类类型</typeparam>
+        </member>
+        <member name="M:KJFramework.Net.Channels.OneWay.OnewayChannel`1.#ctor(KJFramework.Net.ProtocolStacks.IProtocolStack{`0})">
+            <summary>
+                单方向信道抽象父类，提供了相关的基本操作
+            </summary>
+            <param name="protocolStack">协议栈</param>
+        </member>
+        <member name="M:KJFramework.Net.Channels.OneWay.OnewayChannel`1.#ctor(KJFramework.Net.Channels.IRawTransportChannel,KJFramework.Net.ProtocolStacks.IProtocolStack{`0})">
+            <summary>
+                单方向信道抽象父类，提供了相关的基本操作
+            </summary>
+            <param name="channel">基于流的通讯信道</param>
+            <param name="protocolStack">协议栈</param>
+        </member>
+        <member name="M:KJFramework.Net.Channels.OneWay.OnewayChannel`1.SendCallbackAsync(`0)">
+            <summary>
+                使用此方法来发送响应消息
+            </summary>
+            <param name="message">响应消息</param>
+        </member>
+        <member name="M:KJFramework.Net.Channels.OneWay.OnewayChannel`1.Connect(KJFramework.Net.Channels.IRawTransportChannel)">
+            <summary>
+                连接到远程终结点
+            </summary>
+            <param name="channel">基于流的通讯信道</param>
+            <exception cref="T:System.NullReferenceException">远程终结点地址不能为空</exception>
+        </member>
+        <member name="M:KJFramework.Net.Channels.OneWay.OnewayChannel`1.Disconnect">
+            <summary>
+                断开当前信道的连接
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.OneWay.OnewayChannel`1.RegistSpy(KJFramework.Net.Channels.Spy.IMessageSpy{`0})">
+            <summary>
+                注册一个消息拦截器
+            </summary>
+            <param name="spy">消息拦截器</param>
+            <exception cref="T:System.ArgumentNullException">参数不能为空</exception>
+            <exception cref="T:System.ArgumentException">非法参数</exception>
+        </member>
+        <member name="P:KJFramework.Net.Channels.OneWay.OnewayChannel`1.Address">
+            <summary>
+                获取或设置物理地址
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.OneWay.OnewayChannel`1.LogicalAddress">
+            <summary>
+                获取或设置逻辑地址
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.OneWay.OnewayChannel`1.Connected">
+            <summary>
+                获取当前信道的连接状态
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.OneWay.OnewayChannel`1.CreateTime">
+            <summary>
+                获取创建时间
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.OneWay.OnewayChannel`1.Key">
+            <summary>
+                获取通道唯一标示
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.OneWay.OnewayChannel`1.ProtocolStack">
+            <summary>
+                获取协议栈
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Channels.OneWay.OnewayChannel`1.ChannelConnected">
+            <summary>
+                信道已连接事件
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Channels.OneWay.OnewayChannel`1.ChannelDisconnected">
+            <summary>
+                信道已断开事件
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Channels.OneWay.OnewayChannel`1.UnknownSpyMessage">
+            <summary>
+                已拦截未知消息事件
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.OneWay.InputChannel`1.#ctor(KJFramework.Net.ProtocolStacks.IProtocolStack{`0})">
+            <summary>
+                输入通道元接口，提供了相关的基本操作。
+            </summary>
+            <param name="protocolStack">协议栈</param>
+        </member>
+        <member name="M:KJFramework.Net.Channels.OneWay.InputChannel`1.#ctor(KJFramework.Net.Channels.IRawTransportChannel,KJFramework.Net.ProtocolStacks.IProtocolStack{`0})">
+            <summary>
+                输入通道元接口，提供了相关的基本操作。
+            </summary>
+            <param name="channel">基于流的通讯信道</param>
+            <param name="protocolStack">协议栈</param>
+        </member>
+        <member name="M:KJFramework.Net.Channels.OneWay.InputChannel`1.SendCallbackAsync(`0)">
+            <summary>
+                使用此方法来发送响应消息
+            </summary>
+            <param name="message">响应消息</param>
+        </member>
+        <member name="T:KJFramework.Net.Channels.OneWay.IOutputChannel`1">
+            <summary>
+                输出通道元接口，提供了相关的基本操作。
+            </summary>
+            <typeparam name="T">消息父类类型</typeparam>
+        </member>
+        <member name="M:KJFramework.Net.Channels.OneWay.IOutputChannel`1.Send(`0)">
+            <summary>
+                请求一个消息到远程终结点
+            </summary>
+            <param name="message">请求的消息</param>
+            <exception cref="T:System.ArgumentNullException">参数不能为空</exception>
+            <exception cref="T:System.ArgumentException">参数错误</exception>
+            <exception cref="N:KJFramework.Net.Exception">发送失败</exception>
+        </member>
+        <member name="M:KJFramework.Net.Channels.OneWay.IOutputChannel`1.SendAsync(`0)">
+            <summary>
+                异步请求一个消息到远程终结点
+            </summary>
+            <param name="message">请求的消息</param>
+            <exception cref="T:System.ArgumentNullException">参数不能为空</exception>
+            <exception cref="T:System.ArgumentException">参数错误</exception>
+            <exception cref="N:KJFramework.Net.Exception">发送失败</exception>
+            <returns>返回异步结果</returns>
+        </member>
+        <member name="T:KJFramework.Net.Channels.OneWay.OutputChannel`1">
+            <summary>
+                输出通道元接口，提供了相关的基本操作。
+            </summary>
+            <typeparam name="T">消息父类类型</typeparam>
+        </member>
+        <member name="M:KJFramework.Net.Channels.OneWay.OutputChannel`1.#ctor(KJFramework.Net.ProtocolStacks.IProtocolStack{`0})">
+            <summary>
+                输出通道元接口，提供了相关的基本操作。
+            </summary>
+            <param name="protocolStack">协议栈</param>
+        </member>
+        <member name="M:KJFramework.Net.Channels.OneWay.OutputChannel`1.#ctor(KJFramework.Net.Channels.IRawTransportChannel,KJFramework.Net.ProtocolStacks.IProtocolStack{`0})">
+            <summary>
+                输出通道元接口，提供了相关的基本操作。
+            </summary>
+            <param name="channel">基于流的通讯信道</param>
+            <param name="protocolStack">协议栈</param>
+        </member>
+        <member name="M:KJFramework.Net.Channels.OneWay.OutputChannel`1.SendCallbackAsync(`0)">
+            <summary>
+                使用此方法来发送响应消息
+            </summary>
+            <param name="message">响应消息</param>
+        </member>
+        <member name="M:KJFramework.Net.Channels.OneWay.OutputChannel`1.Send(`0)">
+            <summary>
+                请求一个消息到远程终结点
+            </summary>
+            <param name="message">请求的消息</param>
+            <exception cref="T:System.ArgumentNullException">参数不能为空</exception>
+            <exception cref="T:System.ArgumentException">参数错误</exception>
+            <exception cref="N:KJFramework.Net.Exception">发送失败</exception>
+        </member>
+        <member name="M:KJFramework.Net.Channels.OneWay.OutputChannel`1.SendAsync(`0)">
+            <summary>
+                异步请求一个消息到远程终结点
+            </summary>
+            <param name="message">请求的消息</param>
+            <returns>返回异步结果</returns>
+            <exception cref="T:System.ArgumentNullException">参数不能为空</exception>
+            <exception cref="T:System.ArgumentException">参数错误</exception>
+            <exception cref="N:KJFramework.Net.Exception">发送失败</exception>
+        </member>
+        <member name="T:KJFramework.Net.Channels.PipeTransportChannel">
+            <summary>
+               基于IPC通道的传输通道，提供了相关的基本操作。
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.PipeTransportChannel.#ctor(KJFramework.Net.Channels.Uri.PipeUri)">
+            <summary>
+               基于IPC通道的传输通道，提供了相关的基本操作。
+                <para>* 此构造函数用于初始化一个需要连接到远程的命名管道对象</para>
+            </summary>
+            <param name="logicalUri">通道地址</param>
+            <exception cref="T:System.ArgumentNullException">参数错误</exception>
+        </member>
+        <member name="M:KJFramework.Net.Channels.PipeTransportChannel.#ctor(System.IO.Pipes.PipeStream)">
+            <summary>
+               基于IPC通道的传输通道，提供了相关的基本操作。
+                <para>* 此构造函数用于初始化一个已经连接的命名管道数据流</para>
+            </summary>
+            <param name="stream" type="System.IO.Pipes.PipeStream">PIPE流</param>
+            <exception cref="T:System.ArgumentNullException">参数错误</exception>
+        </member>
+        <member name="M:KJFramework.Net.Channels.PipeTransportChannel.InnerAbort">
+            <summary>
+                停止
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.PipeTransportChannel.InnerOpen">
+            <summary>
+                打开
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.PipeTransportChannel.InnerClose">
+            <summary>
+                关闭
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.PipeTransportChannel.Connect">
+            <summary>
+                连接到远程命名管道
+                <para>* 此方法将会使用双向数据流的方式连接远程命名管道</para>
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.PipeTransportChannel.Connect(System.IO.Pipes.PipeDirection,System.Int32)">
+            <summary>
+                连接到远程命名管道
+            </summary>
+            <param name="direction">数据流方向</param>
+            <param name="milliseconds">超时时间</param>
+            <exception cref="T:System.ArgumentException">无效的超时时间</exception>
+            <exception cref="T:System.InvalidOperationException">无法再次调用一个已经初始化后的Channel的Connect方法</exception>
+        </member>
+        <member name="M:KJFramework.Net.Channels.PipeTransportChannel.Disconnect">
+            <summary>
+                断开
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.PipeTransportChannel.Reconnect">
+            <summary>
+                重新尝试建立连接
+            </summary>
+            <returns>返回尝试后的状态</returns>
+        </member>
+        <member name="M:KJFramework.Net.Channels.PipeTransportChannel.InnerSend(System.Byte[])">
+            <summary>
+                发送数据
+                <para>* 如果此方法进行发送的元数据，可能是自动分包后的数据。</para>
+            </summary>
+            <param name="data">要发送的数据</param>
+            <returns>返回发送的字节数</returns>
+        </member>
+        <member name="P:KJFramework.Net.Channels.PipeTransportChannel.Stream">
+            <summary>
+               获取内部流对象
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.PipeTransportChannel.LocalEndPoint">
+            <summary>
+                获取本地终结点地址
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.PipeTransportChannel.RemoteEndPoint">
+            <summary>
+                获取发出请求的客户端 IP 地址和端口号
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.PipeTransportChannel.IsConnected">
+            <summary>
+                获取一个值，该值表示了当前通道是否处于连接状态
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.ProtocolChannel">
+            <summary>
+                协议通道抽象基类，提供了相关的基本操作。
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.ProtocolChannel.CreateProtocolMessage``1">
+            <summary>
+                创建协议消息
+            </summary>
+            <typeparam name="TMessage">协议消息类型</typeparam>
+            <returns>返回协议消息</returns>
+        </member>
+        <member name="E:KJFramework.Net.Channels.ProtocolChannel.Requested">
+            <summary>
+                请求事件
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Channels.ProtocolChannel.Responsed">
+            <summary>
+                回馈事件
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.Receivers.TcpAsynDataRecevier">
+            <summary>
+                基础的基于TCP协议的消息接收器，提供了相关的基本操作。
+                <para>* 异步机制基于 .NET FRAMEWORK 3.5中的新Socket异步模型。</para>
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Receivers.TcpAsynDataRecevier.#ctor">
+            <summary>
+                基础的基于TCP协议的消息接收器，提供了相关的基本操作。
+                        * 异步机制基于 .NET FRAMEWORK 3.5中的新Socket异步模型。
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Receivers.TcpAsynDataRecevier.#ctor(System.Net.Sockets.Socket)">
+            <summary>
+                基础的基于TCP协议的消息接收器，提供了相关的基本操作。
+                        * 异步机制基于 .NET FRAMEWORK 3.5中的新Socket异步模型。
+            </summary>
+            <param name="socket">套接字</param>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Receivers.TcpAsynDataRecevier.StartReceive">
+            <summary>
+                开始接收数据
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Receivers.TcpAsynDataRecevier.ProcessReceive(KJFramework.Cache.Cores.IFixedCacheStub{KJFramework.Net.Channels.Caches.SocketBuffStub})">
+            <summary>
+                处理接收的数据
+            </summary>
+            <param name="stub">带缓冲区的固定缓存存根</param>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Receivers.TcpAsynDataRecevier.ProcessData(KJFramework.Cache.Cores.IFixedCacheStub{KJFramework.Net.Channels.Caches.SocketBuffStub},System.Int32)">
+            <summary>
+                处理数据
+            </summary>
+            <param name="stub">带缓冲区的固定缓存存根</param>
+            <param name="bytesTransferred">接收到的数据长度</param>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Receivers.TcpAsynDataRecevier.Start">
+            <summary>
+                开始执行
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Receivers.TcpAsynDataRecevier.Stop">
+            <summary>
+                停止执行
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.Receivers.TcpAsynDataRecevier.Socket">
+            <summary>
+                用户套接字
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Channels.Receivers.TcpAsynDataRecevier.ReceivedData">
+            <summary>
+                接收到数据事件
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Channels.Receivers.TcpAsynDataRecevier.Disconnected">
+            <summary>
+                接收器断开连接事件
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.Receivers.TcpAsynDataRecevier.State">
+            <summary>
+                获取或设置当前的状态
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.Receivers.TcpAsynDataRecevier.Key">
+            <summary>
+                获取或设置用来约束所有对象的唯一标示
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.ReplyNow.IRequestChannel">
+            <summary>
+                请求通道，提供了相关的基本操作
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.ReplyNow.IRequestChannel.Request``1(``0)">
+            <summary>
+                请求一个消息到远程终结点
+            </summary>
+            <typeparam name="T">消息类型</typeparam>
+            <param name="message">请求的消息</param>
+            <returns>返回应答消息</returns>
+        </member>
+        <member name="M:KJFramework.Net.Channels.ReplyNow.IRequestChannel.BeginRequest``1(``0,System.AsyncCallback,System.Object)">
+            <summary>
+                异步请求一个消息到远程终结点
+            </summary>
+            <typeparam name="T">消息类型</typeparam>
+            <param name="message">请求的消息</param>
+            <param name="callback">回调函数</param>
+            <param name="state">状态</param>
+            <returns>返回异步结果</returns>
+        </member>
+        <member name="M:KJFramework.Net.Channels.ReplyNow.IRequestChannel.EndRequest``1(System.IAsyncResult)">
+            <summary>
+                异步请求一个消息到远程终结点
+            </summary>
+            <typeparam name="T">消息类型</typeparam>
+            <param name="result">异步结果</param>
+            <returns>返回应答消息</returns>
+        </member>
+        <member name="T:KJFramework.Net.Channels.ReplyNow.IResponseChannel">
+            <summary>
+                应答通道，提供了相关的基本操作
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.ReplyNow.IResponseChannel.Response``1(``0)">
+            <summary>
+                应答一个消息到远程终结点
+            </summary>
+            <typeparam name="TMessage">消息类型</typeparam>
+            <param name="message">请求的消息</param>
+            <returns>返回应答消息</returns>
+        </member>
+        <member name="M:KJFramework.Net.Channels.ReplyNow.IResponseChannel.BeginResponse``1(``0,System.AsyncCallback,System.Object)">
+            <summary>
+                异步应答一个消息到远程终结点
+            </summary>
+            <typeparam name="TMessage">消息类型</typeparam>
+            <param name="message">请求的消息</param>
+            <param name="callback">回调函数</param>
+            <param name="state">状态</param>
+            <returns>返回异步结果</returns>
+        </member>
+        <member name="M:KJFramework.Net.Channels.ReplyNow.IResponseChannel.EndResponse``1(System.IAsyncResult)">
+            <summary>
+                异步应答一个消息到远程终结点
+            </summary>
+            <typeparam name="TMessage">消息类型</typeparam>
+            <param name="result">异步结果</param>
+            <returns>返回应答消息</returns>
+        </member>
+        <member name="T:KJFramework.Net.Channels.Spy.IMessageSpy`1">
+            <summary>
+                消息拦截器，提供了相关的基本操作
+            </summary>
+            <typeparam name="T">消息父类类型</typeparam>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Spy.IMessageSpy`1.Spy(`0)">
+            <summary>
+                拦截一个消息
+            </summary>
+            <param name="message">被拦截的消息</param>
+            <returns>
+                返回需要响应的消息
+                <para>* 如果无需响应，则返回null.</para>
+            </returns>
+        </member>
+        <member name="P:KJFramework.Net.Channels.Spy.IMessageSpy`1.SupportType">
+            <summary>
+                获取支持拦截的消息类型
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Statistics.PipeHostTransportChannelStatistic.Initialize``1(``0)">
+            <summary>
+            初始化
+            </summary>
+            <param name="element">统计类型</param><typeparam name="T">统计类型</typeparam>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Statistics.PipeHostTransportChannelStatistic.Close">
+            <summary>
+            关闭统计
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Statistics.PipeTransportChannelStatistic.Initialize``1(``0)">
+            <summary>
+                初始化
+            </summary>
+            <param name="element">统计类型</param><typeparam name="T">统计类型</typeparam>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Statistics.PipeTransportChannelStatistic.Close">
+            <summary>
+                关闭统计
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Statistics.TcpHostTransportChannelStatistic.Initialize``1(``0)">
+            <summary>
+            初始化
+            </summary>
+            <param name="element">统计类型</param><typeparam name="T">统计类型</typeparam>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Statistics.TcpHostTransportChannelStatistic.Close">
+            <summary>
+            关闭统计
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Statistics.TcpTransportChannelStatistic.Initialize``1(``0)">
+            <summary>
+                初始化
+            </summary>
+            <param name="element">统计类型</param><typeparam name="T">统计类型</typeparam>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Statistics.TcpTransportChannelStatistic.Close">
+            <summary>
+                关闭统计
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.Transactions.IStreamTransaction`1">
+            <summary>
+                流事物元接口，提供了相关的基本操作。
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Transactions.IStreamTransaction`1.EndWork">
+            <summary>
+               结束当前事物的工作
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.Transactions.IStreamTransaction`1.CanAsync">
+            <summary>
+                获取或设置一个值，该值表示了当前事物是否可以异步执行
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.Transactions.IStreamTransaction`1.Enable">
+            <summary>
+                获取一个值，该值标示了当前流事物的状态
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.Transactions.IStreamTransaction`1.Stream">
+            <summary>
+                获取内部流
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Channels.Transactions.IStreamTransaction`1.Disconnected">
+            <summary>
+                停止工作事件
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.Transactions.PipeStreamTransaction">
+            <summary>
+                Pipe流事物抽象父类，提供了相关的基本操作
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.Transactions.StreamTransaction`1">
+            <summary>
+                流事物抽象父类，提供了相关的基本操作。
+            </summary>
+            <typeparam name="TStream">流类型</typeparam>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Transactions.StreamTransaction`1.#ctor(`0)">
+            <summary>
+                流事物抽象父类，提供了相关的基本操作。
+            </summary>
+            <param name="stream">流</param>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Transactions.StreamTransaction`1.#ctor(`0,System.Boolean)">
+            <summary>
+                流事物抽象父类，提供了相关的基本操作。
+            </summary>
+            <param name="stream">流</param>
+            <param name="canAsync">异步标示</param>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Transactions.StreamTransaction`1.Proc">
+            <summary>
+                内部执行
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Transactions.StreamTransaction`1.EndWork">
+            <summary>
+                停止工作
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Transactions.StreamTransaction`1.InnerProc">
+            <summary>
+                内部执行
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Transactions.StreamTransaction`1.BeginWork">
+            <summary>
+                开始工作
+                <para>* 此方法在事物开始工作的时候将会被调用。</para>
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Transactions.StreamTransaction`1.InnerEndWork">
+            <summary>
+                停止工作
+                <para>* 此方法在事物异常或者结束工作的时候将会被调用。</para>
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Transactions.StreamTransaction`1.ProcAsync">
+            <summary>
+                异步执行
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.Transactions.StreamTransaction`1.Enable">
+            <summary>
+                获取一个值，该值标示了当前流事物的状态
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.Transactions.StreamTransaction`1.CanAsync">
+            <summary>
+                获取或设置一个值，该值表示了当前事物是否可以异步执行
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.Transactions.StreamTransaction`1.Stream">
+            <summary>
+                获取内部流
+            </summary>
+        </member>
+        <member name="E:KJFramework.Net.Channels.Transactions.StreamTransaction`1.Disconnected">
+            <summary>
+                断开事件
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Transactions.PipeStreamTransaction.#ctor(System.IO.Pipes.PipeStream,System.Action{KJFramework.Cache.Cores.IFixedCacheStub{KJFramework.Net.Channels.Caches.BuffStub},System.Int32})">
+            <summary>
+                流事物抽象父类，提供了相关的基本操作。
+            </summary>
+            <param name="stream">流</param>
+            <param name="callback">回调函数</param>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Transactions.PipeStreamTransaction.#ctor(System.IO.Pipes.PipeStream,System.Boolean,System.Action{KJFramework.Cache.Cores.IFixedCacheStub{KJFramework.Net.Channels.Caches.BuffStub},System.Int32})">
+            <summary>
+                流事物抽象父类，提供了相关的基本操作。
+            </summary>
+            <param name="stream">流</param>
+            <param name="canAsync">异步标示</param>
+            <param name="callback">回调函数</param>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Transactions.PipeStreamTransaction.InnerProc">
+            <summary>
+                内部执行
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Transactions.PipeStreamTransaction.BeginWork">
+            <summary>
+                开始工作
+                <para>* 此方法在事物开始工作的时候将会被调用。</para>
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Transactions.PipeStreamTransaction.InnerEndWork">
+            <summary>
+                停止工作
+                <para>* 此方法在事物异常或者结束工作的时候将会被调用。</para>
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Transactions.PipeStreamTransaction.InnerEndWork(KJFramework.Cache.Cores.IFixedCacheStub{KJFramework.Net.Channels.Caches.BuffStub})">
+            <summary>
+               内部停止工作方法
+            </summary>
+            <param name="stub">缓冲区缓存存根</param>
+        </member>
+        <member name="T:KJFramework.Net.Channels.Transactions.Processors.ITransactionProcessor`2">
+            <summary>
+                事物处理器元接口，提供了相关的基本操作
+            </summary>
+            <typeparam name="TIn">输入类型</typeparam>
+            <typeparam name="TOut">输出类型</typeparam>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Transactions.Processors.ITransactionProcessor`2.Process(`0)">
+            <summary>
+                处理
+            </summary>
+            <param name="obj">参数</param>
+            <returns>返回结果</returns>
+        </member>
+        <member name="T:KJFramework.Net.Channels.Transactions.Processors.TransactionProcessor`2">
+            <summary>
+                事物处理器抽象父类，提供了相关的操作。
+            </summary>
+            <typeparam name="TIn">输入类型</typeparam>
+            <typeparam name="TOut">输出类型</typeparam>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Transactions.Processors.TransactionProcessor`2.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Transactions.Processors.TransactionProcessor`2.Process(`0)">
+            <summary>
+                处理
+            </summary>
+            <param name="obj">参数</param>
+            <returns>返回结果</returns>
+        </member>
+        <member name="P:KJFramework.Net.Channels.Transactions.Processors.TransactionProcessor`2.Statistics">
+            <summary>
+            获取或设置统计器
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.Uri.PipeUri">
+            <summary>
+                Pipe资源地址标示类，提供了相关的基本操作。
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.Uri.Uri">
+            <summary>
+                资源地址标示类，提供了相关的基本操作。
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Uri.Uri.#ctor">
+            <summary>
+                资源地址标示类，提供了相关的基本操作。
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Uri.Uri.#ctor(System.String)">
+            <summary>
+                资源地址标示类，提供了相关的基本操作。
+            </summary>
+            <param name="url" type="string">
+                <para>
+                    完整的URL地址
+                </para>
+            </param>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Uri.Uri.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Uri.Uri.GetServiceUri">
+            <summary>
+                获取服务器内部使用的Uri形态
+            </summary>
+            <returns>返回Uri</returns>
+        </member>
+        <member name="P:KJFramework.Net.Channels.Uri.Uri.Url">
+            <summary>
+                获取或设置完整的URL
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.Uri.Uri.Address">
+            <summary>
+                获取或设置地址路径
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.Uri.Uri.Prefix">
+            <summary>
+                获取或设置前缀
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Uri.PipeUri.#ctor">
+            <summary>
+                资源地址标示类，提供了相关的基本操作。
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Uri.PipeUri.#ctor(System.String)">
+            <summary>
+                资源地址标示类，提供了相关的基本操作。
+            </summary>
+            <param name="url" type="string">
+                <para>
+                    完整的URL地址
+                </para>
+            </param>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Uri.PipeUri.GetServiceUri">
+            <summary>
+                获取服务器内部使用的Uri形态
+            </summary>
+            <returns>返回Uri</returns>
+        </member>
+        <member name="P:KJFramework.Net.Channels.Uri.PipeUri.PipeName">
+            <summary>
+                获取或设置IPC名称
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.Uri.PipeUri.MachineName">
+            <summary>
+                获取或设置机器名
+            </summary>
+        </member>
+        <member name="T:KJFramework.Net.Channels.Uri.TcpUri">
+            <summary>
+                Tcp资源地址标示类，提供了相关的基本操作。
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Uri.TcpUri.#ctor">
+            <summary>
+                Tcp资源地址标示类，提供了相关的基本操作。
+            </summary>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Uri.TcpUri.#ctor(System.String)">
+            <summary>
+                Tcp资源地址标示类，提供了相关的基本操作。
+            </summary>
+            <param name="url" type="string">
+                <para>
+                    完整的URL地址
+                </para>
+            </param>
+        </member>
+        <member name="M:KJFramework.Net.Channels.Uri.TcpUri.GetServiceUri">
+            <summary>
+                获取服务器内部使用的Uri形态
+            </summary>
+            <returns>返回Uri</returns>
+        </member>
+        <member name="P:KJFramework.Net.Channels.Uri.TcpUri.ServiceName">
+            <summary>
+                获取或设置服务名称
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.Uri.TcpUri.HostAddress">
+            <summary>
+                获取或设置宿主地址
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.Uri.TcpUri.Port">
+            <summary>
+                获取或设置宿主端口
+            </summary>
+        </member>
+        <member name="P:KJFramework.Net.Channels.Uri.TcpUri.IsHost">
+            <summary>
+                获取一个值，该值标示了当前给定的宿主地址是否为本地地址。
+            </summary>
+        </member>
+    </members>
+</doc>

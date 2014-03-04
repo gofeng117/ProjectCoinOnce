@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{348DB1D0-D099-4AE7-B876-2C37956518BD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CoinAPI.ABS.Test</RootNamespace>
+    <AssemblyName>CoinAPI.ABS.Test</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="fastJSON, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\public dependency\fastJSON.dll</HintPath>
+    </Reference>
+    <Reference Include="KJFramework">
+      <HintPath>..\..\..\public dependency\KJFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="KJFramework.Basic">
+      <HintPath>..\..\..\public dependency\KJFramework.Basic.dll</HintPath>
+    </Reference>
+    <Reference Include="KJFramework.Dynamic">
+      <HintPath>..\..\..\public dependency\KJFramework.Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="KJFramework.IO">
+      <HintPath>..\..\..\public dependency\KJFramework.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="KJFramework.Messages">
+      <HintPath>..\..\..\public dependency\KJFramework.Messages.dll</HintPath>
+    </Reference>
+    <Reference Include="KJFramework.Net">
+      <HintPath>..\..\..\public dependency\KJFramework.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="KJFramework.Net.Channels">
+      <HintPath>..\..\..\public dependency\KJFramework.Net.Channels.dll</HintPath>
+    </Reference>
+    <Reference Include="KJFramework.Net.Transaction">
+      <HintPath>..\..\..\public dependency\KJFramework.Net.Transaction.dll</HintPath>
+    </Reference>
+    <Reference Include="mysql.data">
+      <HintPath>..\..\..\public dependency\mysql.data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\public dependency\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.6.2.12296, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\public dependency\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.mocks, Version=2.6.2.12296, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\public dependency\nunit.mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="pnunit.framework">
+      <HintPath>..\..\..\public dependency\pnunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="UnitTestCreateNewAdGroupProcessor.cs" />
+    <Compile Include="UnitTestCreateNewAdCreativeProcessor.cs" />
+    <Compile Include="UnitTestCreateNewCampaignProcessor2.cs" />
+    <Compile Include="UnitTestCreateNewPushCreativeProcessor.cs" />
+    <Compile Include="UnitTestCreateNewTextCreativeProcessor.cs" />
+    <Compile Include="UnitTestCreateNewVideoCreativeProcessor.cs" />
+    <Compile Include="UnitTestGetImageSizeByIdProcessor.cs" />
+    <Compile Include="UnitTestGetImageSizeProcessor.cs" />
+    <Compile Include="UnitTestUpdateAdGroupByIdProcessor.cs" />
+    <Compile Include="UnitTestUpdateAdTextCreativeByIdProcessor.cs" />
+    <Compile Include="UnitTestUpdateCampaignByIdProcessor.cs" />
+    <Compile Include="UnitTestCreateNewCampaignProcessor.cs" />
+    <Compile Include="UnitTestGetCampaignByIdProcessor.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\MobiSage.Ads.WebAPI.CommonFramework\MobiSage.Ads.WebAPI.CommonFramework\CoinAPI.CommonFramework.csproj">
+      <Project>{cf4264b4-438d-479c-8ea0-c44a33e493d6}</Project>
+      <Name>CoinAPI.CommonFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MobiSage.Ads.WebAPI.CommonFramework\CoinAPI.Domain.Midiator\CoinAPI.Domain.Midiator.csproj">
+      <Project>{dfb5c1f3-f522-46d4-9721-9d70869269e2}</Project>
+      <Name>CoinAPI.Domain.Midiator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MobiSage.Ads.WebAPI.CommonFramework\CoinAPI.Domain.ProtocolMetadata\CoinAPI.Domain.ProtocolMetadata.csproj">
+      <Project>{f7a3b49d-0cff-4f31-a1f7-d90883de0f7f}</Project>
+      <Name>CoinAPI.Domain.ProtocolMetadata</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MobiSage.Ads.WebAPI.CommonFramework\CoinAPI.Domain.Repository\CoinAPI.Domain.Repository.csproj">
+      <Project>{5c6c2ee8-aaab-4bac-b3f8-1ac749202bd0}</Project>
+      <Name>CoinAPI.Domain.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MobiSage.Ads.WebAPI.CommonFramework\CoinAPI.Domain.Service\CoinAPI.Domain.Service.csproj">
+      <Project>{db07a918-244f-47c5-9099-5d33d56cf998}</Project>
+      <Name>CoinAPI.Domain.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MobiSage.Ads.WebAPI.CommonFramework\CoinAPI.Domain\CoinAPI.Domain.csproj">
+      <Project>{bbcd8108-7ada-4cb4-b259-af1fb15e0e5f}</Project>
+      <Name>CoinAPI.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CoinAPI.ABS.Common\CoinAPI.ABS.Common.csproj">
+      <Project>{7f564cf7-043a-45f6-bf80-f8bde66d61a0}</Project>
+      <Name>CoinAPI.ABS.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CoinAPI.ABS.Components.AdComp\CoinAPI.ABS.Components.AdComp.csproj">
+      <Project>{92f833d3-1c3e-45bf-9222-b8036112dcb9}</Project>
+      <Name>CoinAPI.ABS.Components.AdComp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CoinAPI.ABS.ProtocolStack\CoinAPI.ABS.ProtocolStack.csproj">
+      <Project>{d1a9f489-91a2-4da3-87bd-386c981ba8b5}</Project>
+      <Name>CoinAPI.ABS.ProtocolStack</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CoinAPI.ABS\CoinAPI.ABS.csproj">
+      <Project>{866298a7-93c3-461e-b3c8-1ad62eb9106e}</Project>
+      <Name>CoinAPI.ABS %28CoinAPI.ABS\CoinAPI.ABS%29</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="log4net.config" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

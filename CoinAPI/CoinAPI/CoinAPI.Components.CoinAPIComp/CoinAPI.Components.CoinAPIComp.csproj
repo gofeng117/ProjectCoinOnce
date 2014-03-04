@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{92F833D3-1C3E-45BF-9222-B8036112DCB9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CoinAPI.Components.AdComp</RootNamespace>
+    <AssemblyName>CoinAPI.omponents.AdComp</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\CoinAPIServer\Components\CoinAPI.Components.CoinAPIComp\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="KJFramework">
+      <HintPath>..\..\public dependency\KJFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="KJFramework.Basic">
+      <HintPath>..\..\public dependency\KJFramework.Basic.dll</HintPath>
+    </Reference>
+    <Reference Include="KJFramework.Dynamic">
+      <HintPath>..\..\public dependency\KJFramework.Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="KJFramework.IO">
+      <HintPath>..\..\public dependency\KJFramework.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="KJFramework.Messages">
+      <HintPath>..\..\public dependency\KJFramework.Messages.dll</HintPath>
+    </Reference>
+    <Reference Include="KJFramework.Net">
+      <HintPath>..\..\public dependency\KJFramework.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="KJFramework.Net.Channels">
+      <HintPath>..\..\public dependency\KJFramework.Net.Channels.dll</HintPath>
+    </Reference>
+    <Reference Include="KJFramework.Net.Transaction">
+      <HintPath>..\..\public dependency\KJFramework.Net.Transaction.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CoinAPIComponent.cs" />
+    <Compile Include="Global.cs" />
+    <Compile Include="Processors\Basic\MessageProcessorBase.cs" />
+    <Compile Include="Processors\CoinAPI\GetTickerFromOKCoinProcessor.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CoinAPI.CommonFramework\CoinAPI.Domain.Midiator\CoinAPI.Domain.Midiator.csproj">
+      <Project>{DFB5C1F3-F522-46D4-9721-9D70869269E2}</Project>
+      <Name>CoinAPI.Domain.Midiator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CoinAPI.CommonFramework\CoinAPI.Domain.Service\CoinAPI.Service.csproj">
+      <Project>{db07a918-244f-47c5-9099-5d33d56cf998}</Project>
+      <Name>CoinAPI.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CoinAPI.CommonFramework\CoinAPI.Domain\CoinAPI.Domain.csproj">
+      <Project>{bbcd8108-7ada-4cb4-b259-af1fb15e0e5f}</Project>
+      <Name>CoinAPI.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CoinAPI.CommonFramework\CoinAPI.WebAPI.CommonFramework\Coin.CommonFramework.csproj">
+      <Project>{CF4264B4-438D-479C-8EA0-C44A33E493D6}</Project>
+      <Name>Coin.CommonFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CoinAPI.Common\CoinAPI.Common.csproj">
+      <Project>{7f564cf7-043a-45f6-bf80-f8bde66d61a0}</Project>
+      <Name>CoinAPI.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
